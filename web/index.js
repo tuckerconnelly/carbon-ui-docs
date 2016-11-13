@@ -1,1 +1,4 @@
-export default {}
+module.exports = {
+  registerComponents: () => {},
+  nativeModules: {},
+}
