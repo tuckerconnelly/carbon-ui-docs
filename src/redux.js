@@ -1,9 +1,9 @@
 import { createStore as reduxCreateStore, applyMiddleware, compose, combineReducers } from 'redux'
 import thunk from 'redux-thunk'
 
-const rootReducer = combineReducers({
-  temp: (state = {}) => state,
-})
+import app from './app'
+
+const rootReducer = combineReducers({ app })
 
 export default function createStore(initialState) {
   const jackedCreateStore = compose(

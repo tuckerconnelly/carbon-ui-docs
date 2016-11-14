@@ -1,16 +1,31 @@
 import React, { Component, PropTypes } from 'react'
+import { connect } from 'react-redux'
 import { View } from 'react-native-universal'
 import ps from 'react-native-ps'
-import { AppBar } from 'carbon-ui'
+import { AppBar, NavigationDrawer, List, ListItem } from 'carbon-ui'
+
+import { openMenu, closeMenu } from 'src/app'
 
 class Layout extends Component {
   state = { authed: false }
 
   render() {
-    const { children, ...other } = this.props
+    const { menuOpen, openMenu, closeMenu, children } = this.props
     return (
-      <View style={styles.root} {...other}>
-        <AppBar title="Title" />
+      <View style={styles.base}>
+        <AppBar
+          title="Title"
+          css={styles.appBar}
+          onLeftIconPress={openMenu} />
+        <NavigationDrawer
+          open={menuOpen}
+          onOverlayPress={closeMenu}>
+          <List style={styles.list}>
+            <ListItem
+              primaryText="AppBar"
+              active />
+          </List>
+        </NavigationDrawer>
         {children}
       </View>
     )
@@ -18,20 +33,34 @@ class Layout extends Component {
 }
 
 Layout.propTypes = {
+  // connect
+  menuOpen: PropTypes.bool.isRequired,
+  openMenu: PropTypes.func.isRequired,
+  closeMenu: PropTypes.func.isRequired,
+  
   children: PropTypes.node,
 }
 
-export default Layout
+const mapStateToProps = ({ app }) => ({
+  menuOpen: app.menuOpen,
+})
+
+const mapDispatchToProps = { openMenu, closeMenu }
+
+export default
+  connect(mapStateToProps, mapDispatchToProps)(
+  Layout)
 
 const styles = ps({
-  root: {
+  base: {
     flex: 1,
   },
-  
-  
+
+
+  // Account for iOS header
   ios: {
-    root: {
-      marginTop: 20,
+    list: {
+      paddingTop: 24,
     },
   },
 })

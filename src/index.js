@@ -20,8 +20,8 @@ class App extends Component { // eslint-disable-line react/prefer-stateless-func
       <Provider store={store}>
         <ThemeProvider theme={theme}>
           <Layout>
-            <View>
-              <Display2>yoyoyoyoy</Display2>
+            <View style={{ marginTop: 24 }}>
+              <Display2>Carbon UI docs!</Display2>
             </View>
             {this.props.children}
           </Layout>
