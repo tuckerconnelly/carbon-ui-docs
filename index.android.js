@@ -1,8 +1,8 @@
-import React from 'react'
-import { View } from 'react-native'
+import { AppRegistry } from 'react-native'
+import matchMedia from 'react-native-match-media'
 
 import App from './src/index'
 
-global.matchMedia = () => ({ addEventListener() {}, removeEventListener() {} })
+global.matchMedia = matchMedia
 
-AppRegistry.registerComponent('CarbonUIDocs', () => App);
+AppRegistry.registerComponent('CarbonUIDocs', () => App)

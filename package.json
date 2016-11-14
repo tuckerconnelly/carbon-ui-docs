@@ -11,6 +11,8 @@
     "lodash": "^4.16.6",
     "react": "~15.3.2",
     "react-native": "git+https://github.com/exponentjs/react-native#sdk-11.0.3",
+    "react-native-match-media": "^0.1.0",
+    "react-native-orientation-listener": "0.0.4",
     "react-native-ps": "0.0.4",
     "react-native-universal": "^0.0.1",
     "react-native-web": "github:tuckerconnelly/react-native-web",
