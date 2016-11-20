@@ -34,4 +34,11 @@ module.exports = {
       __DEV__: true,
     }),
   ],
+  devServer: {
+    hot: true,
+    colors: true,
+    publicPath: '/assets',
+    historyApiFallback: true,
+    contentBase: 'web/build',
+  },
 }

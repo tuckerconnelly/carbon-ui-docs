@@ -1,9 +1,8 @@
 import React, { Component, PropTypes } from 'react'
 import { Provider } from 'react-redux'
-import { View } from 'react-native-universal'
-import { ThemeProvider, Display2 } from 'carbon-ui'
+import { ThemeProvider } from 'carbon-ui'
 
-import Layout from './modules/Layout'
+import Layout from './modules'
 import createStore from './redux'
 import theme from './theme'
 
@@ -20,9 +19,6 @@ class App extends Component { // eslint-disable-line react/prefer-stateless-func
       <Provider store={store}>
         <ThemeProvider theme={theme}>
           <Layout>
-            <View style={{ marginTop: 24 }}>
-              <Display2>Carbon UI docs!</Display2>
-            </View>
             {this.props.children}
           </Layout>
         </ThemeProvider>

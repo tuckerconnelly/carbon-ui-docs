@@ -1,18 +1,20 @@
-import { createStore as reduxCreateStore, applyMiddleware, compose, combineReducers } from 'redux'
+import { createStore, applyMiddleware, compose, combineReducers } from 'redux'
 import thunk from 'redux-thunk'
+import { navigation, attachHistoryModifiers } from 'react-stack-nav'
+import { BackAndroid } from 'react-native'
 
-import app from './app'
+import app from './modules/duck'
 
-const rootReducer = combineReducers({ app })
+const composeEnhancers = global.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 
-export default function createStore(initialState) {
-  const jackedCreateStore = compose(
-    applyMiddleware(
-      thunk,
+const rootReducer = combineReducers({ app, navigation })
+
+export default (initialState = {}) =>
+  createStore(
+    rootReducer,
+    initialState,
+    composeEnhancers(
+      applyMiddleware(thunk),
+      attachHistoryModifiers({ BackAndroid }),
     ),
-  )(reduxCreateStore)
-
-  const store = jackedCreateStore(rootReducer, initialState)
-
-  return store
-}
+  )
