@@ -24,6 +24,7 @@
     "react-stack-nav": "github:tuckerconnelly/react-stack-nav",
     "redux": "^3.6.0",
     "redux-thunk": "^2.1.0",
+    "unindent": "^2.0.0",
     "uranium": "github:tuckerconnelly/uranium",
     "webpack": "^1.13.3"
   },

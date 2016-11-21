@@ -19,10 +19,12 @@ import {
   connectTheme,
 } from 'carbon-ui'
 
+import Content from 'src/modules/common/Content'
+
 export class HomePage extends Component {
   static HEADER_HEIGHT = 40 * gu
   
-  _goToInstallation = () => this.props.pushState(0, 0, '/installation')
+  _goToInstallation = () => this.props.pushState(0, 'Installation', '/installation')
   
   render() {
     const styles = tStyles(this.props.theme)
@@ -35,7 +37,7 @@ export class HomePage extends Component {
             Universal Material Design components for React Native and React
           </Subheading>
         </View>
-        <View style={styles.copy}>
+        <Content style={styles.copy}>
           <Body1 style={styles.firstParagraph}>
             Carbon UI is a set of Material Design components that work in both
             React Native and React, making it simple to build
@@ -75,7 +77,7 @@ export class HomePage extends Component {
             onPress={this._goToInstallation}>
             Get started
           </RaisedButton>
-        </View>
+        </Content>
       </View>
     )
   }
@@ -128,18 +130,10 @@ const tStyles = theme => ({
     textAlign: 'center',
   },
   
-  copy: {
-    maxWidth: 240 * gu,
-    paddingHorizontal: 12 * gu,
-    paddingVertical: 6 * gu,
-    
-    alignSelf: 'center',
-  },
-  
   firstParagraph: {
     lineHeight: 8 * gu,
     
-    textAlign: 'justify',
+    textAlign: 'center',
   },
   
   writeOnce: {

@@ -2,8 +2,8 @@
 import React, { Component, PropTypes } from 'react'
 import { Animated, View } from 'react-native-universal'
 import { createOrchestrator } from 'react-stack-nav'
-import { Animations } from 'carbon-ui'
-import { animate } from 'uranium'
+import { Animations, Breakpoints, gu } from 'carbon-ui'
+import Uranium, { animate } from 'uranium'
 
 import HomePage from './HomePage'
 import Installation from './Installation'
@@ -29,8 +29,7 @@ class Route extends Component {
     if (!this.state.visible) return <View />
     
     return (
-      <Animated.View
-        style={animate('opacity', 0, 1, this._activateAV)}>
+      <Animated.View style={animate('opacity', 0, 1, this._activateAV)}>
         {this.props.children}
       </Animated.View>
     )

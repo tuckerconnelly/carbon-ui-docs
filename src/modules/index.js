@@ -3,32 +3,43 @@ import { connect } from 'react-redux'
 import { ScrollView, View } from 'react-native-universal'
 import ps from 'react-native-ps'
 import { pushState } from 'react-stack-nav'
-import { AppBar, NavigationDrawer, List, ListItem, Colors } from 'carbon-ui'
+import { AppBar, NavigationDrawer, List, ListItem, Colors, gu } from 'carbon-ui'
 
 import Index from './Index/index'
 import { HomePage } from './Index/HomePage'
 import { openMenu, closeMenu } from './duck'
 
 class Layout extends Component {
-  state = { scrollY: 0 }
+  state = { scrollY: 0, expandedItems: [] }
   
-  _navigate = to => {
+  _navigate = (to, title = '') => {
     this.props.closeMenu()
-    this.props.pushState(0, 0, to)
+    this.props.pushState(0, title, to)
   }
   
   _updateScrollY = e => {
     this.setState({ scrollY: e.nativeEvent.contentOffset.y })
   }
+  
+  _toggleExpandedItem = name => {
+    const expandedItems = [...this.state.expandedItems]
+    
+    const index = expandedItems.indexOf(name)
+    if (index === -1) return this.setState({ expandedItems: expandedItems.concat([name]) })
+    
+    expandedItems.splice(index, 1)
+    this.setState({ expandedItems })
+  }
 
   render() {
     const { menuOpen, title, url, openMenu, closeMenu, children } = this.props
-        
+    const { scrollY, expandedItems } = this.state
+    
     return (
       <View style={styles.base}>
         <AppBar
           title={title}
-          elevated={url !== '' || this.state.scrollY > HomePage.HEADER_HEIGHT}
+          elevated={url !== '' || scrollY > HomePage.HEADER_HEIGHT}
           onLeftIconPress={openMenu} />
         <NavigationDrawer
           open={menuOpen}
@@ -39,13 +50,17 @@ class Layout extends Component {
               active={url === ''}
               onPress={() => this._navigate('')} />
             <ListItem
-              primaryText="Installation"
-              active={url === '/installation'}
-              onPress={() => this._navigate('/installation')} />
+              primaryText="Getting started"
+              expanded={expandedItems.indexOf('gettingStarted') !== -1}
+              onPress={() => this._toggleExpandedItem('gettingStarted')}>
+              <ListItem
+                primaryText="Installation"
+                active={url === '/installation'}
+                onPress={() => this._navigate('/installation', 'Installation')} />
+            </ListItem>
           </List>
         </NavigationDrawer>
         <ScrollView
-          style={styles.content}
           scrollEventThrottle={50}
           onScroll={this._updateScrollY}>
           <Index />

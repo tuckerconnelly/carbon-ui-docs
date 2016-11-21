@@ -73,11 +73,16 @@
       const Animated$1 = Animated.createAnimatedComponent($1)
     """
   'Styles full width':
-    'prefis': 'sfw',
+    'prefix': 'sfw',
     'body': """
       position: 'absolute',
       left: 0,
       right: 0,
       top: 0,
       bottom: 0,
+    """
+  'PropTypes style':
+    'prefix': 'ptsy',
+    'body': """
+      style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     """
