@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import { View } from 'react-native-universal'
-import { Display1, Headline, Body1, Body2, Divider, Colors, connectTheme, gu } from 'carbon-ui'
+import { Display1, Headline, Body1, Body2, Divider, connectTheme, gu } from 'carbon-ui'
 import CodeBlock, { InlineCodeBlock } from 'src/modules/common/CodeBlock'
 import Link from 'src/modules/common/Link'
 import Content from 'src/modules/common/Content'

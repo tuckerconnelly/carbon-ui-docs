@@ -9,7 +9,7 @@ import theme from './theme'
 const store = createStore({
   navigation: {
     index: 0,
-    history: [{ stateObj: {}, title: '', url: '/styling/responsive' }],
+    history: [{ stateObj: {}, title: '', url: '/styling/elevation' }],
   },
 })
 
