@@ -6,7 +6,12 @@ import Layout from './modules'
 import createStore from './redux'
 import theme from './theme'
 
-const store = createStore()
+const store = createStore({
+  // navigation: {
+  //   index: 0,
+  //   history: [{ stateObj: {}, title: 'Theming', url: '/styling/theming' }],
+  // },
+})
 
 // Stateful component so it hot reloads
 class App extends Component { // eslint-disable-line react/prefer-stateless-function

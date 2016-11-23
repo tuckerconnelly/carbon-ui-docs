@@ -9,7 +9,7 @@ const composeEnhancers = global.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 
 const rootReducer = combineReducers({ app, navigation })
 
-export default (initialState = { navigation: { index: 0, history: [{ stateObj: {}, title: 'Installation', url: '/installation' }] } }) =>
+export default initialState =>
   createStore(
     rootReducer,
     initialState,

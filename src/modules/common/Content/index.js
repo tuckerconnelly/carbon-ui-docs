@@ -19,7 +19,9 @@ export default
 const styles = {
   base: {
     maxWidth: 190 * gu,
-    padding: 4 * gu,
+    paddingHorizontal: 4 * gu,
+    paddingTop: 4 * gu,
+    paddingBottom: 10 * gu,
     
     flex: 1,
     alignSelf: 'center',
