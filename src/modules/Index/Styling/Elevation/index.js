@@ -7,7 +7,7 @@ import CodeBlock, { InlineCodeBlock } from 'src/modules/common/CodeBlock'
 import Link from 'src/modules/common/Link'
 import Content from 'src/modules/common/Content'
 
-class Colors extends Component {
+class Elevation extends Component {
   render() {
     const styles = tStyles(this.props.theme)
     
@@ -56,7 +56,7 @@ class Colors extends Component {
   }
 }
 
-Colors.propTypes = {
+Elevation.propTypes = {
   // connectTheme
   theme: PropTypes.object.isRequired,
 }
@@ -64,7 +64,7 @@ Colors.propTypes = {
 export default
   connect(null, { pushState })(
   connectTheme(
-  Colors))
+  Elevation))
 
 const tStyles = theme => ({
   break: {
