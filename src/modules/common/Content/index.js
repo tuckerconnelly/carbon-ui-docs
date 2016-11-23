@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react'
 import { View } from 'react-native-universal'
-import { Breakpoints, Colors, gu } from 'carbon-ui'
+import { Colors, gu } from 'carbon-ui'
 import Uranium from 'uranium'
 
 const Content = ({ children, ...other }) =>
@@ -18,7 +18,6 @@ export default
 
 const styles = {
   base: {
-    maxWidth: 190 * gu,
     paddingHorizontal: 4 * gu,
     paddingTop: 4 * gu,
     paddingBottom: 10 * gu,
@@ -28,8 +27,12 @@ const styles = {
     
     backgroundColor: Colors.white,
     
-    [Breakpoints.ml]: {
-      maxWidth: 290 * gu,
+    [`@media (min-width: ${190 * gu}px)`]: {
+      width: 190 * gu,
+    },
+    
+    [`@media (min-width: ${290 * gu}px)`]: {
+      flexBasis: 290 * gu,
     },
   },
 }
