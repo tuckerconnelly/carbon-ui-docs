@@ -5,6 +5,7 @@ import { replaceState, createOrchestrator } from 'react-stack-nav'
 
 import Route from 'src/modules/common/Route'
 import Theming from './Theming'
+import Colors from './Colors'
 
 class StylingIndex extends Component {
   componentWillMount() {
@@ -18,6 +19,7 @@ class StylingIndex extends Component {
     return (
       <View style={styles.base}>
         <Route active={routeFragment === 'theming'}><Theming /></Route>
+        <Route active={routeFragment === 'colors'}><Colors /></Route>
       </View>
     )
   }

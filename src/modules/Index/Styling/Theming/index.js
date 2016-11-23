@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react'
-import { Display1, Body1, Caption, Type, Colors, connectTheme, gu } from 'carbon-ui'
+import { Divider, Headline, Display1, Body1, Caption, Type, Colors, connectTheme, gu } from 'carbon-ui'
 import CodeBlock, { InlineCodeBlock } from 'src/modules/common/CodeBlock'
 import Link from 'src/modules/common/Link'
 import Content from 'src/modules/common/Content'
@@ -11,9 +11,14 @@ class Theming extends Component {
     return (
       <Content style={styles.base}>
         <Display1 style={styles.display1}>Theming</Display1>
+        <Body1 style={styles.smallBreak}>
+          It&apos;s probably a good idea to use a consistent color scheme throughout
+          your app. All of Carbon UI&apos;s components are easy themeable. You just
+          need to create a <InlineCodeBlock>theme</InlineCodeBlock> object, and
+          pass it down the context with a <InlineCodeBlock>ThemeProvider</InlineCodeBlock>.
+        </Body1>
         <Body1>
-          Setting up your custom theme ain&apos;t too hard in Carbon UI.
-          Just gotta set up a <InlineCodeBlock>theme</InlineCodeBlock> object:
+          First, let's set up the <InlineCodeBlock>theme</InlineCodeBlock> object:
         </Body1>
         <CodeBlock style={styles.smallBreak}>{`
         import { Colors, themes } from 'carbon-ui'
@@ -36,9 +41,9 @@ class Theming extends Component {
         </Caption>
         
         <Body1>
-          Once we got that thing set up, create a
-          <InlineCodeBlock>ThemeProvider</InlineCodeBlock> at the root of your
-          app, maybe next to your redux Provider if you&apos;re using redux.
+          Next, create a <InlineCodeBlock>ThemeProvider</InlineCodeBlock> at
+          the root of your app, and pass it the <InlineCodeBlock>theme</InlineCodeBlock>
+          object:
         </Body1>
         
         <CodeBlock style={styles.smallBreak}>{`
@@ -49,21 +54,28 @@ class Theming extends Component {
         class App extends Component {
           render() {
             return (
-              <Provider store={store}>
-                <ThemeProvider theme={theme}>
-                  <Layout>
-                    {this.props.children}
-                  </Layout>
-                </ThemeProvider>
-              </Provider>
+              <ThemeProvider theme={theme}>
+                <Layout>
+                  {this.props.children}
+                </Layout>
+              </ThemeProvider>
             )
           }
         }
         `}</CodeBlock>
+      
+        <Body1 style={styles.break}>
+          Wooo, all of Carbon UI&apos;s components now follow your theme
+        </Body1>
         
+        <Divider style={styles.break} />
+        
+        <Headline style={styles.headline}>Accessing the theme object</Headline>
         <Body1>
-          Boom! Now all you gotta do to use the theme is wrap a component with the
-          <InlineCodeBlock>connectTheme()</InlineCodeBlock> higher-order component:
+          You can access the <InlineCodeBlock>theme</InlineCodeBlock> object in
+          your own components by wrapping them in the
+          <InlineCodeBlock>connectTheme()</InlineCodeBlock> higher-order component.
+          Once it's wrapped, the theme will be accessible as a prop:
         </Body1>
         
         <CodeBlock style={styles.smallBreak}>{`
@@ -90,8 +102,6 @@ class Theming extends Component {
           },
         })
         `}</CodeBlock>
-        
-        <Body1>Now damn, that&apos;s a stylish component.</Body1>
       </Content>
     )
   }

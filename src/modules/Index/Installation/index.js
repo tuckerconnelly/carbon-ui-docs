@@ -13,15 +13,14 @@ class Components extends Component {
       <Content style={styles.base}>
         <Display1 style={styles.display1}>Installation</Display1>
         <Body1>
-          To get started, install the tuckerconnelly/carbon-ui package to your
-          project using npm:
+          You'll need to install the tuckerconnelly/carbon-ui package using npm:
         </Body1>
         <CodeBlock style={styles.break}>npm -S i tuckerconnelly/carbon-ui</CodeBlock>
         
         <Headline style={styles.headline}>Peer dependencies</Headline>
         <Body1 style={styles.smallBreak}>
-          Carbon UI has a few optional peer dependencies you may need to
-          install, depending on what platforms you want to support.
+          Because Carbon UI supports multiple platforms, you may need to install
+          a few peer dependencies.
         </Body1>
         <View style={styles.smallBreak}>
           <Link
@@ -75,8 +74,9 @@ class Components extends Component {
         
         <Headline style={styles.headline}>Fonts</Headline>
         <Body1 style={styles.smallBreak}>
-          Material Design uses the Roboto font family, so it needs to be installed
-          properly on every platform you're building for.
+          Material Design uses the Roboto font family, so for everything to work
+          properly and things to look sweg, you'll need to install it on all
+          the platforms you're supporting.
         </Body1>
         <Body2>Web</Body2>
         <Body1>
@@ -110,7 +110,7 @@ class Components extends Component {
         </Body1>
         <Body2>iOS</Body2>
         <Body1>
-          iOS is a little more complicated than Android (thank you Apple).
+          iOS is a little more complicated than Android (thanks Apple).
           You'll need all the Roboto fonts, which you can get from
           <Link to="https://github.com/tuckerconnelly/carbon-ui-docs/tree/master/android/app/src/main/assets/fonts">
             this app's repo.

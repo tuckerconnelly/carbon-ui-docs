@@ -3,11 +3,13 @@ import { Linking } from 'react-native-universal'
 import ps from 'react-native-ps'
 import { Body1, Colors, gu } from 'carbon-ui'
 
-const Link = ({ to, style, ...other }) =>
+const Link = ({ to, children, style, ...other }) =>
   <Body1
     style={[styles.base].concat(style)}
     onPress={() => Linking.openURL(to)}
-    {...other} />
+    {...other}>
+    {' '}{children}{' '}
+  </Body1>
 
 Link.propTypes = {
   to: PropTypes.string,

@@ -70,13 +70,17 @@ class Layout extends Component {
               active={url === '/installation'}
               onPress={() => this._navigate('/installation', 'Installation')} />
             <ListItem
-              primaryText="Customization"
-              expanded={expandedItems.indexOf('customization') !== -1}
-              onPress={() => this._toggleExpandedItem('customization')}>
+              primaryText="Styling"
+              expanded={expandedItems.indexOf('styling') !== -1}
+              onPress={() => this._toggleExpandedItem('styling')}>
               <ListItem
                 primaryText="Theming"
                 active={url === '/styling/theming'}
                 onPress={() => this._navigate('/styling/theming', 'Theming')} />
+              <ListItem
+                primaryText="Colors"
+                active={url === '/styling/colors'}
+                onPress={() => this._navigate('/styling/colors', 'Colors')} />
             </ListItem>
           </List>
         </NavigationDrawer>
