@@ -142,6 +142,9 @@ class Responsive extends Component {
           pretty easily using <InlineCodeBlock>gu</InlineCodeBlock> and the
           <InlineCodeBlock>Breakpoints</InlineCodeBlock>.
         </Body1>
+        <Body1 style={styles.smallBreak}>
+          Would also accept a PR if someone can prove it can be done elegantly.
+        </Body1>
       </Content>
     )
   }

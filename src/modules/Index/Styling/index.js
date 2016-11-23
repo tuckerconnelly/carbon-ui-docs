@@ -9,6 +9,7 @@ import Colors from './Colors'
 import Responsive from './Responsive'
 import Elevation from './Elevation'
 import Typography from './Typography'
+import Motion from './Motion'
 
 class StylingIndex extends Component {
   componentWillMount() {
@@ -26,6 +27,7 @@ class StylingIndex extends Component {
         <Route active={routeFragment === 'responsive'}><Responsive /></Route>
         <Route active={routeFragment === 'elevation'}><Elevation /></Route>
         <Route active={routeFragment === 'typography'}><Typography /></Route>
+        <Route active={routeFragment === 'motion'}><Motion /></Route>
       </View>
     )
   }

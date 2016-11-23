@@ -93,6 +93,10 @@ class Layout extends Component {
                 primaryText="Typography"
                 active={url === '/styling/typography'}
                 onPress={() => this._navigate('/styling/typography', 'Typography')} />
+              <ListItem
+                primaryText="Motion"
+                active={url === '/styling/motion'}
+                onPress={() => this._navigate('/styling/motion', 'Motion')} />
             </ListItem>
           </List>
         </NavigationDrawer>

@@ -1,6 +1,21 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
-import { Display1, Headline, Body1, Colors as CUIColors, connectTheme, gu } from 'carbon-ui'
+import {
+  Display4,
+  Display3,
+  Display2,
+  Display1,
+  Headline,
+  Title,
+  Subheading,
+  Body2,
+  Body1,
+  Caption,
+  
+  Colors,
+  gu,
+  connectTheme,
+} from 'carbon-ui'
 import { pushState } from 'react-stack-nav'
 
 import CodeBlock, { InlineCodeBlock } from 'src/modules/common/CodeBlock'
@@ -32,10 +47,20 @@ class Typography extends Component {
           </View>
         }
         `}</CodeBlock>
-        <Body1 style={styles.smallBreak}>
-          And the rest of the font sizes from the material design font page are
-          in there, too.
+        <Body1 style={styles.break}>
+          The rest of the font sizes are available too:
         </Body1>
+        
+        <Display4>&lt;Display4&gt;</Display4>
+        <Display3>&lt;Display3&gt;</Display3>
+        <Display2>&lt;Display2&gt;</Display2>
+        <Display1>&lt;Display1&gt;</Display1>
+        <Headline>&lt;Headline&gt;</Headline>
+        <Title>&lt;Title&gt;</Title>
+        <Subheading>&lt;Subheading&gt;</Subheading>
+        <Body2>&lt;Body2&gt;</Body2>
+        <Body1>&lt;Body1&gt;</Body1>
+        <Caption style={styles.break}>&lt;Caption&gt;</Caption>
         
         <Headline style={styles.headline}>The Type object</Headline>
         
@@ -104,6 +129,6 @@ const tStyles = theme => ({
   },
   
   link: {
-    color: CUIColors.lightBlue400,
+    color: Colors.lightBlue400,
   },
 })
