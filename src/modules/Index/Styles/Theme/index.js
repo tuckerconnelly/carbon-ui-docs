@@ -4,13 +4,13 @@ import CodeBlock, { InlineCodeBlock } from 'src/modules/common/CodeBlock'
 import Link from 'src/modules/common/Link'
 import Content from 'src/modules/common/Content'
 
-class Theming extends Component {
+class Theme extends Component {
   render() {
     const styles = tStyles(this.props.theme)
     
     return (
       <Content style={styles.base}>
-        <Display1 style={styles.display1}>Theming</Display1>
+        <Display1 style={styles.display1}>Theme</Display1>
         <Body1 style={styles.smallBreak}>
           It&apos;s probably a good idea to use a consistent color scheme throughout
           your app. All of Carbon UI&apos;s components are easy themeable. You just
@@ -107,14 +107,14 @@ class Theming extends Component {
   }
 }
 
-Theming.propTypes = {
+Theme.propTypes = {
   // connectTheme
   theme: PropTypes.object.isRequired,
 }
 
 export default
   connectTheme(
-  Theming)
+  Theme)
 
 const tStyles = theme => ({
   break: {

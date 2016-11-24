@@ -4,17 +4,17 @@ import { View } from 'react-native-universal'
 import { replaceState, createOrchestrator } from 'react-stack-nav'
 
 import Route from 'src/modules/common/Route'
-import Theming from './Theming'
+import Theme from './Theme'
 import Colors from './Colors'
 import Responsive from './Responsive'
 import Elevation from './Elevation'
 import Typography from './Typography'
 import Motion from './Motion'
 
-class StylingIndex extends Component {
+class StyleIndex extends Component {
   componentWillMount() {
     if (this.props.routeFragment === undefined) {
-      this.props.replaceState(0, 'theming', '/styles/theming')
+      this.props.replaceState(0, 'theme', '/styles/theme')
     }
   }
   
@@ -22,7 +22,7 @@ class StylingIndex extends Component {
     const { routeFragment } = this.props
     return (
       <View style={styles.base}>
-        <Route active={routeFragment === 'theming'}><Theming /></Route>
+        <Route active={routeFragment === 'theme'}><Theme /></Route>
         <Route active={routeFragment === 'colors'}><Colors /></Route>
         <Route active={routeFragment === 'responsive'}><Responsive /></Route>
         <Route active={routeFragment === 'elevation'}><Elevation /></Route>
@@ -33,11 +33,11 @@ class StylingIndex extends Component {
   }
 }
 
-StylingIndex.contextTypes = {
+StyleIndex.contextTypes = {
   store: PropTypes.object,
 }
 
-StylingIndex.propTypes = {
+StyleIndex.propTypes = {
   // connect
   replaceState: PropTypes.func.isRequired,
   
@@ -48,7 +48,7 @@ StylingIndex.propTypes = {
 export default
   connect(null, { replaceState })(
   createOrchestrator(
-  StylingIndex))
+  StyleIndex))
 
 const styles = {
   base: {},

@@ -24,7 +24,7 @@ import Content from 'src/modules/common/Content'
 export class HomePage extends Component {
   static HEADER_HEIGHT = 40 * gu
   
-  _goToInstallation = () => this.props.pushState(0, 'Installation', '/installation')
+  _goToInstallation = () => this.props.pushState(0, 'Installation', '/getting-started/installation')
   
   render() {
     const styles = tStyles(this.props.theme)

@@ -83,9 +83,9 @@ class Layout extends Component {
               expanded={expandedItems.indexOf('styles') !== -1}
               onPress={() => this._toggleExpandedItem('styles')}>
               <ListItem
-                primaryText="Theming"
-                active={url === '/styles/theming'}
-                onPress={() => this._navigate('/styles/theming', 'Theming')} />
+                primaryText="Theme"
+                active={url === '/styles/theme'}
+                onPress={() => this._navigate('/styles/theme', 'Theme')} />
               <ListItem
                 primaryText="Colors"
                 active={url === '/styles/colors'}

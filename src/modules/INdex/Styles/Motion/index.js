@@ -15,13 +15,12 @@ class Motion extends Component {
       <Content style={styles.base}>
         <Display1 style={styles.display1}>Motion</Display1>
         <Body1 style={styles.break}>
-          Hoooo motion. Material Design has
+          Motion is a
           <Link to="https://material.google.com/motion/material-motion.html">
-            a lot to say
+            complex and layered
           </Link>
-          on the subject. There&apos;s no way Carbon UI could framework-ize all
-          the guidelines in that section, BUT, we can dramatically simplify
-          Material Design animations in the context of React Native.
+          subject in Material Design. Carbon UI does its best to simplify the
+          creation of Animations for you.
         </Body1>
         
         <Headline style={styles.headline}>The Animations object</Headline>
