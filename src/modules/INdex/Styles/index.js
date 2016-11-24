@@ -14,7 +14,7 @@ import Motion from './Motion'
 class StylingIndex extends Component {
   componentWillMount() {
     if (this.props.routeFragment === undefined) {
-      this.props.replaceState(0, 'theming', '/styling/theming')
+      this.props.replaceState(0, 'theming', '/styles/theming')
     }
   }
   

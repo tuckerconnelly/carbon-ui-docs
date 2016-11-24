@@ -5,13 +5,13 @@ import { createOrchestrator } from 'react-stack-nav'
 import Route from 'src/modules/common/Route'
 import HomePage from './HomePage'
 import GettingStarted from './GettingStarted'
-import Styling from './Styling'
+import Styles from './Styles'
 
 const Index = ({ routeFragment }) =>
   <View style={styles.base}>
     <Route active={routeFragment === ''}><HomePage /></Route>
     <Route active={routeFragment === 'getting-started'}><GettingStarted /></Route>
-    {routeFragment === 'styling' && <Styling />}
+    {routeFragment === 'styles' && <Styles />}
   </View>
 
 Index.propTypes = {

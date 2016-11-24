@@ -79,33 +79,33 @@ class Layout extends Component {
                 onPress={() => this._navigate('/getting-started/exponent', 'Usage with Exponent')} />
             </ListItem>
             <ListItem
-              primaryText="Styling"
-              expanded={expandedItems.indexOf('styling') !== -1}
-              onPress={() => this._toggleExpandedItem('styling')}>
+              primaryText="Styles"
+              expanded={expandedItems.indexOf('styles') !== -1}
+              onPress={() => this._toggleExpandedItem('styles')}>
               <ListItem
                 primaryText="Theming"
-                active={url === '/styling/theming'}
-                onPress={() => this._navigate('/styling/theming', 'Theming')} />
+                active={url === '/styles/theming'}
+                onPress={() => this._navigate('/styles/theming', 'Theming')} />
               <ListItem
                 primaryText="Colors"
-                active={url === '/styling/colors'}
-                onPress={() => this._navigate('/styling/colors', 'Colors')} />
+                active={url === '/styles/colors'}
+                onPress={() => this._navigate('/styles/colors', 'Colors')} />
               <ListItem
                 primaryText="Responsive UI"
-                active={url === '/styling/responsive'}
-                onPress={() => this._navigate('/styling/responsive', 'Responsive UI')} />
+                active={url === '/styles/responsive'}
+                onPress={() => this._navigate('/styles/responsive', 'Responsive UI')} />
               <ListItem
                 primaryText="Elevation and shadows"
-                active={url === '/styling/elevation'}
-                onPress={() => this._navigate('/styling/elevation', 'Elevation and shadows')} />
+                active={url === '/styles/elevation'}
+                onPress={() => this._navigate('/styles/elevation', 'Elevation and shadows')} />
               <ListItem
                 primaryText="Typography"
-                active={url === '/styling/typography'}
-                onPress={() => this._navigate('/styling/typography', 'Typography')} />
+                active={url === '/styles/typography'}
+                onPress={() => this._navigate('/styles/typography', 'Typography')} />
               <ListItem
                 primaryText="Motion"
-                active={url === '/styling/motion'}
-                onPress={() => this._navigate('/styling/motion', 'Motion')} />
+                active={url === '/styles/motion'}
+                onPress={() => this._navigate('/styles/motion', 'Motion')} />
             </ListItem>
           </List>
         </NavigationDrawer>
