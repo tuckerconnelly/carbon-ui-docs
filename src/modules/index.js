@@ -66,9 +66,18 @@ class Layout extends Component {
           </TouchableRipple>
           <List style={styles.list}>
             <ListItem
-              primaryText="Installation"
-              active={url === '/installation'}
-              onPress={() => this._navigate('/installation', 'Installation')} />
+              primaryText="Getting started"
+              expanded={expandedItems.indexOf('getting-started') !== -1}
+              onPress={() => this._toggleExpandedItem('getting-started')}>
+              <ListItem
+                primaryText="Installation"
+                active={url === '/getting-started/installation'}
+                onPress={() => this._navigate('/getting-started/installation', 'Installation')} />
+              <ListItem
+                primaryText="Usage with Exponent"
+                active={url === '/getting-started/exponent'}
+                onPress={() => this._navigate('/getting-started/exponent', 'Usage with Exponent')} />
+            </ListItem>
             <ListItem
               primaryText="Styling"
               expanded={expandedItems.indexOf('styling') !== -1}

@@ -4,13 +4,13 @@ import { createOrchestrator } from 'react-stack-nav'
 
 import Route from 'src/modules/common/Route'
 import HomePage from './HomePage'
-import Installation from './Installation'
+import GettingStarted from './GettingStarted'
 import Styling from './Styling'
 
 const Index = ({ routeFragment }) =>
   <View style={styles.base}>
     <Route active={routeFragment === ''}><HomePage /></Route>
-    <Route active={routeFragment === 'installation'}><Installation /></Route>
+    <Route active={routeFragment === 'getting-started'}><GettingStarted /></Route>
     {routeFragment === 'styling' && <Styling />}
   </View>
 
