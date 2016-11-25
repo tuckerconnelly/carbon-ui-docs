@@ -13,8 +13,8 @@ import Motion from './Motion'
 
 class StyleIndex extends Component {
   componentWillMount() {
-    if (this.props.routeFragment === undefined) {
-      this.props.replaceState(0, 'theme', '/styles/theme')
+    if (this.props.url === '/styles') {
+      this.props.replaceState(0, 'Theme', '/styles/theme')
     }
   }
   
@@ -39,14 +39,20 @@ StyleIndex.contextTypes = {
 
 StyleIndex.propTypes = {
   // connect
+  url: PropTypes.string,
   replaceState: PropTypes.func.isRequired,
   
   // createOrchestrator
   routeFragment: PropTypes.string,
 }
 
+const mapStateToProps = ({ navigation }) => ({
+  url: navigation.history[navigation.index].url,
+})
+const mapDispatchToProps = { replaceState }
+
 export default
-  connect(null, { replaceState })(
+  connect(mapStateToProps, mapDispatchToProps)(
   createOrchestrator(
   StyleIndex))
 

@@ -38,7 +38,7 @@
     "import/no-named-as-default": 0,
     "import/no-unresolved": 0,
     "import/prefer-default-export": 0,
-    "import/extensions": [2, "never"],
+    "import/extensions": [2, { "js": "never", "json": "always" }],
     "import/newline-after-import": 0,
 
     "jsx-a11y/anchor-has-content": 0,

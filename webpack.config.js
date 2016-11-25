@@ -19,13 +19,17 @@ module.exports = {
         loader: 'babel',
         exclude: /node_modules/,
       },
+      {
+        test: /\.json$/,
+        loader: 'json',
+      },
     ],
   },
   resolve: {
     alias: {
       'react-native': 'react-native-web',
     },
-    extensions: ['', '.js'],
+    extensions: ['', '.js', '.json'],
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),

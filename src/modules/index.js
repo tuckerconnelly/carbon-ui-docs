@@ -18,6 +18,7 @@ import {
   connectTheme,
 } from 'carbon-ui'
 
+import docs from 'src/docs.json'
 import Index from './Index/index'
 import { HomePage } from './Index/HomePage'
 import { openMenu, closeMenu } from './duck'
@@ -106,6 +107,21 @@ class Layout extends Component {
                 primaryText="Motion"
                 active={url === '/styles/motion'}
                 onPress={() => this._navigate('/styles/motion', 'Motion')} />
+            </ListItem>
+            <ListItem
+              primaryText="Components"
+              expanded={expandedItems.indexOf('components') !== -1}
+              onPress={() => this._toggleExpandedItem('components')}>
+              {Object.keys(docs).map(filename => {
+                const name = filename.split('/').pop().split('.')[0]
+                return (
+                  <ListItem
+                    key={name}
+                    primaryText={name}
+                    active={url === `/components/${name}`}
+                    onPress={() => this._navigate(`/components/${name}`)} />
+                )
+              })}
             </ListItem>
           </List>
         </NavigationDrawer>

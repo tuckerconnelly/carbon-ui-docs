@@ -9,8 +9,8 @@ import Exponent from './Exponent'
 
 class StylingIndex extends Component {
   componentWillMount() {
-    if (this.props.routeFragment === undefined) {
-      this.props.replaceState(0, 'theming', '/getting-started/installation')
+    if (this.props.url === '/getting-started') {
+      this.props.replaceState(0, 'Installation', '/getting-started/installation')
     }
   }
   
@@ -31,14 +31,20 @@ StylingIndex.contextTypes = {
 
 StylingIndex.propTypes = {
   // connect
+  url: PropTypes.string,
   replaceState: PropTypes.func.isRequired,
   
   // createOrchestrator
   routeFragment: PropTypes.string,
 }
 
+const mapStateToProps = ({ navigation }) => ({
+  url: navigation.history[navigation.index].url,
+})
+const mapDispatchToProps = { replaceState }
+
 export default
-  connect(null, { replaceState })(
+  connect(mapStateToProps, mapDispatchToProps)(
   createOrchestrator(
   StylingIndex))
 

@@ -1,0 +1,858 @@
+{
+  "node_modules/carbon-ui/src/components/AppBar.js": {
+    "description": "The app bar, formerly known as the action bar in Android, is a special kind\nof toolbar that’s used for branding, navigation, search, and actions.",
+    "methods": [],
+    "props": {
+      "title": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The title on the AppBar"
+      },
+      "leftIcon": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The material icon name of the left icon",
+        "defaultValue": {
+          "value": "'menu'",
+          "computed": false
+        }
+      },
+      "onLeftIconPress": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Callback for handling presses on the left icon"
+      },
+      "elevated": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "`true` if the AppBar is elevated and has shadows. `false` if you want a\nflat AppBar"
+      },
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Children inserted after the title"
+      },
+      "css": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": ""
+      },
+      "theme": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": ""
+      }
+    }
+  },
+  "node_modules/carbon-ui/src/components/Dialog.js": {
+    "description": "",
+    "methods": [],
+    "props": {
+      "title": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": ""
+      },
+      "actions": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Whether or not the Dialog is active."
+      },
+      "active": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": ""
+      }
+    }
+  },
+  "node_modules/carbon-ui/src/components/Divider.js": {
+    "description": "",
+    "methods": [],
+    "props": {
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": ""
+      },
+      "type": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'solid'",
+              "computed": false
+            },
+            {
+              "value": "'dotted'",
+              "computed": false
+            },
+            {
+              "value": "'dashed'",
+              "computed": false
+            }
+          ]
+        },
+        "required": false,
+        "description": ""
+      },
+      "theme": {
+        "type": {
+          "name": "object"
+        },
+        "required": true,
+        "description": ""
+      },
+      "style": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": ""
+      }
+    }
+  },
+  "node_modules/carbon-ui/src/components/Error.js": {
+    "description": "",
+    "methods": [
+      {
+        "name": "show",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "text",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "hide",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "changeTo",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "text",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "styles",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      }
+    ],
+    "props": {
+      "theme": {
+        "type": {
+          "name": "object"
+        },
+        "required": true,
+        "description": ""
+      },
+      "style": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": ""
+      },
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": ""
+      }
+    }
+  },
+  "node_modules/carbon-ui/src/components/Icon.js": {
+    "description": "",
+    "methods": [],
+    "props": {
+      "name": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": ""
+      },
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": ""
+      },
+      "style": {
+        "type": {
+          "name": "union",
+          "value": [
+            {
+              "name": "object"
+            },
+            {
+              "name": "array"
+            }
+          ]
+        },
+        "required": false,
+        "description": ""
+      }
+    }
+  },
+  "node_modules/carbon-ui/src/components/Input.js": {
+    "description": "",
+    "methods": [
+      {
+        "name": "styles",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      }
+    ],
+    "props": {
+      "style": {
+        "type": {
+          "name": "union",
+          "value": [
+            {
+              "name": "object"
+            },
+            {
+              "name": "array"
+            }
+          ]
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "textInputStyle": {
+        "type": {
+          "name": "union",
+          "value": [
+            {
+              "name": "object"
+            },
+            {
+              "name": "array"
+            }
+          ]
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "placeholderStyle": {
+        "type": {
+          "name": "union",
+          "value": [
+            {
+              "name": "object"
+            },
+            {
+              "name": "array"
+            }
+          ]
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "placeholder": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "value": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": ""
+      },
+      "disabled": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "error": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": ""
+      },
+      "singleLine": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "theme": {
+        "type": {
+          "name": "object"
+        },
+        "required": true,
+        "description": ""
+      }
+    }
+  },
+  "node_modules/carbon-ui/src/components/List.js": {
+    "description": "Lists are best suited to presenting a homogeneous data type or sets of data\ntypes, such as images and text.",
+    "methods": [],
+    "props": {
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Usually a collection of `ListItem`s"
+      },
+      "style": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": ""
+      }
+    }
+  },
+  "node_modules/carbon-ui/src/components/ListItem.js": {
+    "description": "Individual items for the <List /> component",
+    "methods": [],
+    "props": {
+      "primaryText": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The primary text for the item"
+      },
+      "leftIcon": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Usually an <Icon /> or <Avatar />"
+      },
+      "active": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "`true` if the list item is currently selected"
+      },
+      "expanded": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Controls the expanded/collapses state if there are ListItem children"
+      },
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Pass additional ListItems as children to make this ListItem expandable"
+      },
+      "style": {
+        "type": {
+          "name": "union",
+          "value": [
+            {
+              "name": "object"
+            },
+            {
+              "name": "array"
+            }
+          ]
+        },
+        "required": false,
+        "description": ""
+      },
+      "onPress": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": ""
+      },
+      "theme": {
+        "type": {
+          "name": "object"
+        },
+        "required": true,
+        "description": ""
+      }
+    }
+  },
+  "node_modules/carbon-ui/src/components/NavigationDrawer.js": {
+    "description": "The navigation drawer slides in from the left and contains the navigation\ndestinations for your app.",
+    "methods": [],
+    "props": {
+      "open": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "`true` if open, `false` if closed. Will animate open/closed when this prop\nswitches.",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "onOverlayPress": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Callback for when the overlay is pressed"
+      },
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": ""
+      }
+    }
+  },
+  "node_modules/carbon-ui/src/components/Paper.js": {
+    "description": "",
+    "methods": [],
+    "props": {
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": ""
+      },
+      "style": {
+        "type": {
+          "name": "union",
+          "value": [
+            {
+              "name": "object"
+            },
+            {
+              "name": "array"
+            }
+          ]
+        },
+        "required": false,
+        "description": ""
+      },
+      "css": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": ""
+      },
+      "elevation": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "2",
+          "computed": false
+        }
+      }
+    }
+  },
+  "node_modules/carbon-ui/src/components/TouchableRipple.js": {
+    "description": "",
+    "methods": [
+      {
+        "name": "getLayout",
+        "docblock": null,
+        "modifiers": [
+          "async"
+        ],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "_handleLayout",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "e",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "measure",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "cb",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "touchableHandleActivePressIn",
+        "docblock": "`Touchable.Mixin` self callbacks. The mixin will invoke these if they are\ndefined on your component.",
+        "modifiers": [],
+        "params": [
+          {
+            "name": "e"
+          }
+        ],
+        "returns": null,
+        "description": "`Touchable.Mixin` self callbacks. The mixin will invoke these if they are\ndefined on your component."
+      },
+      {
+        "name": "touchableHandleActivePressOut",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "e",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "touchableHandlePress",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "e",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "touchableHandleLongPress",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "e",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "touchableGetPressRectOffset",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "touchableGetHitSlop",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "touchableGetHighlightDelayMS",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "touchableGetLongPressDelayMS",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "touchableGetPressOutDelayMS",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "_onKeyEnter",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "e",
+            "type": null
+          },
+          {
+            "name": "callback",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "_onKeyDown",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "e",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "_onKeyUp",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "e",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "_onKeyPress",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "e",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "start",
+        "docblock": null,
+        "modifiers": [
+          "async"
+        ],
+        "params": [
+          {
+            "name": "e",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "end",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      }
+    ],
+    "props": {
+      "rippleColor": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "'black'",
+          "computed": false
+        }
+      },
+      "rippleSpread": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "1",
+          "computed": false
+        }
+      },
+      "rippleOpacity": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "0.2",
+          "computed": false
+        }
+      },
+      "rippleDuration": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "300",
+          "computed": false
+        }
+      },
+      "rippleCentered": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": ""
+      },
+      "style": {
+        "type": {
+          "name": "union",
+          "value": [
+            {
+              "name": "object"
+            },
+            {
+              "name": "array"
+            }
+          ]
+        },
+        "required": false,
+        "description": ""
+      },
+      "onResponderGrant": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": ""
+      },
+      "onResponderRelease": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": ""
+      },
+      "onPress": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": ""
+      },
+      "onPressIn": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": ""
+      },
+      "onPressOut": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": ""
+      },
+      "onLayout": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": ""
+      }
+    },
+    "composes": [
+      "react-native-universal"
+    ]
+  }
+}

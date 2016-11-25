@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "start:web": "webpack-dev-server"
+    "start:web": "webpack-dev-server",
+    "generateDocs": "node_modules/.bin/react-docgen node_modules/carbon-ui/src/components/*.js -o src/docs.json --pretty"
   },
   "dependencies": {
     "animated": "github:tuckerconnelly/animated#add-boxshadow-support-build",
@@ -39,6 +40,8 @@
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^2.2.3",
     "eslint-plugin-react": "^6.6.0",
+    "json-loader": "^0.5.4",
+    "react-docgen": "^2.12.1",
     "webpack-dev-server": "^1.16.2"
   }
 }
