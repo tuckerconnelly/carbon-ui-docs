@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { View } from 'react-native-universal'
 import { replaceState, createOrchestrator } from 'react-stack-nav'
 
-import Route from 'src/modules/common/Route'
+import RouteFade from 'src/modules/common/RouteFade'
 import Installation from './Installation'
 import Exponent from './Exponent'
 
@@ -18,8 +18,8 @@ class StylingIndex extends Component {
     const { routeFragment } = this.props
     return (
       <View style={styles.base}>
-        <Route active={routeFragment === 'installation'}><Installation /></Route>
-        <Route active={routeFragment === 'exponent'}><Exponent /></Route>
+        <RouteFade active={routeFragment === 'installation'}><Installation /></RouteFade>
+        <RouteFade active={routeFragment === 'exponent'}><Exponent /></RouteFade>
       </View>
     )
   }

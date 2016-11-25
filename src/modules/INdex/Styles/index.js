@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { View } from 'react-native-universal'
 import { replaceState, createOrchestrator } from 'react-stack-nav'
 
-import Route from 'src/modules/common/Route'
+import RouteFade from 'src/modules/common/RouteFade'
 import Theme from './Theme'
 import Colors from './Colors'
 import Responsive from './Responsive'
@@ -22,12 +22,12 @@ class StyleIndex extends Component {
     const { routeFragment } = this.props
     return (
       <View style={styles.base}>
-        <Route active={routeFragment === 'theme'}><Theme /></Route>
-        <Route active={routeFragment === 'colors'}><Colors /></Route>
-        <Route active={routeFragment === 'responsive'}><Responsive /></Route>
-        <Route active={routeFragment === 'elevation'}><Elevation /></Route>
-        <Route active={routeFragment === 'typography'}><Typography /></Route>
-        <Route active={routeFragment === 'motion'}><Motion /></Route>
+        <RouteFade active={routeFragment === 'theme'}><Theme /></RouteFade>
+        <RouteFade active={routeFragment === 'colors'}><Colors /></RouteFade>
+        <RouteFade active={routeFragment === 'responsive'}><Responsive /></RouteFade>
+        <RouteFade active={routeFragment === 'elevation'}><Elevation /></RouteFade>
+        <RouteFade active={routeFragment === 'typography'}><Typography /></RouteFade>
+        <RouteFade active={routeFragment === 'motion'}><Motion /></RouteFade>
       </View>
     )
   }
