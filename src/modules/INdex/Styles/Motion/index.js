@@ -3,7 +3,8 @@ import { connect } from 'react-redux'
 import { Divider, Headline, Display1, Body1, Body2, Colors, connectTheme, gu } from 'carbon-ui'
 import { pushState } from 'react-stack-nav'
 
-import CodeBlock, { InlineCodeBlock as ICB } from 'src/modules/common/CodeBlock'
+import CodeBlock from 'src/modules/common/CodeBlock'
+import InlineCode from 'src/modules/common/InlineCode'
 import Link from 'src/modules/common/Link'
 import Content from 'src/modules/common/Content'
 
@@ -48,7 +49,7 @@ class Motion extends Component {
         </Body1>
         
         <Body1>
-          All of these can be used on the <ICB>Animations</ICB> object like so:
+          All of these can be used on the <InlineCode>Animations</InlineCode> object like so:
         </Body1>
         
         <CodeBlock>{`
@@ -78,7 +79,8 @@ class Motion extends Component {
         `}</CodeBlock>
       
         <Body1 style={styles.smallBreak}>
-          <ICB>Animations.standard()</ICB> creates an <ICB>Animated.timing()</ICB>
+          <InlineCode>Animations.standard()</InlineCode> creates an
+          <InlineCode>Animated.timing()</InlineCode>
           automatically, with the proper duration and easing, and goes from
           0 to 1.
         </Body1>
@@ -90,12 +92,13 @@ class Motion extends Component {
         
         <Body1 style={styles.smallBreak}>
           In the end the component above animates from
-          <ICB>width: 100, height: 100</ICB> to <ICB>width: 200, height: 200</ICB>
+          <InlineCode>width: 100, height: 100</InlineCode> to
+          <InlineCode>width: 200, height: 200</InlineCode>
         </Body1>
         
         <Body1 style={styles.smallBreak}>
           If we wanted to go back to the starting value, we could do a standard
-          animation back to <ICB>0</ICB>:
+          animation back to <InlineCode>0</InlineCode>:
         </Body1>
         
         <CodeBlock>{`
@@ -103,9 +106,10 @@ class Motion extends Component {
         `}</CodeBlock>
       
         <Body1>
-          <ICB>Animations.large()</ICB>, <ICB>Animations.entrance()</ICB>, and the
-          rest are all available on the <ICB>Animations</ICB> object. They all
-          follow the signature:
+          <InlineCode>Animations.large()</InlineCode>,
+          <InlineCode>Animations.entrance()</InlineCode>, and the
+          rest are all available on the <InlineCode>Animations</InlineCode> object.
+          They all follow the signature:
         </Body1>
         
         <CodeBlock>{`
@@ -113,8 +117,8 @@ class Motion extends Component {
         `}</CodeBlock>
   
         <Body1>
-          So if you wanted to do an <ICB>exit</ICB> animation with a duration of 200ms,
-          delayed by 50ms, you could do:
+          So if you wanted to do an <InlineCode>exit</InlineCode> animation with
+          a duration of 200ms, delayed by 50ms, you could do:
         </Body1>
         
         <CodeBlock style={styles.break}>{`
@@ -130,7 +134,7 @@ class Motion extends Component {
           <Link to="https://material.google.com/motion/choreography.html">
             stagger animations
           </Link> by ~50 ms or so in complex
-          transitions. Carbon UI has the special <ICB>staggered</ICB> animation
+          transitions. Carbon UI has the special <InlineCode>staggered</InlineCode> animation
           for these. It has the signature:
         </Body1>
         
@@ -168,9 +172,9 @@ class Motion extends Component {
         `}</CodeBlock>
   
         <Body1 style={styles.break}>
-          The the <ICB>animate()</ICB> method above comes from Uranium. Uranium
+          The the <InlineCode>animate()</InlineCode> method above comes from Uranium. Uranium
           was built side-bys-ide with Carbon UI, so they integrate nicely. You
-          can read more about <ICB>animate()</ICB>
+          can read more about <InlineCode>animate()</InlineCode>
           <Link to="https://github.com/tuckerconnelly/uranium#animate-function">
             over here
           </Link>.
@@ -181,8 +185,8 @@ class Motion extends Component {
         <Headline style={styles.headline}>Nitty gritty customization</Headline>
         
         <Body1>
-          Carbon UI also has a <ICB>Durations</ICB> object and an
-          <ICB>Easing</ICB> object if you want to build your own to-spec
+          Carbon UI also has a <InlineCode>Durations</InlineCode> object and an
+          <InlineCode>Easing</InlineCode> object if you want to build your own to-spec
           animations. You can read about them in the
           <Link to="https://github.com/tuckerconnelly/carbon-ui/blob/master/src/style/Animations.js">
             source

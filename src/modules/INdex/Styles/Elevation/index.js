@@ -3,7 +3,8 @@ import { connect } from 'react-redux'
 import { Display1, Body1, Colors as CUIColors, connectTheme, gu } from 'carbon-ui'
 import { pushState } from 'react-stack-nav'
 
-import CodeBlock, { InlineCodeBlock } from 'src/modules/common/CodeBlock'
+import CodeBlock from 'src/modules/common/CodeBlock'
+import InlineCode from 'src/modules/common/InlineCode'
 import Link from 'src/modules/common/Link'
 import Content from 'src/modules/common/Content'
 
@@ -21,7 +22,7 @@ class Elevation extends Component {
           </Link>.
           All components in Carbon UI implement elevation to spec, but if you want
           to add your own shadows to an element you can do so with the
-          <InlineCodeBlock>Elevation</InlineCodeBlock> object:
+          <InlineCode>Elevation</InlineCode> object:
         </Body1>
         <CodeBlock>{`
         import { Elevation } from 'carbon-ui'
@@ -39,16 +40,16 @@ class Elevation extends Component {
         }
         `}</CodeBlock>
         <Body1 style={styles.smallBreak}>
-          This would create a <InlineCodeBlock>View</InlineCodeBlock> with an
+          This would create a <InlineCode>View</InlineCode> with an
           elevation of 4dp.
         </Body1>
         <Body1 style={styles.smallBreak}>
-          The <InlineCodeBlock>Elevation</InlineCodeBlock> object has all the dps
+          The <InlineCode>Elevation</InlineCode> object has all the dps
           you see on the
           <Link to="https://material.google.com/material-design/elevation-shadows.html#elevation-shadows-elevation-android">
             Material Design elevation page
           </Link>. You could spread, for example,
-          <InlineCodeBlock>...Elevation.dp16</InlineCodeBlock> in a style object
+          <InlineCode>...Elevation.dp16</InlineCode> in a style object
           if you wanted to set an elevation of 16dp.
         </Body1>
       </Content>

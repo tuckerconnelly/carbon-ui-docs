@@ -3,7 +3,8 @@ import { connect } from 'react-redux'
 import { Divider, Display1, Headline, Body1, Body2, Colors as CUIColors, connectTheme, gu } from 'carbon-ui'
 import { pushState } from 'react-stack-nav'
 
-import CodeBlock, { InlineCodeBlock } from 'src/modules/common/CodeBlock'
+import CodeBlock from 'src/modules/common/CodeBlock'
+import InlineCode from 'src/modules/common/InlineCode'
 import Link from 'src/modules/common/Link'
 import Content from 'src/modules/common/Content'
 
@@ -29,8 +30,8 @@ class Responsive extends Component {
           In Material Design, some things, like typography and iconography, are
           on a 4dp square grid, and others, like components, are on an 8dp square
           grid. Carbon UI provides the greatest common divisor, 4, as the constant
-          <InlineCodeBlock>gu</InlineCodeBlock>. gu stands for "grid-unit". I created
-          <InlineCodeBlock>gu</InlineCodeBlock> to be a sort of css unit like px.
+          <InlineCode>gu</InlineCode>. gu stands for "grid-unit". I created
+          <InlineCode>gu</InlineCode> to be a sort of css unit like px.
           You can use it like:
         </Body1>
         <CodeBlock>{`
@@ -46,12 +47,12 @@ class Responsive extends Component {
         }
         `}</CodeBlock>
         <Body1 style={styles.smallBreak}>
-          That would create a <InlineCodeBlock>View</InlineCodeBlock> that&apos;s
+          That would create a <InlineCode>View</InlineCode> that&apos;s
           16dp x 16dp.
         </Body1>
         
         <Body1 style={styles.break}>
-          Using <InlineCodeBlock>gu</InlineCodeBlock> for all of your sizing keeps
+          Using <InlineCode>gu</InlineCode> for all of your sizing keeps
           your layout consistent and your vertical rhythm
           <Link to="https://www.youtube.com/watch?v=Eo-KmOd3i7s">
             *Nsync.
@@ -139,8 +140,8 @@ class Responsive extends Component {
         <Body1 style={styles.smallBreak}>
           I didn't implement it because I'm not a fan of strict grid systems.
           You can read the spec and implement it yourself
-          pretty easily using <InlineCodeBlock>gu</InlineCodeBlock> and the
-          <InlineCodeBlock>Breakpoints</InlineCodeBlock>.
+          pretty easily using <InlineCode>gu</InlineCode> and the
+          <InlineCode>Breakpoints</InlineCode>.
         </Body1>
         <Body1 style={styles.smallBreak}>
           Would also accept a PR if someone can do it elegantly.

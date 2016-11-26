@@ -6,6 +6,7 @@ import Uranium from 'uranium'
 import get from 'lodash/get'
 
 import componentDocs from 'src/modules/Index/Components/docs'
+import MarkdownBlock from 'src/modules/common/MarkdownBlock'
 
 class ComponentDoc extends Component {
   componentDidMount() {
@@ -31,13 +32,13 @@ class ComponentDoc extends Component {
 
     const { description, props } = doc
       
-    const descriptionWithoutNewlines = description.replace(/\n/gi, ' ')
+    // const descriptionWithoutNewlines = description.replace(/\n/gi, ' ')
       
     return (
       <Content style={styles.base}>
         <Display1 style={styles.display1}>{component}</Display1>
         {!!description.length &&
-          <Body1 style={styles.break}>{descriptionWithoutNewlines}</Body1>
+          <MarkdownBlock style={styles.break}>{description}</MarkdownBlock>
         }
         <DataTable>
           <DataTable.HeaderRow>

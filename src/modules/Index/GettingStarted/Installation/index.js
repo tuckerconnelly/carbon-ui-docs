@@ -1,7 +1,8 @@
 import React, { Component, PropTypes } from 'react'
 import { View } from 'react-native-universal'
 import { Display1, Headline, Body1, Body2, Divider, connectTheme, gu } from 'carbon-ui'
-import CodeBlock, { InlineCodeBlock } from 'src/modules/common/CodeBlock'
+import CodeBlock from 'src/modules/common/CodeBlock'
+import InlineCode from 'src/modules/common/InlineCode'
 import Link from 'src/modules/common/Link'
 import Content from 'src/modules/common/Content'
 
@@ -60,9 +61,9 @@ class Components extends Component {
             </Link>.
           </Body1>
           <Body1>
-            You need to set <InlineCodeBlock>global.matchMedia</InlineCodeBlock>
-            in your <InlineCodeBlock>index.ios.js</InlineCodeBlock> or
-            <InlineCodeBlock>index.android.js</InlineCodeBlock> file like:
+            You need to set <InlineCode>global.matchMedia</InlineCode>
+            in your <InlineCode>index.ios.js</InlineCode> or
+            <InlineCode>index.android.js</InlineCode> file like:
           </Body1>
           <CodeBlock>{`
           import matchMedia from 'react-native-match-media'
@@ -81,7 +82,7 @@ class Components extends Component {
         <Body2>Web</Body2>
         <Body1>
           Installing the fonts on web is as simple as putting the
-          <InlineCodeBlock>{'<WebStyles />'}</InlineCodeBlock> component in your
+          <InlineCode>{'<WebStyles />'}</InlineCode> component in your
           top-level component:
         </Body1>
         <CodeBlock style={styles.smallBreak}>{`
@@ -99,7 +100,7 @@ class Components extends Component {
         <Body2>Android</Body2>
         <Body1>
           Android's pretty simple--just gotta put all the fonts in the
-          <InlineCodeBlock>android/app/src/main/assets/fonts</InlineCodeBlock>
+          <InlineCode>android/app/src/main/assets/fonts</InlineCode>
           folder and they'll automatically be usable by the app.
         </Body1>
         <Body1 style={styles.smallBreak}>

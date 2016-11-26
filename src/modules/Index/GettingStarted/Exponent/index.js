@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { Display1, Body1, connectTheme, gu } from 'carbon-ui'
-import CodeBlock, { InlineCodeBlock as ICB } from 'src/modules/common/CodeBlock'
+import CodeBlock from 'src/modules/common/CodeBlock'
+import InlineCode from 'src/modules/common/InlineCode'
 import Content from 'src/modules/common/Content'
 
 class Components extends Component {
@@ -11,7 +12,7 @@ class Components extends Component {
       <Content style={styles.base}>
         <Display1 style={styles.display1}>Usage with Exponent</Display1>
         <Body1>
-          Yup, it works. Just create a matchMedia mock in your <ICB>main.js</ICB>:
+          Yup, it works. Just create a matchMedia mock in your <InlineCode>main.js</InlineCode>:
         </Body1>
         <CodeBlock>{`
         global.matchMedia = { addListener() {}, removeListener() {} }

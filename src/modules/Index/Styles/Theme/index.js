@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { Divider, Headline, Display1, Body1, Caption, Type, Colors, connectTheme, gu } from 'carbon-ui'
-import CodeBlock, { InlineCodeBlock } from 'src/modules/common/CodeBlock'
+import CodeBlock from 'src/modules/common/CodeBlock'
+import InlineCode from 'src/modules/common/InlineCode'
 import Link from 'src/modules/common/Link'
 import Content from 'src/modules/common/Content'
 
@@ -13,11 +14,11 @@ class Theme extends Component {
         <Display1 style={styles.display1}>Theme</Display1>
         <Body1 style={styles.smallBreak}>
           All of Carbon UI&apos;s components are themeable. You just
-          need to create a <InlineCodeBlock>theme</InlineCodeBlock> object, and
-          pass it down the context with a <InlineCodeBlock>ThemeProvider</InlineCodeBlock>.
+          need to create a <InlineCode>theme</InlineCode> object, and
+          pass it down the context with a <InlineCode>ThemeProvider</InlineCode>.
         </Body1>
         <Body1>
-          First, let's set up the <InlineCodeBlock>theme</InlineCodeBlock> object:
+          First, let's set up the <InlineCode>theme</InlineCode> object:
         </Body1>
         <CodeBlock style={styles.smallBreak}>{`
         import merge from 'lodash/merge'
@@ -43,13 +44,13 @@ class Theme extends Component {
         
         <Body1 style={styles.smallBreak}>
           The above code extends
-          <InlineCodeBlock>themes.light</InlineCodeBlock>
+          <InlineCode>themes.light</InlineCode>
           with your own custom colors.
         </Body1>
         
         <Body1>
-          Next, create a <InlineCodeBlock>ThemeProvider</InlineCodeBlock> at
-          the root of your app, and pass it the <InlineCodeBlock>theme</InlineCodeBlock>
+          Next, create a <InlineCode>ThemeProvider</InlineCode> at
+          the root of your app, and pass it the <InlineCode>theme</InlineCode>
           object:
         </Body1>
         
@@ -79,9 +80,9 @@ class Theme extends Component {
         
         <Headline style={styles.headline}>Accessing the theme object</Headline>
         <Body1>
-          You can access the <InlineCodeBlock>theme</InlineCodeBlock> object in
+          You can access the <InlineCode>theme</InlineCode> object in
           your own components by wrapping them in the
-          <InlineCodeBlock>connectTheme()</InlineCodeBlock> higher-order component.
+          <InlineCode>connectTheme()</InlineCode> higher-order component.
           Once it's wrapped, the theme will be accessible as a prop:
         </Body1>
         

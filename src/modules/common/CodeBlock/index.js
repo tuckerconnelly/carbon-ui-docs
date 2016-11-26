@@ -16,20 +16,6 @@ CodeBlock.propTypes = {
 
 export default CodeBlock
 
-export const InlineCodeBlock = ({ children, style }) =>
-  <Text>
-    {' '}
-    <Text style={[styles.inlineCodeBlock].concat([style])}>
-      {children}
-    </Text>
-    {' '}
-  </Text>
-
-InlineCodeBlock.propTypes = {
-  children: PropTypes.string,
-  style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
-}
-
 const styles = ps({
   base: {
     padding: 4 * gu,
@@ -39,14 +25,6 @@ const styles = ps({
   },
   
   text: {
-    color: Colors.blackPrimary,
-    
-    fontFamily: 'RobotoMono-Regular',
-    fontSize: 13,
-  },
-  
-  inlineCodeBlock: {
-    backgroundColor: Colors.grey200,
     color: Colors.blackPrimary,
     
     fontFamily: 'RobotoMono-Regular',

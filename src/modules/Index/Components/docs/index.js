@@ -11,7 +11,7 @@ class ComponentDocs {
     const tree = {}
     
     Object.keys(docgenOutput).forEach(filename => {
-      const withinComponentsFolder = filename.split('node_modules/carbon-ui/src/components/').pop()
+      const withinComponentsFolder = filename.split('../carbon-ui/src/components/').pop()
       const layers = withinComponentsFolder.split('/')
       
       // Remove .js from end of name

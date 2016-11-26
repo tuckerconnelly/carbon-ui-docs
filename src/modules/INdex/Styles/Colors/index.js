@@ -4,7 +4,8 @@ import { Text } from 'react-native-universal'
 import { Display1, Body1, Colors as CUIColors, connectTheme, gu } from 'carbon-ui'
 import { pushState } from 'react-stack-nav'
 
-import CodeBlock, { InlineCodeBlock } from 'src/modules/common/CodeBlock'
+import CodeBlock from 'src/modules/common/CodeBlock'
+import InlineCode from 'src/modules/common/InlineCode'
 import Link from 'src/modules/common/Link'
 import Content from 'src/modules/common/Content'
 
@@ -43,7 +44,7 @@ class Colors extends Component {
             {' '}theme{' '}
           </Text>
           for any theme colors, but for one-off styles the
-          <InlineCodeBlock>Colors</InlineCodeBlock> object works great.
+          <InlineCode>Colors</InlineCode> object works great.
         </Body1>
       </Content>
     )

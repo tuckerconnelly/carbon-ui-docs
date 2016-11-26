@@ -18,7 +18,8 @@ import {
 } from 'carbon-ui'
 import { pushState } from 'react-stack-nav'
 
-import CodeBlock, { InlineCodeBlock } from 'src/modules/common/CodeBlock'
+import CodeBlock from 'src/modules/common/CodeBlock'
+import InlineCode from 'src/modules/common/InlineCode'
 import Link from 'src/modules/common/Link'
 import Content from 'src/modules/common/Content'
 
@@ -66,7 +67,7 @@ class Typography extends Component {
         
         <Body1>
           If you wanna add the typography styles specifically, you can
-          use the <InlineCodeBlock>Type</InlineCodeBlock> object:
+          use the <InlineCode>Type</InlineCode> object:
         </Body1>
         <CodeBlock>{`
         import { Type } from 'carbon-ui'

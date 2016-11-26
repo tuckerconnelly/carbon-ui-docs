@@ -5,7 +5,8 @@
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "start:web": "webpack-dev-server",
-    "generateDocs": "node_modules/.bin/react-docgen node_modules/carbon-ui/src/components -o src/modules/Index/Components/docs/docgenOutput.json --pretty"
+    "generateDocs": "node_modules/.bin/react-docgen ../carbon-ui/src/components --pretty -o src/modules/Index/Components/docs/docgenOutput.json",
+    "generateDocs:watch": "node_modules/.bin/onchange '../carbon-ui/src' -iw -- npm run generateDocs"
   },
   "dependencies": {
     "animated": "github:tuckerconnelly/animated#add-boxshadow-support-build",
@@ -25,6 +26,7 @@
     "react-stack-nav": "github:tuckerconnelly/react-stack-nav",
     "redux": "^3.6.0",
     "redux-thunk": "^2.1.0",
+    "simple-markdown": "^0.2.1",
     "unindent": "^2.0.0",
     "uranium": "github:tuckerconnelly/uranium",
     "webpack": "^1.13.3"

@@ -1,5 +1,5 @@
 {
-  "node_modules/carbon-ui/src/components/AppBar.js": {
+  "../carbon-ui/src/components/AppBar.js": {
     "description": "The app bar, formerly known as the action bar in Android, is a special kind\nof toolbar that’s used for branding, navigation, search, and actions.",
     "methods": [],
     "props": {
@@ -62,7 +62,7 @@
       }
     }
   },
-  "node_modules/carbon-ui/src/components/DataTable/Cell.js": {
+  "../carbon-ui/src/components/DataTable/Cell.js": {
     "description": "",
     "methods": [],
     "props": {
@@ -90,7 +90,7 @@
       }
     }
   },
-  "node_modules/carbon-ui/src/components/DataTable/HeaderCell.js": {
+  "../carbon-ui/src/components/DataTable/HeaderCell.js": {
     "description": "",
     "methods": [],
     "props": {
@@ -118,7 +118,7 @@
       }
     }
   },
-  "node_modules/carbon-ui/src/components/DataTable/HeaderRow.js": {
+  "../carbon-ui/src/components/DataTable/HeaderRow.js": {
     "description": "",
     "methods": [],
     "props": {
@@ -146,7 +146,7 @@
       }
     }
   },
-  "node_modules/carbon-ui/src/components/DataTable/Row.js": {
+  "../carbon-ui/src/components/DataTable/Row.js": {
     "description": "",
     "methods": [],
     "props": {
@@ -174,7 +174,7 @@
       }
     }
   },
-  "node_modules/carbon-ui/src/components/DataTable/index.js": {
+  "../carbon-ui/src/components/DataTable/index.js": {
     "description": "Data tables display sets of raw data. They usually appear in desktop\nenterprise products.",
     "methods": [],
     "props": {
@@ -202,7 +202,7 @@
       }
     }
   },
-  "node_modules/carbon-ui/src/components/Dialog.js": {
+  "../carbon-ui/src/components/Dialog.js": {
     "description": "Dialogs inform users about a specific task and may contain critical\ninformation, require decisions, or involve multiple tasks.",
     "methods": [],
     "props": {
@@ -240,7 +240,7 @@
       }
     }
   },
-  "node_modules/carbon-ui/src/components/Divider.js": {
+  "../carbon-ui/src/components/Divider.js": {
     "description": "A divider is a thin, lightweight rule that groups content in lists and page\nlayouts.",
     "methods": [],
     "props": {
@@ -267,7 +267,7 @@
       }
     }
   },
-  "node_modules/carbon-ui/src/components/Icon.js": {
+  "../carbon-ui/src/components/Icon.js": {
     "description": "A system icon, or UI icon, symbolizes a command, file, device, or directory.\nSystem icons are also used to represent common actions like trash, print,\nand save.\n\nThe Icon's name maps to the material icons font.",
     "methods": [],
     "props": {
@@ -302,7 +302,7 @@
       }
     }
   },
-  "node_modules/carbon-ui/src/components/List.js": {
+  "../carbon-ui/src/components/List.js": {
     "description": "Lists are best suited to presenting a homogeneous data type or sets of data\ntypes, such as images and text.",
     "methods": [],
     "props": {
@@ -322,7 +322,7 @@
       }
     }
   },
-  "node_modules/carbon-ui/src/components/ListItem.js": {
+  "../carbon-ui/src/components/ListItem.js": {
     "description": "Individual items for the <List /> component.\n\nCan become a nested menu item it has ListItem for children.",
     "methods": [],
     "props": {
@@ -346,6 +346,17 @@
         },
         "required": false,
         "description": "`true` if the list item is currently selected"
+      },
+      "nestingDepth": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "The depth, in px, of nested items. Only applies if there are children\nListItems. The default is the Material Design spec value.",
+        "defaultValue": {
+          "value": "18 * gu",
+          "computed": false
+        }
       },
       "expanded": {
         "type": {
@@ -392,7 +403,7 @@
       }
     }
   },
-  "node_modules/carbon-ui/src/components/NavigationDrawer.js": {
+  "../carbon-ui/src/components/NavigationDrawer.js": {
     "description": "The navigation drawer slides in from the left and contains the navigation\ndestinations for your app.",
     "methods": [],
     "props": {
@@ -423,7 +434,7 @@
       }
     }
   },
-  "node_modules/carbon-ui/src/components/Paper.js": {
+  "../carbon-ui/src/components/Paper.js": {
     "description": "Generic Paper component. Like the <div /> of Material Design.",
     "methods": [],
     "props": {
@@ -469,7 +480,7 @@
       }
     }
   },
-  "node_modules/carbon-ui/src/components/TextField.js": {
+  "../carbon-ui/src/components/TextField.js": {
     "description": "Text fields allow users to input text, select text, and lookup data via\nauto-completion.\n\nThis component wraps React Native's TextInput, so it accepts all the same\nprops.",
     "methods": [
       {
@@ -585,7 +596,7 @@
       }
     }
   },
-  "node_modules/carbon-ui/src/components/TextFieldError.js": {
+  "../carbon-ui/src/components/TextFieldError.js": {
     "description": "Error component for the TextField.",
     "methods": [
       {
@@ -651,7 +662,7 @@
       }
     }
   },
-  "node_modules/carbon-ui/src/components/TouchableRipple.js": {
+  "../carbon-ui/src/components/TouchableRipple.js": {
     "description": "Ink ripples confirm user input by immediately expanding outward from the\npoint of touch. The card lifts to indicate an active state.",
     "methods": [
       {
@@ -927,7 +938,7 @@
       "react-native-universal"
     ]
   },
-  "node_modules/carbon-ui/src/components/buttons/FlatButton.js": {
+  "../carbon-ui/src/components/buttons/FlatButton.js": {
     "description": "Flat buttons are printed on material. They do not lift, but fill with color\non press.",
     "methods": [],
     "props": {
@@ -965,7 +976,7 @@
       }
     }
   },
-  "node_modules/carbon-ui/src/components/buttons/IconToggle.js": {
+  "../carbon-ui/src/components/buttons/IconToggle.js": {
     "description": "Icons are appropriate for toggle buttons that allow a single choice to be\nselected or deselected, such as adding or removing a star to an item.",
     "methods": [],
     "props": {
@@ -992,7 +1003,7 @@
       }
     }
   },
-  "node_modules/carbon-ui/src/components/buttons/RaisedButton.js": {
+  "../carbon-ui/src/components/buttons/RaisedButton.js": {
     "description": "Raised buttons behave like a piece of material resting on another sheet –\nthey lift and fill with color on press.",
     "methods": [],
     "props": {
