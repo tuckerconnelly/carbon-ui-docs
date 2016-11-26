@@ -220,7 +220,7 @@ const tStyles = theme => ps({
   },
   
   listHeading: {
-    backgroundColor: theme.primary,
+    backgroundColor: theme.colors.primary,
     
     paddingHorizontal: 4 * gu,
     paddingTop: 2 * gu,

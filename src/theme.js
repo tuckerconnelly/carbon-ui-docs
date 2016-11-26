@@ -1,6 +1,8 @@
+import merge from 'lodash/merge'
 import { Colors, themes } from 'carbon-ui'
 
-export default {
-  ...themes.light,
-  primary: Colors.cyan400,
-}
+export default merge(themes.light, {
+  colors: {
+    primary: Colors.cyan400,
+  },
+})

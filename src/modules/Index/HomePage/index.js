@@ -109,7 +109,7 @@ const tStyles = theme => ({
   heading: {
     height: HomePage.HEADER_HEIGHT,
     
-    backgroundColor: theme.primary,
+    backgroundColor: theme.colors.primary,
   },
   
   title: {

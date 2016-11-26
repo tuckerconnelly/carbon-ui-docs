@@ -172,13 +172,13 @@ const tStyles = theme => ({
   display1: {
     marginBottom: 2.5 * gu,
     
-    color: theme.primary,
+    color: theme.colors.primary,
   },
   
   headline: {
     marginBottom: 2 * gu,
     
-    color: theme.primary,
+    color: theme.colors.primary,
   },
   
   link: {

@@ -128,7 +128,7 @@ const tStyles = theme => ({
   display1: {
     marginBottom: 5 * gu,
     
-    color: theme.primary,
+    color: theme.colors.primary,
   },
   
   captionLink: {
@@ -139,7 +139,7 @@ const tStyles = theme => ({
   headline: {
     marginBottom: 4 * gu,
     
-    color: theme.primary,
+    color: theme.colors.primary,
   },
   
   dependencyLink: {
