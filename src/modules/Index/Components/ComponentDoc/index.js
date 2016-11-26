@@ -5,7 +5,7 @@ import Content from 'src/modules/common/Content'
 import Uranium from 'uranium'
 import get from 'lodash/get'
 
-import docs from 'src/docs.json'
+import componentDocs from 'src/modules/Index/Components/docs'
 
 class ComponentDoc extends Component {
   componentDidMount() {
@@ -21,26 +21,15 @@ class ComponentDoc extends Component {
   }
   _mobileMQLListener = () => this.forceUpdate()
   
-  get _doc() {
-    const { component } = this.props
-    // Resolve the doc from the given component name
-    const possibleDocs = [
-      docs[`node_modules/carbon-ui/src/components/${component}.js`],
-      docs[`node_modules/carbon-ui/src/components/${component}/index.js`],
-      docs[`node_modules/carbon-ui/src/components/buttons/${component}.js`],
-      docs[`node_modules/carbon-ui/src/components/DataTable/${component}.js`],
-    ]
-    
-    return possibleDocs.reduce((prev, curr) => prev || curr)
-  }
-  
   render() {
     const { component } = this.props
     const styles = tStyles(this.props.theme)
     
-    if (!this._doc) return <View />
+    const doc = componentDocs.findDocForName(component)
+    
+    if (!doc) return <View />
 
-    const { description, props } = this._doc
+    const { description, props } = doc
       
     const descriptionWithoutNewlines = description.replace(/\n/gi, ' ')
       

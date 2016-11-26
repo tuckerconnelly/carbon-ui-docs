@@ -5,7 +5,7 @@
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "start:web": "webpack-dev-server",
-    "generateDocs": "node_modules/.bin/react-docgen node_modules/carbon-ui/src/components -o src/docs.json --pretty"
+    "generateDocs": "node_modules/.bin/react-docgen node_modules/carbon-ui/src/components -o src/modules/Index/Components/docs/docgenOutput.json --pretty"
   },
   "dependencies": {
     "animated": "github:tuckerconnelly/animated#add-boxshadow-support-build",

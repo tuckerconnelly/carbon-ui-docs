@@ -17,9 +17,8 @@ import {
   
   connectTheme,
 } from 'carbon-ui'
-import set from 'lodash/set'
 
-import docs from 'src/docs.json'
+import componentDocs from 'src/modules/Index/Components/docs'
 import Index from './Index/index'
 import { HomePage } from './Index/HomePage'
 import { openMenu, closeMenu } from './duck'
@@ -46,28 +45,6 @@ class Layout extends Component {
     
     expandedItems.splice(index, 1)
     this.setState({ expandedItems })
-  }
-  
-  get _componentDocsTree() {
-    const tree = {}
-    
-    Object.keys(docs).forEach(filename => {
-      const withinComponentsFolder = filename.split('node_modules/carbon-ui/src/components/').pop()
-      const layers = withinComponentsFolder.split('/')
-      
-      // Remove .js from end of name
-      layers[layers.length - 1] = layers[layers.length - 1].split('.')[0]
-      // Replace index.js with folder name
-      if (layers[layers.length - 1] === 'index') layers[layers.length - 1] = layers[layers.length - 2]
-      
-      const caplitalizedLayers = layers.map(name =>
-        name.charAt(0).toUpperCase() + name.substring(1)
-      )
-      
-      set(tree, caplitalizedLayers, docs[filename])
-    })
-    
-    return tree
   }
 
   render() {
@@ -140,8 +117,8 @@ class Layout extends Component {
               expanded={expandedItems.indexOf('components') !== -1}
               nestingDepth={NESTING_DEPTH}
               onPress={() => this._toggleExpandedItem('components')}>
-              {Object.keys(this._componentDocsTree).sort().map(name => {
-                const isComponent = this._componentDocsTree[name].description
+              {Object.keys(componentDocs.tree).sort().map(name => {
+                const isComponent = componentDocs.tree[name].description
                 
                 if (isComponent) {
                   return (
@@ -160,7 +137,7 @@ class Layout extends Component {
                     expanded={expandedItems.indexOf(name) !== -1}
                     nestingDepth={NESTING_DEPTH}
                     onPress={() => this._toggleExpandedItem(name)}>
-                    {Object.keys(this._componentDocsTree[name]).sort().map(nestedName =>
+                    {Object.keys(componentDocs.tree[name]).sort().map(nestedName =>
                       <ListItem
                         key={nestedName}
                         primaryText={nestedName}
