@@ -33,14 +33,18 @@
           "name": "bool"
         },
         "required": false,
-        "description": "`true` if the AppBar is elevated and has shadows. `false` if you want a\nflat AppBar"
+        "description": "Will make the AppBar flat and without shadows if false.",
+        "defaultValue": {
+          "value": "true",
+          "computed": false
+        }
       },
       "children": {
         "type": {
           "name": "node"
         },
         "required": false,
-        "description": "Children inserted after the title"
+        "description": "children are inserted after the title"
       },
       "css": {
         "type": {
@@ -58,8 +62,148 @@
       }
     }
   },
-  "node_modules/carbon-ui/src/components/Dialog.js": {
+  "node_modules/carbon-ui/src/components/DataTable/Cell.js": {
     "description": "",
+    "methods": [],
+    "props": {
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": ""
+      },
+      "style": {
+        "type": {
+          "name": "union",
+          "value": [
+            {
+              "name": "object"
+            },
+            {
+              "name": "array"
+            }
+          ]
+        },
+        "required": false,
+        "description": ""
+      }
+    }
+  },
+  "node_modules/carbon-ui/src/components/DataTable/HeaderCell.js": {
+    "description": "",
+    "methods": [],
+    "props": {
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": ""
+      },
+      "style": {
+        "type": {
+          "name": "union",
+          "value": [
+            {
+              "name": "object"
+            },
+            {
+              "name": "array"
+            }
+          ]
+        },
+        "required": false,
+        "description": ""
+      }
+    }
+  },
+  "node_modules/carbon-ui/src/components/DataTable/HeaderRow.js": {
+    "description": "",
+    "methods": [],
+    "props": {
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": "A collection of HeaderCells"
+      },
+      "style": {
+        "type": {
+          "name": "union",
+          "value": [
+            {
+              "name": "object"
+            },
+            {
+              "name": "array"
+            }
+          ]
+        },
+        "required": false,
+        "description": ""
+      }
+    }
+  },
+  "node_modules/carbon-ui/src/components/DataTable/Row.js": {
+    "description": "",
+    "methods": [],
+    "props": {
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": "A collection of Cells"
+      },
+      "style": {
+        "type": {
+          "name": "union",
+          "value": [
+            {
+              "name": "object"
+            },
+            {
+              "name": "array"
+            }
+          ]
+        },
+        "required": false,
+        "description": ""
+      }
+    }
+  },
+  "node_modules/carbon-ui/src/components/DataTable/index.js": {
+    "description": "Data tables display sets of raw data. They usually appear in desktop\nenterprise products.",
+    "methods": [],
+    "props": {
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": "The first child should be a HeaderRow, and the rest regular Rows."
+      },
+      "style": {
+        "type": {
+          "name": "union",
+          "value": [
+            {
+              "name": "object"
+            },
+            {
+              "name": "array"
+            }
+          ]
+        },
+        "required": false,
+        "description": ""
+      }
+    }
+  },
+  "node_modules/carbon-ui/src/components/Dialog.js": {
+    "description": "Dialogs inform users about a specific task and may contain critical\ninformation, require decisions, or involve multiple tasks.",
     "methods": [],
     "props": {
       "title": {
@@ -67,21 +211,21 @@
           "name": "string"
         },
         "required": false,
-        "description": ""
+        "description": "The title of the dialog."
       },
       "actions": {
         "type": {
           "name": "node"
         },
         "required": false,
-        "description": "Whether or not the Dialog is active."
+        "description": "The actions, can be an array (say, of FlatButtons) or a full element itself."
       },
       "active": {
         "type": {
           "name": "bool"
         },
         "required": false,
-        "description": "",
+        "description": "Whether or not the Dialog is active.",
         "defaultValue": {
           "value": "false",
           "computed": false
@@ -91,13 +235,13 @@
         "type": {
           "name": "node"
         },
-        "required": false,
-        "description": ""
+        "required": true,
+        "description": "The contents of the dialog"
       }
     }
   },
   "node_modules/carbon-ui/src/components/Divider.js": {
-    "description": "",
+    "description": "A divider is a thin, lightweight rule that groups content in lists and page\nlayouts.",
     "methods": [],
     "props": {
       "color": {
@@ -105,25 +249,11 @@
           "name": "string"
         },
         "required": false,
-        "description": ""
+        "description": "The color of the divider. It's derived from the theme by default."
       },
-      "type": {
+      "style": {
         "type": {
-          "name": "enum",
-          "value": [
-            {
-              "value": "'solid'",
-              "computed": false
-            },
-            {
-              "value": "'dotted'",
-              "computed": false
-            },
-            {
-              "value": "'dashed'",
-              "computed": false
-            }
-          ]
+          "name": "object"
         },
         "required": false,
         "description": ""
@@ -133,85 +263,12 @@
           "name": "object"
         },
         "required": true,
-        "description": ""
-      },
-      "style": {
-        "type": {
-          "name": "object"
-        },
-        "required": false,
-        "description": ""
-      }
-    }
-  },
-  "node_modules/carbon-ui/src/components/Error.js": {
-    "description": "",
-    "methods": [
-      {
-        "name": "show",
-        "docblock": null,
-        "modifiers": [],
-        "params": [
-          {
-            "name": "text",
-            "type": null
-          }
-        ],
-        "returns": null
-      },
-      {
-        "name": "hide",
-        "docblock": null,
-        "modifiers": [],
-        "params": [],
-        "returns": null
-      },
-      {
-        "name": "changeTo",
-        "docblock": null,
-        "modifiers": [],
-        "params": [
-          {
-            "name": "text",
-            "type": null
-          }
-        ],
-        "returns": null
-      },
-      {
-        "name": "styles",
-        "docblock": null,
-        "modifiers": [],
-        "params": [],
-        "returns": null
-      }
-    ],
-    "props": {
-      "theme": {
-        "type": {
-          "name": "object"
-        },
-        "required": true,
-        "description": ""
-      },
-      "style": {
-        "type": {
-          "name": "object"
-        },
-        "required": false,
-        "description": ""
-      },
-      "children": {
-        "type": {
-          "name": "node"
-        },
-        "required": false,
         "description": ""
       }
     }
   },
   "node_modules/carbon-ui/src/components/Icon.js": {
-    "description": "",
+    "description": "A system icon, or UI icon, symbolizes a command, file, device, or directory.\nSystem icons are also used to represent common actions like trash, print,\nand save.\n\nThe Icon's name maps to the material icons font.",
     "methods": [],
     "props": {
       "name": {
@@ -219,7 +276,7 @@
           "name": "string"
         },
         "required": true,
-        "description": ""
+        "description": "The name of the icon, from the material icons font."
       },
       "children": {
         "type": {
@@ -241,131 +298,6 @@
           ]
         },
         "required": false,
-        "description": ""
-      }
-    }
-  },
-  "node_modules/carbon-ui/src/components/Input.js": {
-    "description": "",
-    "methods": [
-      {
-        "name": "styles",
-        "docblock": null,
-        "modifiers": [],
-        "params": [],
-        "returns": null
-      }
-    ],
-    "props": {
-      "style": {
-        "type": {
-          "name": "union",
-          "value": [
-            {
-              "name": "object"
-            },
-            {
-              "name": "array"
-            }
-          ]
-        },
-        "required": false,
-        "description": "",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
-      "textInputStyle": {
-        "type": {
-          "name": "union",
-          "value": [
-            {
-              "name": "object"
-            },
-            {
-              "name": "array"
-            }
-          ]
-        },
-        "required": false,
-        "description": "",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
-      "placeholderStyle": {
-        "type": {
-          "name": "union",
-          "value": [
-            {
-              "name": "object"
-            },
-            {
-              "name": "array"
-            }
-          ]
-        },
-        "required": false,
-        "description": "",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
-      "placeholder": {
-        "type": {
-          "name": "string"
-        },
-        "required": false,
-        "description": "",
-        "defaultValue": {
-          "value": "''",
-          "computed": false
-        }
-      },
-      "value": {
-        "type": {
-          "name": "string"
-        },
-        "required": false,
-        "description": ""
-      },
-      "disabled": {
-        "type": {
-          "name": "bool"
-        },
-        "required": false,
-        "description": "",
-        "defaultValue": {
-          "value": "false",
-          "computed": false
-        }
-      },
-      "error": {
-        "type": {
-          "name": "string"
-        },
-        "required": false,
-        "description": ""
-      },
-      "singleLine": {
-        "type": {
-          "name": "bool"
-        },
-        "required": false,
-        "description": "",
-        "defaultValue": {
-          "value": "false",
-          "computed": false
-        }
-      },
-      "theme": {
-        "type": {
-          "name": "object"
-        },
-        "required": true,
         "description": ""
       }
     }
@@ -391,7 +323,7 @@
     }
   },
   "node_modules/carbon-ui/src/components/ListItem.js": {
-    "description": "Individual items for the <List /> component",
+    "description": "Individual items for the <List /> component.\n\nCan become a nested menu item it has ListItem for children.",
     "methods": [],
     "props": {
       "primaryText": {
@@ -427,7 +359,7 @@
           "name": "node"
         },
         "required": false,
-        "description": "Pass additional ListItems as children to make this ListItem expandable"
+        "description": "Pass additional ListItems as children to make this ListItem nested\nand expandable."
       },
       "style": {
         "type": {
@@ -469,7 +401,7 @@
           "name": "bool"
         },
         "required": false,
-        "description": "`true` if open, `false` if closed. Will animate open/closed when this prop\nswitches.",
+        "description": "Will open the drawer if set to true.",
         "defaultValue": {
           "value": "false",
           "computed": false
@@ -492,9 +424,20 @@
     }
   },
   "node_modules/carbon-ui/src/components/Paper.js": {
-    "description": "",
+    "description": "Generic Paper component. Like the <div /> of Material Design.",
     "methods": [],
     "props": {
+      "elevation": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "The elevation of the paper",
+        "defaultValue": {
+          "value": "2",
+          "computed": false
+        }
+      },
       "children": {
         "type": {
           "name": "node"
@@ -523,22 +466,193 @@
         },
         "required": false,
         "description": ""
-      },
-      "elevation": {
+      }
+    }
+  },
+  "node_modules/carbon-ui/src/components/TextField.js": {
+    "description": "Text fields allow users to input text, select text, and lookup data via\nauto-completion.\n\nThis component wraps React Native's TextInput, so it accepts all the same\nprops.",
+    "methods": [
+      {
+        "name": "styles",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      }
+    ],
+    "props": {
+      "value": {
         "type": {
-          "name": "number"
+          "name": "string"
         },
         "required": false,
-        "description": "",
+        "description": "The value of the TextField."
+      },
+      "placeholder": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The placeholder, for when the value is blank."
+      },
+      "disabled": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Will disabled the TextField if set to true.",
         "defaultValue": {
-          "value": "2",
+          "value": "false",
           "computed": false
         }
+      },
+      "error": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The error to display under the TextField"
+      },
+      "singleLine": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Will make the TextField a single-line TextField, without a label.",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "textInputStyle": {
+        "type": {
+          "name": "union",
+          "value": [
+            {
+              "name": "object"
+            },
+            {
+              "name": "array"
+            }
+          ]
+        },
+        "required": false,
+        "description": "The style passed to the React Native TextInput"
+      },
+      "placeholderStyle": {
+        "type": {
+          "name": "union",
+          "value": [
+            {
+              "name": "object"
+            },
+            {
+              "name": "array"
+            }
+          ]
+        },
+        "required": false,
+        "description": "The style passed to the placeholder."
+      },
+      "onChangeText": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Passed through to the underlying TextInput."
+      },
+      "theme": {
+        "type": {
+          "name": "object"
+        },
+        "required": true,
+        "description": ""
+      },
+      "style": {
+        "type": {
+          "name": "union",
+          "value": [
+            {
+              "name": "object"
+            },
+            {
+              "name": "array"
+            }
+          ]
+        },
+        "required": false,
+        "description": "The style of the containing View."
+      }
+    }
+  },
+  "node_modules/carbon-ui/src/components/TextFieldError.js": {
+    "description": "Error component for the TextField.",
+    "methods": [
+      {
+        "name": "show",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "text",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "hide",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "changeTo",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "text",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "styles",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      }
+    ],
+    "props": {
+      "style": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": ""
+      },
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "The error text. The height expands to show it."
+      },
+      "theme": {
+        "type": {
+          "name": "object"
+        },
+        "required": true,
+        "description": ""
       }
     }
   },
   "node_modules/carbon-ui/src/components/TouchableRipple.js": {
-    "description": "",
+    "description": "Ink ripples confirm user input by immediately expanding outward from the\npoint of touch. The card lifts to indicate an active state.",
     "methods": [
       {
         "name": "getLayout",
@@ -736,7 +850,7 @@
           "name": "string"
         },
         "required": false,
-        "description": "",
+        "description": "The color of the ripple.",
         "defaultValue": {
           "value": "'black'",
           "computed": false
@@ -747,7 +861,7 @@
           "name": "number"
         },
         "required": false,
-        "description": "",
+        "description": "How large the ripple gets. It's multipled by the diagonal length of the\nTouchableRipple.",
         "defaultValue": {
           "value": "1",
           "computed": false
@@ -758,7 +872,7 @@
           "name": "number"
         },
         "required": false,
-        "description": "",
+        "description": "The opacity of the ripple",
         "defaultValue": {
           "value": "0.2",
           "computed": false
@@ -769,7 +883,7 @@
           "name": "number"
         },
         "required": false,
-        "description": "",
+        "description": "The duration of the ripple _and_ the ripple fade out, in ms. So multiply\nit by 2 to get the full duration.",
         "defaultValue": {
           "value": "300",
           "computed": false
@@ -780,7 +894,7 @@
           "name": "bool"
         },
         "required": false,
-        "description": "",
+        "description": "Will center the ripple if set to true.",
         "defaultValue": {
           "value": "false",
           "computed": false
@@ -791,7 +905,7 @@
           "name": "node"
         },
         "required": false,
-        "description": ""
+        "description": "The contents of the ripple. Unlike other Touchables, doesn't need to be\na single element."
       },
       "style": {
         "type": {
@@ -807,52 +921,109 @@
         },
         "required": false,
         "description": ""
-      },
-      "onResponderGrant": {
-        "type": {
-          "name": "func"
-        },
-        "required": false,
-        "description": ""
-      },
-      "onResponderRelease": {
-        "type": {
-          "name": "func"
-        },
-        "required": false,
-        "description": ""
-      },
-      "onPress": {
-        "type": {
-          "name": "func"
-        },
-        "required": false,
-        "description": ""
-      },
-      "onPressIn": {
-        "type": {
-          "name": "func"
-        },
-        "required": false,
-        "description": ""
-      },
-      "onPressOut": {
-        "type": {
-          "name": "func"
-        },
-        "required": false,
-        "description": ""
-      },
-      "onLayout": {
-        "type": {
-          "name": "func"
-        },
-        "required": false,
-        "description": ""
       }
     },
     "composes": [
       "react-native-universal"
     ]
+  },
+  "node_modules/carbon-ui/src/components/buttons/FlatButton.js": {
+    "description": "Flat buttons are printed on material. They do not lift, but fill with color\non press.",
+    "methods": [],
+    "props": {
+      "disabled": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Disables the button if set to true.",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": true,
+        "description": "The inside of the button. If it's text, it'll be UPPERCASEd."
+      },
+      "css": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": ""
+      },
+      "theme": {
+        "type": {
+          "name": "object"
+        },
+        "required": true,
+        "description": ""
+      }
+    }
+  },
+  "node_modules/carbon-ui/src/components/buttons/IconToggle.js": {
+    "description": "Icons are appropriate for toggle buttons that allow a single choice to be\nselected or deselected, such as adding or removing a star to an item.",
+    "methods": [],
+    "props": {
+      "iconName": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "The name of the icon, from material icons: https://material.io/icons/"
+      },
+      "style": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "The style of the containing TouchableRipple (which is a View)"
+      },
+      "iconStyle": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "The style of the Icon element"
+      }
+    }
+  },
+  "node_modules/carbon-ui/src/components/buttons/RaisedButton.js": {
+    "description": "Raised buttons behave like a piece of material resting on another sheet –\nthey lift and fill with color on press.",
+    "methods": [],
+    "props": {
+      "disabled": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Disables the button if set to true."
+      },
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "The inside of the button. If it's text, it'll be UPPERCASEd."
+      },
+      "css": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": ""
+      },
+      "theme": {
+        "type": {
+          "name": "object"
+        },
+        "required": true,
+        "description": ""
+      }
+    }
   }
 }

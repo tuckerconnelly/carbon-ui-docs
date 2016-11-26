@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react'
+import { View } from 'react-native-universal'
 import { DataTable, Display1, Body1, Breakpoints, connectTheme, gu } from 'carbon-ui'
 import Content from 'src/modules/common/Content'
 import Uranium from 'uranium'
@@ -20,13 +21,28 @@ class ComponentDoc extends Component {
   }
   _mobileMQLListener = () => this.forceUpdate()
   
+  get _doc() {
+    const { component } = this.props
+    // Resolve the doc from the given component name
+    const possibleDocs = [
+      docs[`node_modules/carbon-ui/src/components/${component}.js`],
+      docs[`node_modules/carbon-ui/src/components/${component}/index.js`],
+      docs[`node_modules/carbon-ui/src/components/buttons/${component}.js`],
+      docs[`node_modules/carbon-ui/src/components/DataTable/${component}.js`],
+    ]
+    
+    return possibleDocs.reduce((prev, curr) => prev || curr)
+  }
+  
   render() {
     const { component } = this.props
     const styles = tStyles(this.props.theme)
     
-    const { description, props } = docs[`node_modules/carbon-ui/src/components/${component}.js`]
+    if (!this._doc) return <View />
+
+    const { description, props } = this._doc
       
-    const descriptionWithoutNewlines = description.replace(/\n/gi, '')
+    const descriptionWithoutNewlines = description.replace(/\n/gi, ' ')
       
     return (
       <Content style={styles.base}>

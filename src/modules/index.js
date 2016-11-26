@@ -17,11 +17,14 @@ import {
   
   connectTheme,
 } from 'carbon-ui'
+import set from 'lodash/set'
 
 import docs from 'src/docs.json'
 import Index from './Index/index'
 import { HomePage } from './Index/HomePage'
 import { openMenu, closeMenu } from './duck'
+
+const NESTING_DEPTH = 12 * gu
 
 class Layout extends Component {
   state = { scrollY: 0, expandedItems: [] }
@@ -43,6 +46,28 @@ class Layout extends Component {
     
     expandedItems.splice(index, 1)
     this.setState({ expandedItems })
+  }
+  
+  get _componentDocsTree() {
+    const tree = {}
+    
+    Object.keys(docs).forEach(filename => {
+      const withinComponentsFolder = filename.split('node_modules/carbon-ui/src/components/').pop()
+      const layers = withinComponentsFolder.split('/')
+      
+      // Remove .js from end of name
+      layers[layers.length - 1] = layers[layers.length - 1].split('.')[0]
+      // Replace index.js with folder name
+      if (layers[layers.length - 1] === 'index') layers[layers.length - 1] = layers[layers.length - 2]
+      
+      const caplitalizedLayers = layers.map(name =>
+        name.charAt(0).toUpperCase() + name.substring(1)
+      )
+      
+      set(tree, caplitalizedLayers, docs[filename])
+    })
+    
+    return tree
   }
 
   render() {
@@ -69,6 +94,7 @@ class Layout extends Component {
             <ListItem
               primaryText="Getting started"
               expanded={expandedItems.indexOf('getting-started') !== -1}
+              nestingDepth={NESTING_DEPTH}
               onPress={() => this._toggleExpandedItem('getting-started')}>
               <ListItem
                 primaryText="Installation"
@@ -82,6 +108,7 @@ class Layout extends Component {
             <ListItem
               primaryText="Styles"
               expanded={expandedItems.indexOf('styles') !== -1}
+              nestingDepth={NESTING_DEPTH}
               onPress={() => this._toggleExpandedItem('styles')}>
               <ListItem
                 primaryText="Theme"
@@ -111,15 +138,36 @@ class Layout extends Component {
             <ListItem
               primaryText="Components"
               expanded={expandedItems.indexOf('components') !== -1}
+              nestingDepth={NESTING_DEPTH}
               onPress={() => this._toggleExpandedItem('components')}>
-              {Object.keys(docs).map(filename => {
-                const name = filename.split('/').pop().split('.')[0]
+              {Object.keys(this._componentDocsTree).sort().map(name => {
+                const isComponent = this._componentDocsTree[name].description
+                
+                if (isComponent) {
+                  return (
+                    <ListItem
+                      key={name}
+                      primaryText={name}
+                      active={url === `/components/${name}`}
+                      onPress={() => this._navigate(`/components/${name}`, name)} />
+                  )
+                }
+                                
                 return (
                   <ListItem
                     key={name}
                     primaryText={name}
-                    active={url === `/components/${name}`}
-                    onPress={() => this._navigate(`/components/${name}`)} />
+                    expanded={expandedItems.indexOf(name) !== -1}
+                    nestingDepth={NESTING_DEPTH}
+                    onPress={() => this._toggleExpandedItem(name)}>
+                    {Object.keys(this._componentDocsTree[name]).sort().map(nestedName =>
+                      <ListItem
+                        key={nestedName}
+                        primaryText={nestedName}
+                        active={url === `/components/${nestedName}`}
+                        onPress={() => this._navigate(`/components/${nestedName}`, nestedName)} />
+                    )}
+                  </ListItem>
                 )
               })}
             </ListItem>
