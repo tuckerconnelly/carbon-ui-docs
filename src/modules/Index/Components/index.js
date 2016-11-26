@@ -31,6 +31,8 @@ class ComponentsIndex extends Component {
   _showAV = new Animated.Value(this.props.routeFragment === undefined ? 0 : 1)
   
   render() {
+    if (this.state.activeComponent === undefined) return <View />
+    
     return (
       <Animated.View style={animate('opacity', 0, 1, this._showAV)}>
         <ComponentDoc component={this.state.activeComponent} />
@@ -59,7 +61,7 @@ const mapDispatchToProps = { replaceState }
 
 export default
   connect(mapStateToProps, mapDispatchToProps)(
-  createOrchestrator(
+  createOrchestrator('components')(
   ComponentsIndex))
 
 const styles = {

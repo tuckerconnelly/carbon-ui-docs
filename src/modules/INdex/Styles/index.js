@@ -53,7 +53,7 @@ const mapDispatchToProps = { replaceState }
 
 export default
   connect(mapStateToProps, mapDispatchToProps)(
-  createOrchestrator(
+  createOrchestrator('styles')(
   StyleIndex))
 
 const styles = {

@@ -16,6 +16,7 @@ class StylingIndex extends Component {
   
   render() {
     const { routeFragment } = this.props
+    
     return (
       <View style={styles.base}>
         <RouteFade active={routeFragment === 'installation'}><Installation /></RouteFade>
@@ -45,7 +46,7 @@ const mapDispatchToProps = { replaceState }
 
 export default
   connect(mapStateToProps, mapDispatchToProps)(
-  createOrchestrator(
+  createOrchestrator('getting-started')(
   StylingIndex))
 
 const styles = {

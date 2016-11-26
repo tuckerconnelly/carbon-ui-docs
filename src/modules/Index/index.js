@@ -10,7 +10,7 @@ import Components from './Components'
 
 const Index = ({ routeFragment }) =>
   <View style={styles.base}>
-    <RouteFade active={routeFragment === undefined}><HomePage /></RouteFade>
+    <RouteFade active={routeFragment === ''}><HomePage /></RouteFade>
     <GettingStarted />
     <Styles />
     <Components />
@@ -22,7 +22,7 @@ Index.propTypes = {
 }
 
 export default
-  createOrchestrator(
+  createOrchestrator()(
   Index)
 
 const styles = {
