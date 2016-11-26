@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { View } from 'react-native-universal'
-import { replaceState, createOrchestrator } from 'react-stack-nav'
+import { indexRedirect, createOrchestrator } from 'react-stack-nav'
 
 import RouteFade from 'src/modules/common/RouteFade'
 import Installation from './Installation'
@@ -9,8 +9,8 @@ import Exponent from './Exponent'
 
 class StylingIndex extends Component {
   componentWillMount() {
-    if (this.props.url === '/getting-started') {
-      this.props.replaceState(0, 'Installation', '/getting-started/installation')
+    if (this.props.routeFragment === '') {
+      this.props.indexRedirect(0, 'Installation', 'installation')
     }
   }
   
@@ -32,8 +32,7 @@ StylingIndex.contextTypes = {
 
 StylingIndex.propTypes = {
   // connect
-  url: PropTypes.string,
-  replaceState: PropTypes.func.isRequired,
+  indexRedirect: PropTypes.func.isRequired,
   
   // createOrchestrator
   routeFragment: PropTypes.string,
@@ -42,7 +41,7 @@ StylingIndex.propTypes = {
 const mapStateToProps = ({ navigation }) => ({
   url: navigation.history[navigation.index].url,
 })
-const mapDispatchToProps = { replaceState }
+const mapDispatchToProps = { indexRedirect }
 
 export default
   connect(mapStateToProps, mapDispatchToProps)(

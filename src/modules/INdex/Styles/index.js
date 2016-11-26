@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { View } from 'react-native-universal'
-import { replaceState, createOrchestrator } from 'react-stack-nav'
+import { indexRedirect, createOrchestrator } from 'react-stack-nav'
 
 import RouteFade from 'src/modules/common/RouteFade'
 import Theme from './Theme'
@@ -13,8 +13,8 @@ import Motion from './Motion'
 
 class StyleIndex extends Component {
   componentWillMount() {
-    if (this.props.url === '/styles') {
-      this.props.replaceState(0, 'Theme', '/styles/theme')
+    if (this.props.routeFragment === '') {
+      this.props.indexRedirect(0, 'Theme', 'theme')
     }
   }
   
@@ -39,8 +39,7 @@ StyleIndex.contextTypes = {
 
 StyleIndex.propTypes = {
   // connect
-  url: PropTypes.string,
-  replaceState: PropTypes.func.isRequired,
+  indexRedirect: PropTypes.func.isRequired,
   
   // createOrchestrator
   routeFragment: PropTypes.string,
@@ -49,7 +48,7 @@ StyleIndex.propTypes = {
 const mapStateToProps = ({ navigation }) => ({
   url: navigation.history[navigation.index].url,
 })
-const mapDispatchToProps = { replaceState }
+const mapDispatchToProps = { indexRedirect }
 
 export default
   connect(mapStateToProps, mapDispatchToProps)(

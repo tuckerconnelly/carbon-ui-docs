@@ -7,10 +7,10 @@ import createStore from './redux'
 import theme from './theme'
 
 const store = createStore({
-  navigation: {
-    index: 0,
-    history: [{ stateObj: {}, title: '', url: '/components/AppBar' }],
-  },
+  // navigation: {
+  //   index: 0,
+  //   history: [{ stateObj: {}, title: '', url: '/components/AppBar' }],
+  // },
 })
 
 // Stateful component so it hot reloads

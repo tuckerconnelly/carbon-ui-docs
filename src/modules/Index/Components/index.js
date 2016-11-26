@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { Animated, View } from 'react-native-universal'
-import { replaceState, createOrchestrator } from 'react-stack-nav'
+import { indexRedirect, createOrchestrator } from 'react-stack-nav'
 import { Animations } from 'carbon-ui'
 import { animate } from 'uranium'
 
@@ -11,8 +11,8 @@ class ComponentsIndex extends Component {
   state = { activeComponent: this.props.routeFragment }
 
   componentWillMount() {
-    if (this.props.url === '/components') {
-      this.props.replaceState(0, 'AppBar', '/components/AppBar')
+    if (this.props.routeFragment === '') {
+      this.props.indexRedirect(0, 'AppBar', 'AppBar')
     }
   }
   
@@ -31,7 +31,7 @@ class ComponentsIndex extends Component {
   _showAV = new Animated.Value(this.props.routeFragment === undefined ? 0 : 1)
   
   render() {
-    if (this.state.activeComponent === undefined) return <View />
+    if (this.state.activeComponent === undefined || this.state.activeComponent === '') return <View />
     
     return (
       <Animated.View style={animate('opacity', 0, 1, this._showAV)}>
@@ -47,8 +47,7 @@ ComponentsIndex.contextTypes = {
 
 ComponentsIndex.propTypes = {
   // connect
-  url: PropTypes.string,
-  replaceState: PropTypes.func.isRequired,
+  indexRedirect: PropTypes.func.isRequired,
   
   // createOrchestrator
   routeFragment: PropTypes.string,
@@ -57,7 +56,7 @@ ComponentsIndex.propTypes = {
 const mapStateToProps = ({ navigation }) => ({
   url: navigation.history[navigation.index].url,
 })
-const mapDispatchToProps = { replaceState }
+const mapDispatchToProps = { indexRedirect }
 
 export default
   connect(mapStateToProps, mapDispatchToProps)(
