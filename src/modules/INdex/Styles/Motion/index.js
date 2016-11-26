@@ -127,7 +127,7 @@ class Motion extends Component {
         
         <Body1 style={styles.smallBreak}>
           Material Design also likes to
-          <Link to="">
+          <Link to="https://material.google.com/motion/choreography.html">
             stagger animations
           </Link> by ~50 ms or so in complex
           transitions. Carbon UI has the special <ICB>staggered</ICB> animation
@@ -169,9 +169,9 @@ class Motion extends Component {
   
         <Body1 style={styles.break}>
           The the <ICB>animate()</ICB> method above comes from Uranium. Uranium
-          integrates nicely with Carbon UI to really simplify animations. You
+          was built side-bys-ide with Carbon UI, so they integrate nicely. You
           can read more about <ICB>animate()</ICB>
-          <Link to="">
+          <Link to="https://github.com/tuckerconnelly/uranium#animate-function">
             over here
           </Link>.
         </Body1>
@@ -184,7 +184,7 @@ class Motion extends Component {
           Carbon UI also has a <ICB>Durations</ICB> object and an
           <ICB>Easing</ICB> object if you want to build your own to-spec
           animations. You can read about them in the
-          <Link to="">
+          <Link to="https://github.com/tuckerconnelly/carbon-ui/blob/master/src/style/Animations.js">
             source
           </Link>.
         </Body1>

@@ -12,8 +12,7 @@ class Theme extends Component {
       <Content style={styles.base}>
         <Display1 style={styles.display1}>Theme</Display1>
         <Body1 style={styles.smallBreak}>
-          It&apos;s probably a good idea to use a consistent color scheme throughout
-          your app. All of Carbon UI&apos;s components are easy themeable. You just
+          All of Carbon UI&apos;s components are themeable. You just
           need to create a <InlineCodeBlock>theme</InlineCodeBlock> object, and
           pass it down the context with a <InlineCodeBlock>ThemeProvider</InlineCodeBlock>.
         </Body1>
@@ -21,12 +20,14 @@ class Theme extends Component {
           First, let's set up the <InlineCodeBlock>theme</InlineCodeBlock> object:
         </Body1>
         <CodeBlock style={styles.smallBreak}>{`
+        import merge from 'lodash/merge'
         import { Colors, themes } from 'carbon-ui'
         
-        export default {
-          ...themes.light,
-          primary: Colors.lightblue400,
-          // And so on
+        export default merge(themes.light, {
+          colors: {
+            primary: Colors.lightblue400,
+            // And any of the other colors in themes.light
+          },
         }
         `}</CodeBlock>
         
@@ -39,6 +40,12 @@ class Theme extends Component {
           </Link>
           for all the possible options.
         </Caption>
+        
+        <Body1 style={styles.smallBreak}>
+          The above code extends
+          <InlineCodeBlock>themes.light</InlineCodeBlock>
+          with your own custom colors.
+        </Body1>
         
         <Body1>
           Next, create a <InlineCodeBlock>ThemeProvider</InlineCodeBlock> at

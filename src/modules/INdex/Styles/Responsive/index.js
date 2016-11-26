@@ -27,10 +27,10 @@ class Responsive extends Component {
       
         <Body1 style={styles.smallBreak}>
           In Material Design, some things, like typography and iconography, are
-          on a 4dp square grid, and others, like components, are on an 8dp grid.
-          Carbon UI provides the greatest common divisor, 4, as the constant
-          <InlineCodeBlock>gu</InlineCodeBlock>. gu stands for "grid-unit". I like to
-          think of <InlineCodeBlock>gu</InlineCodeBlock> as css unit like px.
+          on a 4dp square grid, and others, like components, are on an 8dp square
+          grid. Carbon UI provides the greatest common divisor, 4, as the constant
+          <InlineCodeBlock>gu</InlineCodeBlock>. gu stands for "grid-unit". I created
+          <InlineCodeBlock>gu</InlineCodeBlock> to be a sort of css unit like px.
           You can use it like:
         </Body1>
         <CodeBlock>{`
@@ -131,7 +131,7 @@ class Responsive extends Component {
         
         <Body1 style={styles.smallBreak}>
           Material Design has a full-on
-          <Link to="">
+          <Link to="https://material.google.com/layout/responsive-ui.html#responsive-ui-grid">
             grid system
           </Link>
           with specs for gutters and margins and such.
@@ -143,7 +143,7 @@ class Responsive extends Component {
           <InlineCodeBlock>Breakpoints</InlineCodeBlock>.
         </Body1>
         <Body1 style={styles.smallBreak}>
-          Would also accept a PR if someone can prove it can be done elegantly.
+          Would also accept a PR if someone can do it elegantly.
         </Body1>
       </Content>
     )
