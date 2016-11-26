@@ -23,16 +23,20 @@ const styles = {
     paddingBottom: 10 * gu,
     
     flex: 1,
-    alignSelf: 'center',
+    alignSelf: 'stretch',
     
     backgroundColor: Colors.white,
     
     [`@media (min-width: ${190 * gu}px)`]: {
       width: 190 * gu,
+      
+      alignSelf: 'center',
     },
     
     [`@media (min-width: ${290 * gu}px)`]: {
       flexBasis: 290 * gu,
+      
+      alignSelf: 'center',
     },
   },
 }
