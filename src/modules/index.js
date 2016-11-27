@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
-import { ScrollView, View } from 'react-native-universal'
+import { Linking, ScrollView, View } from 'react-native-universal'
 import ps from 'react-native-ps'
 import { pushState } from 'react-stack-nav'
 import {
@@ -9,8 +9,10 @@ import {
   TouchableRipple,
   List,
   ListItem,
+  Divider,
   
   Headline,
+  Body1,
   
   Colors,
   gu,
@@ -46,6 +48,8 @@ class Layout extends Component {
     expandedItems.splice(index, 1)
     this.setState({ expandedItems })
   }
+  
+  _openExternalLink = url => Linking.openURL(url)
 
   render() {
     const { menuOpen, title, url, openMenu, closeMenu, theme, children } = this.props
@@ -152,6 +156,16 @@ class Layout extends Component {
               primaryText="Related libraries"
               active={url === '/related-libraries'}
               onPress={() => this._navigate('/related-libraries', 'Related libraries')} />
+            
+            <Divider />
+            
+            <Body1 style={styles.navigationSubheader}>
+              Resources
+            </Body1>
+            
+            <ListItem
+              primaryText="GitHub"
+              onPress={() => this._openExternalLink('https://github.com/tuckerconnelly/carbon-ui')} />
           </List>
         </NavigationDrawer>
         <ScrollView
@@ -210,6 +224,12 @@ const tStyles = theme => ps({
   
   listHeadingText: {
     color: Colors.whitePrimary,
+  },
+  
+  navigationSubheader: {
+    margin: 4 * gu,
+  
+    color: Colors.blackSecondary,
   },
 
 
