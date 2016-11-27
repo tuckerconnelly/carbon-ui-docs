@@ -6,7 +6,8 @@
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "start:web": "webpack-dev-server",
     "generateDocs": "node_modules/.bin/react-docgen ../carbon-ui/src/components --pretty -o src/modules/Index/Components/docs/docgenOutput.json",
-    "generateDocs:watch": "node_modules/.bin/onchange '../carbon-ui/src' -iw -- npm run generateDocs"
+    "generateDocs:watch": "node_modules/.bin/onchange '../carbon-ui/src' -iw -- npm run generateDocs",
+    "generateExamples": "node_modules/.bin/babel-node src/modules/Index/Components/docs/generateExamples.js"
   },
   "dependencies": {
     "animated": "github:tuckerconnelly/animated#add-boxshadow-support-build",
@@ -32,6 +33,7 @@
     "webpack": "^1.13.3"
   },
   "devDependencies": {
+    "babel-cli": "^6.18.0",
     "babel-eslint": "^7.1.0",
     "babel-loader": "^6.2.7",
     "babel-plugin-add-module-exports": "^0.2.1",
@@ -42,6 +44,7 @@
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^2.2.3",
     "eslint-plugin-react": "^6.6.0",
+    "fs-extra": "^1.0.0",
     "json-loader": "^0.5.4",
     "react-docgen": "^2.12.1",
     "webpack-dev-server": "^1.16.2"

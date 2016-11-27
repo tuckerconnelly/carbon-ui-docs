@@ -38,7 +38,11 @@ class ComponentDoc extends Component {
       <Content style={styles.base}>
         <Display1 style={styles.display1}>{component}</Display1>
         {!!description.length &&
-          <MarkdownBlock style={styles.break}>{description}</MarkdownBlock>
+          <MarkdownBlock
+            component={component}
+            style={styles.break}>
+            {description}
+          </MarkdownBlock>
         }
         <DataTable>
           <DataTable.HeaderRow>

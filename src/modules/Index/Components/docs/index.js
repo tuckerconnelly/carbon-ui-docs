@@ -1,5 +1,6 @@
 import set from 'lodash/set'
 
+import examples from './generatedExamplesFromMarkdown'
 import docgenOutput from './docgenOutput.json'
 
 /**
@@ -38,6 +39,11 @@ class ComponentDocs {
       const potentialDocInNodes = this.findDocForName(name, tree[docName])
       if (potentialDocInNodes) return potentialDocInNodes
     }
+  }
+  
+  findExampleForName(name, id = 0) {
+    console.log(examples)
+    return examples[name][id]
   }
 }
 
