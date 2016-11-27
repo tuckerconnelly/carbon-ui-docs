@@ -2,9 +2,7 @@ import React from 'react'
 import { View } from 'react-native-universal'
 import { AppBar } from 'carbon-ui'
 
-const SimpleAppBarExample = () =>
+export default () =>
   <View>
-    <AppBar title="Kill bill" />
+    <AppBar title="The app" />
   </View>
-
-export default SimpleAppBarExample

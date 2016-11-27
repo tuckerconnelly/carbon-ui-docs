@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import { View } from 'react-native-universal'
-import { DataTable, Display1, Body1, Breakpoints, connectTheme, gu } from 'carbon-ui'
+import { DataTable, Display1, Title, Breakpoints, connectTheme, gu } from 'carbon-ui'
 import Content from 'src/modules/common/Content'
 import Uranium from 'uranium'
 import get from 'lodash/get'
@@ -44,6 +44,7 @@ class ComponentDoc extends Component {
             {description}
           </MarkdownBlock>
         }
+        <Title style={styles.break}>Props</Title>
         <DataTable>
           <DataTable.HeaderRow>
             <DataTable.HeaderCell>Name</DataTable.HeaderCell>

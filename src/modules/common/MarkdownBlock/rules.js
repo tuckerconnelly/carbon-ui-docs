@@ -1,6 +1,6 @@
 import React from 'react'
 import { Text, View } from 'react-native-universal'
-import { Display1, Headline, Title, Subheading, Body2, Body1, gu } from 'carbon-ui'
+import { Divider, Display1, Headline, Title, Subheading, Body2, Body1, gu } from 'carbon-ui'
 import merge from 'lodash/merge'
 import SimpleMarkdown from 'simple-markdown'
 
@@ -26,8 +26,18 @@ export default component => {
     text: {
       react: (node, output, state) =>
         <Text key={state.key}>
-          {node.content}
+          {node.content.replace('\n', ' ')}
         </Text>,
+    },
+    br: {
+      react: (node, output, state) =>
+        <Text key={state.key}>
+          {'\n\n'}
+        </Text>,
+    },
+    hr: {
+      react: (node, output, state) =>
+        <Divider key={state.key} style={styles.divider} />,
     },
     heading: {
       react: (node, output, state) => {
@@ -72,7 +82,13 @@ export default component => {
 }
 
 const styles = {
+  heading: {
+    marginBottom: 4 * gu,
+  },
   paragraph: {
+    marginBottom: 4 * gu,
+  },
+  divider: {
     marginBottom: 4 * gu,
   },
 }

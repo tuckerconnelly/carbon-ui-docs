@@ -1,6 +1,6 @@
 {
   "../carbon-ui/src/components/AppBar.js": {
-    "description": "The app bar, formerly known as the action bar in Android, is a special kind\nof toolbar that’s used for branding, navigation, search, and actions.\n\n    import React from 'react'\n    import { View } from 'react-native-universal'\n    import { AppBar } from 'carbon-ui'\n\n    const SimpleAppBarExample = () =>\n      <View>\n        <AppBar title=\"Kill bill\" />\n      </View>\n\n    export default SimpleAppBarExample",
+    "description": "The app bar, formerly known as the action bar in Android, is a special kind\nof toolbar that’s used for branding, navigation, search, and actions.\n\n    import React from 'react'\n    import { View } from 'react-native-universal'\n    import { AppBar } from 'carbon-ui'\n\n    export default () =>\n      <View>\n        <AppBar title=\"The app\" />\n      </View>",
     "methods": [],
     "props": {
       "title": {
@@ -175,7 +175,7 @@
     }
   },
   "../carbon-ui/src/components/DataTable/index.js": {
-    "description": "Data tables display sets of raw data. They usually appear in desktop\nenterprise products.",
+    "description": "Data tables display sets of raw data. They usually appear in desktop\nenterprise products.\n\n### Examples\n\n     import React from 'react'\n     import { View } from 'react-native-universal'\n     import { Subheading, DataTable, gu } from 'carbon-ui'\n\n     export default () =>\n       <View>\n         <Subheading style={{ marginLeft: 6 * gu }}>\n           Really important coffee data\n         </Subheading>\n         <DataTable>\n           <DataTable.HeaderRow>\n             <DataTable.HeaderCell>Name</DataTable.HeaderCell>\n             <DataTable.HeaderCell>Calories</DataTable.HeaderCell>\n             <DataTable.HeaderCell>Goodness</DataTable.HeaderCell>\n           </DataTable.HeaderRow>\n           <DataTable.Row>\n             <DataTable.Cell>Cappuccino</DataTable.Cell>\n             <DataTable.Cell>150</DataTable.Cell>\n             <DataTable.Cell>Solid</DataTable.Cell>\n           </DataTable.Row>\n           <DataTable.Row>\n             <DataTable.Cell>Latte</DataTable.Cell>\n             <DataTable.Cell>300</DataTable.Cell>\n             <DataTable.Cell>It's aight</DataTable.Cell>\n           </DataTable.Row>\n           <DataTable.Row>\n             <DataTable.Cell>Mocha</DataTable.Cell>\n             <DataTable.Cell>400</DataTable.Cell>\n             <DataTable.Cell>😍</DataTable.Cell>\n           </DataTable.Row>\n         </DataTable>\n       </View>",
     "methods": [],
     "props": {
       "children": {
@@ -203,7 +203,7 @@
     }
   },
   "../carbon-ui/src/components/Dialog.js": {
-    "description": "Dialogs inform users about a specific task and may contain critical\ninformation, require decisions, or involve multiple tasks.",
+    "description": "Dialogs inform users about a specific task and may contain critical\ninformation, require decisions, or involve multiple tasks.\n\n### Examples\n\n     import React from 'react'\n     import { View } from 'react-native-universal'\n     import { Dialog, FlatButton, Body1 } from 'carbon-ui'\n\n     export default () =>\n       <View style={{ height: 300 }}>\n         <Dialog\n           title=\"Title\"\n           actions={[\n             <FlatButton>No</FlatButton>,\n             <FlatButton>Yes</FlatButton>\n           ]}\n           active>\n           <Body1>Body of the dialog here</Body1>\n          </Dialog>\n       </View>",
     "methods": [],
     "props": {
       "title": {
@@ -241,7 +241,7 @@
     }
   },
   "../carbon-ui/src/components/Divider.js": {
-    "description": "A divider is a thin, lightweight rule that groups content in lists and page\nlayouts.",
+    "description": "A divider is a thin, lightweight rule that groups content in lists and page\nlayouts.\n\n### Examples\n\n     import React from 'react'\n     import { View } from 'react-native-universal'\n     import { Body1, Divider, gu } from 'carbon-ui'\n\n     export default () =>\n       <View>\n         <Body1>Above</Body1>\n         <Divider style={{ marginVertical: 2 * gu }} />\n         <Body1>Below</Body1>\n       </View>",
     "methods": [],
     "props": {
       "color": {
@@ -268,7 +268,7 @@
     }
   },
   "../carbon-ui/src/components/Icon.js": {
-    "description": "A system icon, or UI icon, symbolizes a command, file, device, or directory.\nSystem icons are also used to represent common actions like trash, print,\nand save.\n\nThe Icon's name maps to the material icons font.",
+    "description": "A system icon, or UI icon, symbolizes a command, file, device, or directory.\nSystem icons are also used to represent common actions like trash, print,\nand save.\n\nThe Icon's name maps to the material icons font.\n\n### Examples\n\n     import React from 'react'\n     import { View } from 'react-native-universal'\n     import { Icon } from 'carbon-ui'\n\n     export default () =>\n       <View style={{ flexDirection: 'row', justifyContent: 'flex-start' }}>\n         <Icon name=\"thumb_up\" />\n         <Icon name=\"label\" />\n         <Icon name=\"toc\" />\n       </View>",
     "methods": [],
     "props": {
       "name": {
@@ -303,7 +303,7 @@
     }
   },
   "../carbon-ui/src/components/List.js": {
-    "description": "Lists are best suited to presenting a homogeneous data type or sets of data\ntypes, such as images and text.",
+    "description": "Lists are best suited to presenting a homogeneous data type or sets of data\ntypes, such as images and text.\n\n### Examples\n\n     import React from 'react'\n     import { View } from 'react-native-universal'\n     import { List, ListItem, Elevation } from 'carbon-ui'\n\n     export default () =>\n       <View style={{ ...Elevation.dp2 }}>\n         <List>\n           <ListItem primaryText=\"One\" />\n           <ListItem primaryText=\"Two\" />\n           <ListItem primaryText=\"Three\" />\n         </List>\n       </View>\n\n---\n\n     import React, { Component } from 'react'\n     import { View } from 'react-native-universal'\n     import { List, ListItem, Elevation } from 'carbon-ui'\n\n     export default class Example extends Component {\n       state = { expandedItems: [] }\n\n       _toggleExpandedItem = name => {\n         const expandedItems = [...this.state.expandedItems]\n\n         const index = expandedItems.indexOf(name)\n         if (index === -1) return this.setState({ expandedItems: expandedItems.concat([name]) })\n\n         expandedItems.splice(index, 1)\n         this.setState({ expandedItems })\n       }\n\n       render() {\n         return (\n           <View style={{ ...Elevation.dp2 }}>\n             <List>\n               <ListItem\n                 primaryText=\"Nested item\"\n                 expanded={this.state.expandedItems.indexOf('nestedItem') !== -1}\n                 onPress={() => this._toggleExpandedItem('nestedItem')}>\n                 <ListItem primaryText=\"Nested one\" />\n                 <ListItem primaryText=\"Nested two\" />\n               </ListItem>\n               <ListItem primaryText=\"Item two\" />\n               <ListItem primaryText=\"Item three\" />\n             </List>\n           </View>\n         )\n       }\n     }",
     "methods": [],
     "props": {
       "children": {
@@ -323,7 +323,7 @@
     }
   },
   "../carbon-ui/src/components/ListItem.js": {
-    "description": "Individual items for the <List /> component.\n\nCan become a nested menu item it has ListItem for children.",
+    "description": "Individual items for the <List /> component.\n\nCan become a nested menu item it has ListItem for children.\n\nExamples in the List page.",
     "methods": [],
     "props": {
       "primaryText": {
@@ -404,7 +404,7 @@
     }
   },
   "../carbon-ui/src/components/NavigationDrawer.js": {
-    "description": "The navigation drawer slides in from the left and contains the navigation\ndestinations for your app.",
+    "description": "The navigation drawer slides in from the left and contains the navigation\ndestinations for your app.\n\n\n### Examples\n\n\n     import React, { Component } from 'react'\n     import { View } from 'react-native-universal'\n     import { NavigationDrawer, List, ListItem, RaisedButton } from 'carbon-ui'\n\n     export default class Example extends Component {\n       state = { open: false }\n\n       _toggleOpen = () => this.setState({ open: !this.state.open })\n\n       render() {\n         return (\n           <View style={{ height: 200 }}>\n             <NavigationDrawer\n               open={this.state.open}\n               onOverlayPress={this._toggleOpen}>\n               <List>\n                 <ListItem\n                   primaryText=\"Link one\"\n                   onPress={this._toggleOpen} />\n                 <ListItem\n                   primaryText=\"Link two\"\n                   onPress={this._toggleOpen} />\n               </List>\n             </NavigationDrawer>\n             <View style={{ justifyContent: 'flex-start', flexDirection: 'row' }}>\n               <RaisedButton\n                 onPress={this._toggleOpen}>\n                 Toggle\n               </RaisedButton>\n             </View>\n           </View>\n         )\n       }\n     }",
     "methods": [],
     "props": {
       "open": {
@@ -435,7 +435,7 @@
     }
   },
   "../carbon-ui/src/components/Paper.js": {
-    "description": "Generic Paper component. Like the <div /> of Material Design.",
+    "description": "Generic Paper component. The <div /> of Material Design.\n\n### Examples\n\n    import React from 'react'\n    import { Paper, Body1 } from 'carbon-ui'\n\n    export default () =>\n      <Paper elevation={8}>\n        <Body1>Hey I'm just some paper</Body1>\n      </Paper>",
     "methods": [],
     "props": {
       "elevation": {
@@ -481,7 +481,7 @@
     }
   },
   "../carbon-ui/src/components/TextField.js": {
-    "description": "Text fields allow users to input text, select text, and lookup data via\nauto-completion.\n\nThis component wraps React Native's TextInput, so it accepts all the same\nprops.",
+    "description": "Text fields allow users to input text, select text, and lookup data via\nauto-completion.\n\nThis component wraps React Native's TextInput, so it accepts all the same\nprops.\n\n### Examples\n\n     import React, { Component } from 'react'\n     import { View } from 'react-native-universal'\n     import { TextField } from 'carbon-ui'\n\n     export default class Example extends Component {\n       state = {\n         form: {\n           textFieldOne: '',\n           textFieldTwo: 'Edit this one to see an error',\n         },\n         errors: {}\n       }\n\n       _setFormValue = (field, val) => {\n         // Set an example error\n         if (field === 'textFieldTwo') {\n           this.setState({\n             errors: { textFieldTwo: 'Something went wrong'}\n           })\n         }\n\n         this.setState({ form: { ...this.state.form, [field]: val }})\n       }\n\n       render() {\n         return (\n           <View>\n             <TextField\n               placeholder=\"Text field one\"\n               value={this.state.form.textFieldOne}\n               onChangeText={val => this._setFormValue('textFieldOne', val)} />\n             <TextField\n               placeholder=\"Text field two\"\n               singleLine\n               value={this.state.form.textFieldTwo}\n               error={this.state.errors.textFieldTwo}\n               onChangeText={val => this._setFormValue('textFieldTwo', val)} />\n             <TextField\n               placeholder=\"Disabled\"\n               singleLine\n               disabled />\n           </View>\n         )\n       }\n     }",
     "methods": [
       {
         "name": "styles",
@@ -597,10 +597,10 @@
     }
   },
   "../carbon-ui/src/components/TextFieldError.js": {
-    "description": "Error component for the TextField.",
+    "description": "Error component for the TextField. Normally you wouldn't use this, but you\nyou could use it for a generic form error or something.",
     "methods": [
       {
-        "name": "show",
+        "name": "_show",
         "docblock": null,
         "modifiers": [],
         "params": [
@@ -612,14 +612,14 @@
         "returns": null
       },
       {
-        "name": "hide",
+        "name": "_hide",
         "docblock": null,
         "modifiers": [],
         "params": [],
         "returns": null
       },
       {
-        "name": "changeTo",
+        "name": "_changeTo",
         "docblock": null,
         "modifiers": [],
         "params": [
@@ -663,7 +663,7 @@
     }
   },
   "../carbon-ui/src/components/TouchableRipple.js": {
-    "description": "Ink ripples confirm user input by immediately expanding outward from the\npoint of touch. The card lifts to indicate an active state.",
+    "description": "Ink ripples confirm user input by immediately expanding outward from the\npoint of touch. The card lifts to indicate an active state.\n\n### Examples\n\n     import React from 'react'\n     import { View } from 'react-native-universal'\n     import { Paper, TouchableRipple, Body1, Colors, gu } from 'carbon-ui'\n\n     export default () =>\n       <View>\n         <TouchableRipple>\n           <View style={{ padding: 4 * gu }}>\n             <Body1>Simple TouchableRipple</Body1>\n           </View>\n         </TouchableRipple>\n         <TouchableRipple rippleColor={Colors.pinkA200}>\n           <View style={{ padding: 4 * gu }}>\n             <Body1>Colorful ripple</Body1>\n           </View>\n         </TouchableRipple>\n       </View>",
     "methods": [
       {
         "name": "getLayout",
@@ -939,7 +939,7 @@
     ]
   },
   "../carbon-ui/src/components/buttons/FlatButton.js": {
-    "description": "Flat buttons are printed on material. They do not lift, but fill with color\non press.",
+    "description": "Flat buttons are printed on material. They do not lift, but fill with color\non press.\n\n### Examples\n\n     import React from 'react'\n     import { View } from 'react-native-universal'\n     import { FlatButton } from 'carbon-ui'\n\n     export default () =>\n       <View style={{ justifyContent: 'flex-start', flexDirection: 'row' }}>\n         <FlatButton>Hey I'm a button</FlatButton>\n       </View>",
     "methods": [],
     "props": {
       "disabled": {
@@ -977,10 +977,10 @@
     }
   },
   "../carbon-ui/src/components/buttons/IconToggle.js": {
-    "description": "Icons are appropriate for toggle buttons that allow a single choice to be\nselected or deselected, such as adding or removing a star to an item.",
+    "description": "Icons are appropriate for toggle buttons that allow a single choice to be\nselected or deselected, such as adding or removing a star to an item.\n\n### Examples\n\n     import React from 'react'\n     import { View } from 'react-native-universal'\n     import { IconToggle } from 'carbon-ui'\n\n     export default () =>\n       <View style={{ justifyContent: 'flex-start', flexDirection: 'row' }}>\n         <IconToggle name=\"add\" />\n         <IconToggle name=\"favorite\" />\n         <IconToggle name=\"account_circle\" />\n       </View>",
     "methods": [],
     "props": {
-      "iconName": {
+      "name": {
         "type": {
           "name": "string"
         },
@@ -1004,7 +1004,7 @@
     }
   },
   "../carbon-ui/src/components/buttons/RaisedButton.js": {
-    "description": "Raised buttons behave like a piece of material resting on another sheet –\nthey lift and fill with color on press.",
+    "description": "Raised buttons behave like a piece of material resting on another sheet –\nthey lift and fill with color on press.\n\n### Examples\n\n     import React from 'react'\n     import { View } from 'react-native-universal'\n     import { RaisedButton } from 'carbon-ui'\n\n     export default () =>\n       <View style={{ justifyContent: 'flex-start', flexDirection: 'row' }}>\n         <RaisedButton>Click me!</RaisedButton>\n         <RaisedButton disabled>Out of commission</RaisedButton>\n       </View>",
     "methods": [],
     "props": {
       "disabled": {

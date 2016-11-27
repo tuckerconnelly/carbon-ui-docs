@@ -5,9 +5,10 @@
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "start:web": "webpack-dev-server",
-    "generateDocs": "node_modules/.bin/react-docgen ../carbon-ui/src/components --pretty -o src/modules/Index/Components/docs/docgenOutput.json",
-    "generateDocs:watch": "node_modules/.bin/onchange '../carbon-ui/src' -iw -- npm run generateDocs",
-    "generateExamples": "node_modules/.bin/babel-node src/modules/Index/Components/docs/generateExamples.js"
+    "gen:docs": "node_modules/.bin/react-docgen ../carbon-ui/src/components --pretty -o src/modules/Index/Components/docs/docgenOutput.json",
+    "gen:examples": "node_modules/.bin/babel-node src/modules/Index/Components/docs/generateExamples.js",
+    "gen": "npm run gen:docs && npm run gen:examples",
+    "gen:watch": "node_modules/.bin/onchange '../carbon-ui/src' -iw -- npm run gen"
   },
   "dependencies": {
     "animated": "github:tuckerconnelly/animated#add-boxshadow-support-build",

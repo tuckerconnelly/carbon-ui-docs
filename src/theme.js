@@ -4,5 +4,6 @@ import { Colors, themes } from 'carbon-ui'
 export default merge(themes.light, {
   colors: {
     primary: Colors.cyan400,
+    error: Colors.pinkA200,
   },
 })

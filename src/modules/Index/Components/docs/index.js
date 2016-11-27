@@ -42,7 +42,6 @@ class ComponentDocs {
   }
   
   findExampleForName(name, id = 0) {
-    console.log(examples)
     return examples[name][id]
   }
 }

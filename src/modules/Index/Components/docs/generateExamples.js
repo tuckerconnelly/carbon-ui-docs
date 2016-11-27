@@ -13,7 +13,9 @@ let indexImports = ''
 let indexExport = ''
 
 Object.keys(docgenOutput).map(filename => { // eslint-disable-line array-callback-return
-  const componentName = filename.split('/').pop().split('.')[0]
+  const filenameParts = filename.split('/')
+  let componentName = filenameParts.pop().split('.')[0]
+  if (componentName === 'index') componentName = filenameParts.pop().split('.')[0]
   
   const doc = docgenOutput[filename]
   
@@ -43,3 +45,5 @@ Object.keys(docgenOutput).map(filename => { // eslint-disable-line array-callbac
 const index = `${indexImports}\nexport default {\n${indexExport}\n}\n`
 
 fs.writeFileSync(path.resolve(__dirname, `./${EXAMPLE_DIRNAME}/index.js`), index)
+
+console.log('Finished generating examples')
