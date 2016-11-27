@@ -7,10 +7,11 @@ import createStore from './redux'
 import theme from './theme'
 
 const store = createStore({
-  navigation: {
-    index: 0,
-    history: [{ stateObj: {}, title: '', url: '/components/DataTable' }],
-  },
+  // NOTE For development, to start app on specific page
+  // navigation: {
+  //   index: 0,
+  //   history: [{ stateObj: {}, title: '', url: '/components/DataTable' }],
+  // },
 })
 
 // Stateful component so it hot reloads
