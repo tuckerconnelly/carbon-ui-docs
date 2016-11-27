@@ -10,7 +10,7 @@ const store = createStore({
   // NOTE For development, to start app on specific page
   // navigation: {
   //   index: 0,
-  //   history: [{ stateObj: {}, title: '', url: '/components/DataTable' }],
+  //   history: [{ stateObj: {}, title: '', url: '/related-libraries' }],
   // },
 })
 

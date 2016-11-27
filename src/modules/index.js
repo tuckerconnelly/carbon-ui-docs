@@ -148,6 +148,10 @@ class Layout extends Component {
                 )
               })}
             </ListItem>
+            <ListItem
+              primaryText="Related libraries"
+              active={url === '/related-libraries'}
+              onPress={() => this._navigate('/related-libraries', 'Related libraries')} />
           </List>
         </NavigationDrawer>
         <ScrollView

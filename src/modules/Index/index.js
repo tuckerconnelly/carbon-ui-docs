@@ -7,6 +7,7 @@ import HomePage from './HomePage'
 import GettingStarted from './GettingStarted'
 import Styles from './Styles'
 import Components from './Components'
+import RelatedLibraries from './RelatedLibraries'
 
 const Index = ({ routeFragment }) =>
   <View style={styles.base}>
@@ -14,6 +15,7 @@ const Index = ({ routeFragment }) =>
     <GettingStarted />
     <Styles />
     <Components />
+    <RouteFade active={routeFragment === 'related-libraries'}><RelatedLibraries /></RouteFade>
   </View>
 
 Index.propTypes = {
