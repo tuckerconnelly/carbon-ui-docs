@@ -4,9 +4,9 @@ import { Divider, Display1, Headline, Title, Subheading, Body2, Body1, gu } from
 import merge from 'lodash/merge'
 import SimpleMarkdown from 'simple-markdown'
 
-import CodeBlock from 'src/modules/common/CodeBlock'
 import InlineCode from 'src/modules/common/InlineCode'
 import componentDocs from 'src/modules/Index/Components/docs'
+import ExampleCard from './ExampleCard'
 
 export default component => {
   let codeBlockId = 0
@@ -63,12 +63,9 @@ export default component => {
         const Example = componentDocs.findExampleForName(component, codeBlockId)
         codeBlockId++
         return (
-          <View key={state.key}>
+          <ExampleCard key={state.key} source={node.content}>
             <Example />
-            <CodeBlock>
-              {node.content}
-            </CodeBlock>
-          </View>
+          </ExampleCard>
         )
       },
     },
