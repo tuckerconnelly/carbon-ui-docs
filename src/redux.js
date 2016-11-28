@@ -1,7 +1,7 @@
 import { createStore, applyMiddleware, compose, combineReducers } from 'redux'
 import thunk from 'redux-thunk'
 import { navigation, attachHistoryModifiers } from 'react-stack-nav'
-import { BackAndroid } from 'react-native'
+import { BackAndroid, Linking } from 'react-native'
 
 import app from './modules/duck'
 
@@ -15,6 +15,6 @@ export default initialState =>
     initialState,
     composeEnhancers(
       applyMiddleware(thunk),
-      attachHistoryModifiers({ BackAndroid }),
+      attachHistoryModifiers({ BackAndroid, Linking }),
     ),
   )

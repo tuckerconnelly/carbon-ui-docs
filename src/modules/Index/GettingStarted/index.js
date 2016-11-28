@@ -18,10 +18,14 @@ const VALID_FRAGMENTS = [
 
 class StylingIndex extends Component {
   componentWillMount() {
-    if (this.props.routeFragment === '') {
-      this.props.indexRedirect(0, 'Installation', 'installation')
-    }
+    this._indexRedirect(this.props)
   }
+  componentWillUpdate(nextProps) {
+    this._indexRedirect(nextProps)
+  }
+  
+  _indexRedirect = ({ routeFragment, indexRedirect }) =>
+    routeFragment === '' && indexRedirect(0, 'Installation', 'installation')
   
   render() {
     const { routeFragment } = this.props
@@ -42,7 +46,7 @@ StylingIndex.contextTypes = {
 
 StylingIndex.propTypes = {
   // connect
-  indexRedirect: PropTypes.func.isRequired,
+  indexRedirect: PropTypes.func.isRequired, // eslint-disable-line react/no-unused-prop-types
   
   // createOrchestrator
   routeFragment: PropTypes.string,

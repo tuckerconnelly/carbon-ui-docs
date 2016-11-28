@@ -23,10 +23,14 @@ const VALID_FRAGMENTS = [
 
 class StyleIndex extends Component {
   componentWillMount() {
-    if (this.props.routeFragment === '') {
-      this.props.indexRedirect(0, 'Theme', 'theme')
-    }
+    this._indexRedirect(this.props)
   }
+  componentWillUpdate(nextProps) {
+    this._indexRedirect(nextProps)
+  }
+  
+  _indexRedirect = ({ routeFragment, indexRedirect }) =>
+    routeFragment === '' && indexRedirect(0, 'Theme', 'theme')
   
   render() {
     const { routeFragment } = this.props
@@ -50,7 +54,7 @@ StyleIndex.contextTypes = {
 
 StyleIndex.propTypes = {
   // connect
-  indexRedirect: PropTypes.func.isRequired,
+  indexRedirect: PropTypes.func.isRequired, // eslint-disable-line react/no-unused-prop-types
   
   // createOrchestrator
   routeFragment: PropTypes.string,

@@ -11,9 +11,7 @@ class ComponentsIndex extends Component {
   state = { activeComponent: this.props.routeFragment }
 
   componentWillMount() {
-    if (this.props.routeFragment === '') {
-      this.props.indexRedirect(0, 'AppBar', 'AppBar')
-    }
+    this._indexRedirect(this.props)
   }
   
   componentWillReceiveProps(next) {
@@ -27,6 +25,13 @@ class ComponentsIndex extends Component {
       })
     })
   }
+  
+  componentWillUpdate(nextProps) {
+    this._indexRedirect(nextProps)
+  }
+  
+  _indexRedirect = ({ routeFragment, indexRedirect }) =>
+    routeFragment === '' && indexRedirect(0, 'AppBar', 'AppBar')
   
   _showAV = new Animated.Value(this.props.routeFragment === undefined ? 0 : 1)
   
@@ -47,7 +52,7 @@ ComponentsIndex.contextTypes = {
 
 ComponentsIndex.propTypes = {
   // connect
-  indexRedirect: PropTypes.func.isRequired,
+  indexRedirect: PropTypes.func.isRequired, // eslint-disable-line react/no-unused-prop-types
   
   // createOrchestrator
   routeFragment: PropTypes.string,

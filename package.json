@@ -31,6 +31,7 @@
     "simple-markdown": "^0.2.1",
     "unindent": "^2.0.0",
     "uranium": "github:tuckerconnelly/uranium",
+    "url-parse": "^1.1.7",
     "webpack": "^1.13.3"
   },
   "devDependencies": {
