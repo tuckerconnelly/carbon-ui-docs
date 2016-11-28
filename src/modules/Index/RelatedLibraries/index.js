@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import { View } from 'react-native-universal'
 import { Display1, Body1, connectTheme, gu } from 'carbon-ui'
 
+import createLeafOrchestrator from 'src/modules/common/createLeafOrchestrator'
 import Content from 'src/modules/common/Content'
 import IC from 'src/modules/common/InlineCode'
 import Link from 'src/modules/common/Link'
@@ -64,8 +65,9 @@ RelatedLibraries.propTypes = {
 }
 
 export default
+  createLeafOrchestrator('related-libraries')(
   connectTheme(
-  RelatedLibraries)
+  RelatedLibraries))
 
 const tStyles = theme => ({
   break: {

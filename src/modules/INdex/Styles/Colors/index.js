@@ -4,6 +4,7 @@ import { Text } from 'react-native-universal'
 import { Display1, Body1, Colors as CUIColors, connectTheme, gu } from 'carbon-ui'
 import { pushState } from 'react-stack-nav'
 
+import createLeafOrchestrator from 'src/modules/common/createLeafOrchestrator'
 import CodeBlock from 'src/modules/common/CodeBlock'
 import InlineCode from 'src/modules/common/InlineCode'
 import Link from 'src/modules/common/Link'
@@ -59,9 +60,10 @@ Colors.propTypes = {
 }
 
 export default
+  createLeafOrchestrator('colors')(
   connect(null, { pushState })(
   connectTheme(
-  Colors))
+  Colors)))
 
 const tStyles = theme => ({
   break: {

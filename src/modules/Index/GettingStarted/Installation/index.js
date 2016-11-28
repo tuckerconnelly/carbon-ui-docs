@@ -1,6 +1,8 @@
 import React, { Component, PropTypes } from 'react'
 import { View } from 'react-native-universal'
 import { Display1, Headline, Body1, Body2, Divider, connectTheme, gu } from 'carbon-ui'
+
+import createLeafOrchestrator from 'src/modules/common/createLeafOrchestrator'
 import CodeBlock from 'src/modules/common/CodeBlock'
 import InlineCode from 'src/modules/common/InlineCode'
 import Link from 'src/modules/common/Link'
@@ -129,8 +131,9 @@ Components.propTypes = {
 }
 
 export default
+  createLeafOrchestrator('installation')(
   connectTheme(
-  Components)
+  Components))
 
 const tStyles = theme => ({
   break: {

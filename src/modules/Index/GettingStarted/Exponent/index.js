@@ -1,10 +1,12 @@
 import React, { Component, PropTypes } from 'react'
 import { Display1, Body1, connectTheme, gu } from 'carbon-ui'
+
+import createLeafOrchestrator from 'src/modules/common/createLeafOrchestrator'
 import CodeBlock from 'src/modules/common/CodeBlock'
 import InlineCode from 'src/modules/common/InlineCode'
 import Content from 'src/modules/common/Content'
 
-class Components extends Component {
+class Exponent extends Component {
   render() {
     const styles = tStyles(this.props.theme)
     
@@ -22,14 +24,15 @@ class Components extends Component {
   }
 }
 
-Components.propTypes = {
+Exponent.propTypes = {
   // connectTheme
   theme: PropTypes.object.isRequired,
 }
 
 export default
+  createLeafOrchestrator('exponent')(
   connectTheme(
-  Components)
+  Exponent))
 
 const tStyles = theme => ({
   break: {

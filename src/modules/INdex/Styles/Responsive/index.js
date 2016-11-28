@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { Divider, Display1, Headline, Body1, Body2, Colors as CUIColors, connectTheme, gu } from 'carbon-ui'
 import { pushState } from 'react-stack-nav'
 
+import createLeafOrchestrator from 'src/modules/common/createLeafOrchestrator'
 import CodeBlock from 'src/modules/common/CodeBlock'
 import InlineCode from 'src/modules/common/InlineCode'
 import Link from 'src/modules/common/Link'
@@ -157,9 +158,10 @@ Responsive.propTypes = {
 }
 
 export default
+  createLeafOrchestrator('responsive')(
   connect(null, { pushState })(
   connectTheme(
-  Responsive))
+  Responsive)))
 
 const tStyles = theme => ({
   break: {

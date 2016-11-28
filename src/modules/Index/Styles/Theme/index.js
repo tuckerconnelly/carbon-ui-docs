@@ -1,5 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { Divider, Headline, Display1, Body1, Caption, Type, Colors, connectTheme, gu } from 'carbon-ui'
+
+import createLeafOrchestrator from 'src/modules/common/createLeafOrchestrator'
 import CodeBlock from 'src/modules/common/CodeBlock'
 import InlineCode from 'src/modules/common/InlineCode'
 import Link from 'src/modules/common/Link'
@@ -121,8 +123,9 @@ Theme.propTypes = {
 }
 
 export default
+  createLeafOrchestrator('theme')(
   connectTheme(
-  Theme)
+  Theme))
 
 const tStyles = theme => ({
   break: {

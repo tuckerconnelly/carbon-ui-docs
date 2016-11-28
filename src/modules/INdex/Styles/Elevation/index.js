@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { Display1, Body1, Colors as CUIColors, connectTheme, gu } from 'carbon-ui'
 import { pushState } from 'react-stack-nav'
 
+import createLeafOrchestrator from 'src/modules/common/createLeafOrchestrator'
 import CodeBlock from 'src/modules/common/CodeBlock'
 import InlineCode from 'src/modules/common/InlineCode'
 import Link from 'src/modules/common/Link'
@@ -63,9 +64,10 @@ Elevation.propTypes = {
 }
 
 export default
+  createLeafOrchestrator('elevation')(
   connect(null, { pushState })(
   connectTheme(
-  Elevation))
+  Elevation)))
 
 const tStyles = theme => ({
   break: {

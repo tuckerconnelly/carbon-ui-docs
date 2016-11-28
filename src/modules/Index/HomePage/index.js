@@ -19,6 +19,7 @@ import {
   connectTheme,
 } from 'carbon-ui'
 
+import createLeafOrchestrator from 'src/modules/common/createLeafOrchestrator'
 import Content from 'src/modules/common/Content'
 
 export class HomePage extends Component {
@@ -94,10 +95,11 @@ HomePage.propTypes = {
 const mapDispatchToProps = { pushState }
 
 export default
+  createLeafOrchestrator('')(
   connect(null, mapDispatchToProps)(
   connectTheme(
   Uranium(
-  HomePage)))
+  HomePage))))
 
 const tStyles = theme => ({
   base: {

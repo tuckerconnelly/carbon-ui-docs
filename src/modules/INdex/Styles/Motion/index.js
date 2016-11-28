@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { Divider, Headline, Display1, Body1, Body2, Colors, connectTheme, gu } from 'carbon-ui'
 import { pushState } from 'react-stack-nav'
 
+import createLeafOrchestrator from 'src/modules/common/createLeafOrchestrator'
 import CodeBlock from 'src/modules/common/CodeBlock'
 import InlineCode from 'src/modules/common/InlineCode'
 import Link from 'src/modules/common/Link'
@@ -203,9 +204,10 @@ Motion.propTypes = {
 }
 
 export default
+  createLeafOrchestrator('motion')(
   connect(null, { pushState })(
   connectTheme(
-  Motion))
+  Motion)))
 
 const tStyles = theme => ({
   break: {

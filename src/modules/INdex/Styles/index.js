@@ -19,6 +19,7 @@ const VALID_FRAGMENTS = [
   'responsive',
   'elevation',
   'typography',
+  'motion',
 ]
 
 class StyleIndex extends Component {

@@ -4,6 +4,7 @@ import Content from 'src/modules/common/Content'
 import Uranium from 'uranium'
 import get from 'lodash/get'
 
+import createLeafOrchestrator from 'src/modules/common/createLeafOrchestrator'
 import NotFound from 'src/modules/common/NotFound'
 import componentDocs from 'src/modules/Index/Components/docs'
 import MarkdownBlock from 'src/modules/common/MarkdownBlock'
@@ -78,9 +79,10 @@ ComponentDoc.propTypes = {
 }
 
 export default
+  createLeafOrchestrator(/\w+/)(
   connectTheme(
   Uranium(
-  ComponentDoc))
+  ComponentDoc)))
 
 const tStyles = theme => ({
   break: {
