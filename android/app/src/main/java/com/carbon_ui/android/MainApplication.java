@@ -1,4 +1,4 @@
-package com.carbonuidocs;
+package com.carbon_ui.android;
 
 import android.app.Application;
 import android.util.Log;

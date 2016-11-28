@@ -43,6 +43,6 @@ module.exports = {
     colors: true,
     publicPath: '/assets',
     historyApiFallback: true,
-    contentBase: 'web/build',
+    contentBase: 'web',
   },
 }
