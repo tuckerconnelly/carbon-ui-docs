@@ -4,8 +4,17 @@ import { View } from 'react-native-universal'
 import { indexRedirect, createOrchestrator } from 'react-stack-nav'
 
 import RouteFade from 'src/modules/common/RouteFade'
+import NotFound from 'src/modules/common/NotFound'
+
 import Installation from './Installation'
 import Exponent from './Exponent'
+
+const VALID_FRAGMENTS = [
+  undefined,
+  '',
+  'installation',
+  'exponent',
+]
 
 class StylingIndex extends Component {
   componentWillMount() {
@@ -21,6 +30,7 @@ class StylingIndex extends Component {
       <View style={styles.base}>
         <RouteFade active={routeFragment === 'installation'}><Installation /></RouteFade>
         <RouteFade active={routeFragment === 'exponent'}><Exponent /></RouteFade>
+        <RouteFade active={VALID_FRAGMENTS.indexOf(routeFragment) === -1}><NotFound /></RouteFade>
       </View>
     )
   }

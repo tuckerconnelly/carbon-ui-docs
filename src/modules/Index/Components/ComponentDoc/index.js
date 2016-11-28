@@ -1,10 +1,10 @@
 import React, { Component, PropTypes } from 'react'
-import { View } from 'react-native-universal'
 import { DataTable, Display1, Title, Breakpoints, connectTheme, gu } from 'carbon-ui'
 import Content from 'src/modules/common/Content'
 import Uranium from 'uranium'
 import get from 'lodash/get'
 
+import NotFound from 'src/modules/common/NotFound'
 import componentDocs from 'src/modules/Index/Components/docs'
 import MarkdownBlock from 'src/modules/common/MarkdownBlock'
 
@@ -28,7 +28,7 @@ class ComponentDoc extends Component {
     
     const doc = componentDocs.findDocForName(component)
     
-    if (!doc) return <View />
+    if (!doc) return <NotFound />
 
     const { description, props } = doc
       

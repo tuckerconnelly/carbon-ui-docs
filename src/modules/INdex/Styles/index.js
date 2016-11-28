@@ -4,12 +4,22 @@ import { View } from 'react-native-universal'
 import { indexRedirect, createOrchestrator } from 'react-stack-nav'
 
 import RouteFade from 'src/modules/common/RouteFade'
+import NotFound from 'src/modules/common/NotFound'
 import Theme from './Theme'
 import Colors from './Colors'
 import Responsive from './Responsive'
 import Elevation from './Elevation'
 import Typography from './Typography'
 import Motion from './Motion'
+
+const VALID_FRAGMENTS = [
+  undefined,
+  'theme',
+  'colors',
+  'responsive',
+  'elevation',
+  'typography',
+]
 
 class StyleIndex extends Component {
   componentWillMount() {
@@ -28,6 +38,7 @@ class StyleIndex extends Component {
         <RouteFade active={routeFragment === 'elevation'}><Elevation /></RouteFade>
         <RouteFade active={routeFragment === 'typography'}><Typography /></RouteFade>
         <RouteFade active={routeFragment === 'motion'}><Motion /></RouteFade>
+        <RouteFade active={VALID_FRAGMENTS.indexOf(routeFragment) === -1}><NotFound /></RouteFade>
       </View>
     )
   }
