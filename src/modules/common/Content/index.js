@@ -20,7 +20,7 @@ const styles = {
   base: {
     paddingHorizontal: 4 * gu,
     paddingTop: 4 * gu,
-    paddingBottom: 10 * gu,
+    paddingBottom: 16 * gu,
     
     flex: 1,
     alignSelf: 'stretch',

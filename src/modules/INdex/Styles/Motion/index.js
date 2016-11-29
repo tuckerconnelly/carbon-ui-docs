@@ -186,8 +186,8 @@ class Motion extends Component {
         <Headline style={styles.headline}>Nitty gritty customization</Headline>
         
         <Body1>
-          Carbon UI also has a <InlineCode>Durations</InlineCode> object and an
-          <InlineCode>Easing</InlineCode> object if you want to build your own to-spec
+          Carbon UI also has a <InlineCode>Durations</InlineCode> object and a
+          <InlineCode>Curves</InlineCode> object if you want to build your own to-spec
           animations. You can read about them in the
           <Link to="https://github.com/tuckerconnelly/carbon-ui/blob/master/src/style/Animations.js">
             source
