@@ -9,6 +9,7 @@
     "build:webpack": "node_modules/.bin/webpack --config=webpack.config.prod.js",
     "copy:assets": "cp -R src/assets/* web/assets",
     "build:web": "rm -rf web/assets && npm run build:webpack && npm run copy:assets",
+    "pushToASO": "ssh carbonui@carbon-ui.com 'cd carbon-ui-docs && git pull'",
     "gen:docs": "node_modules/.bin/react-docgen ../carbon-ui/src/components --pretty -o src/modules/Index/Components/docs/docgenOutput.json",
     "gen:examples": "node_modules/.bin/babel-node src/modules/Index/Components/docs/generateExamples.js",
     "gen": "npm run gen:docs && npm run gen:examples",
