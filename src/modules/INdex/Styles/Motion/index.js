@@ -174,7 +174,7 @@ class Motion extends Component {
   
         <Body1 style={styles.break}>
           The the <InlineCode>animate()</InlineCode> method above comes from Uranium. Uranium
-          was built side-bys-ide with Carbon UI, so they integrate nicely. You
+          was built side-by-side with Carbon UI, so they integrate nicely. You
           can read more about <InlineCode>animate()</InlineCode>
           <Link to="https://github.com/tuckerconnelly/uranium#animate-function">
             over here
