@@ -333,6 +333,34 @@
         "required": false,
         "description": "The primary text for the item"
       },
+      "secondaryText": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The secondary text for the item. Gets cut off at 2 lines."
+      },
+      "secondaryTextLines": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "1",
+              "computed": false
+            },
+            {
+              "value": "2",
+              "computed": false
+            }
+          ]
+        },
+        "required": false,
+        "description": "The number of lines before the ellipsis will show in the secondary text.",
+        "defaultValue": {
+          "value": "1",
+          "computed": false
+        }
+      },
       "leftIcon": {
         "type": {
           "name": "string"

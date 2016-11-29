@@ -7,7 +7,7 @@ module.exports = {
     './index.web',
   ],
   output: {
-    path: path.join(__dirname, 'web/build/assets'),
+    path: path.join(__dirname, 'web/assets'),
     filename: 'bundle.js',
     publicPath: '/assets',
   },
@@ -38,9 +38,7 @@ module.exports = {
 
     // Optimize
 
-    // Another webpack somewhere is causing a problem with Dedupe
-    // https://github.com/webpack/webpack/issues/1082#issuecomment-189700673
-    // new webpack.optimize.DedupePlugin(),
+    new webpack.optimize.DedupePlugin(),
     new webpack.optimize.OccurrenceOrderPlugin(true),
     new webpack.optimize.UglifyJsPlugin({
       mangle: true,
