@@ -41,7 +41,7 @@ class Colors extends Component {
           I recommend using your
           <Text
             style={styles.link}
-            onPress={() => this.props.pushState(0, 0, '/styling/theming')}>
+            onPress={() => this.props.pushState(0, 0, '/style/theme')}>
             {' '}theme{' '}
           </Text>
           for any theme colors, but for one-off styles the

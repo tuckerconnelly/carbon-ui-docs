@@ -7,7 +7,7 @@
     "start:web": "webpack-dev-server",
     "start:web:prod": "NODE_ENV=production node web/server.js",
     "build:webpack": "node_modules/.bin/webpack --config=webpack.config.prod.js",
-    "copy:aasa": "mdkir -p web/assets && cp src/assets/app-app-site-association web/assets/app-app-site-association",
+    "copy:aasa": "mkdir -p web/assets && cp src/assets/apple-app-site-association web/assets",
     "build:web": "rm -rf web/assets && npm run build:webpack && npm run copy:aasa",
     "pushToASO": "ssh carbonui@carbon-ui.com 'cd carbon-ui-docs && git pull'",
     "gen:docs": "node_modules/.bin/react-docgen ../carbon-ui/src/components --pretty -o src/modules/Index/Components/docs/docgenOutput.json",
