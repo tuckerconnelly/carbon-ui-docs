@@ -1,3 +1,4 @@
 <resources>
+    <string moduleConfig="true" name="reactNativeCodePush_androidDeploymentKey">G_7AN8L6X4AY5TXOxoEj4MwGMWz9Ny-E_qIMM</string>
     <string name="app_name">Carbon UI Docs</string>
 </resources>
