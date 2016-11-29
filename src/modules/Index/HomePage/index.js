@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
-import { View } from 'react-native-universal'
+import { Platform, Image, TouchableOpacity, Linking, View } from 'react-native-universal'
 import { pushState } from 'react-stack-nav'
 import Uranium from 'uranium'
 import {
@@ -22,10 +22,14 @@ import {
 import createLeafOrchestrator from 'src/modules/common/createLeafOrchestrator'
 import Content from 'src/modules/common/Content'
 
+const APP_STORE_URL = 'https://itunes.apple.com/us/genre/ios/id36'
+const GOOGLE_PLAY_URL = 'https://play.google.com/store/apps'
+
 export class HomePage extends Component {
   static HEADER_HEIGHT = 40 * gu
   
   _goToInstallation = () => this.props.pushState(0, 'Installation', '/getting-started/installation')
+  _navigateExternal = url => Linking.openURL(url)
   
   render() {
     const styles = tStyles(this.props.theme)
@@ -78,6 +82,26 @@ export class HomePage extends Component {
             onPress={this._goToInstallation}>
             Get started
           </RaisedButton>
+          
+          {Platform.OS === 'web' &&
+            <View style={styles.viewNatively}>
+              <Subheading style={styles.viewNativelyCopy}>
+                View these docs natively, written with the same exact code
+              </Subheading>
+              <View style={styles.badges}>
+                <TouchableOpacity onPress={() => this._navigateExternal(APP_STORE_URL)}>
+                  <Image
+                    style={styles.badgeAppStore}
+                    source={require('src/assets/images/badge-app-store.svg')} />
+                </TouchableOpacity>
+                <TouchableOpacity onPress={() => this._navigateExternal(GOOGLE_PLAY_URL)}>
+                  <Image
+                    style={styles.badgeGooglePlay}
+                    source={require('src/assets/images/badge-google-play.png')} />
+                </TouchableOpacity>
+              </View>
+            </View>
+          }
         </Content>
       </View>
     )
@@ -183,5 +207,26 @@ const tStyles = theme => ({
     width: 32 * gu,
     
     alignSelf: 'center',
+  },
+  
+  viewNatively: {
+    marginTop: 14 * gu,
+  
+    alignItems: 'center',
+  },
+  
+  viewNativelyCopy: {
+    marginBottom: 4 * gu,
+  },
+  
+  badges: {
+    flexDirection: 'row',
+  },
+  
+  badgeGooglePlay: {
+    position: 'relative',
+    top: -10,
+
+    height: 60,
   },
 })
