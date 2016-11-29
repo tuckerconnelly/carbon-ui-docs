@@ -366,7 +366,29 @@
           "name": "string"
         },
         "required": false,
-        "description": "Usually an <Icon /> or <Avatar />"
+        "description": "Will put an <Icon /> with the passed value on the left of the ListItem"
+      },
+      "rightIcon": {
+        "type": {
+          "name": "union",
+          "value": [
+            {
+              "name": "string"
+            },
+            {
+              "name": "element"
+            }
+          ]
+        },
+        "required": false,
+        "description": "If a string, will put an <Icon /> with the passed value on the right of\nthe list item. If it's an element, it'll place the element on the right of\nthe list item."
+      },
+      "rightText": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The caption text on the top right of the ListItem"
       },
       "active": {
         "type": {
