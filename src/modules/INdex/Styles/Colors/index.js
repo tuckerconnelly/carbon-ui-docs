@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { Text } from 'react-native-universal'
+import ps from 'react-native-ps'
 import { Display1, Body1, Colors as CUIColors, connectTheme, gu } from 'carbon-ui'
 import { pushState } from 'react-stack-nav'
 
@@ -41,7 +42,7 @@ class Colors extends Component {
           I recommend using your
           <Text
             style={styles.link}
-            onPress={() => this.props.pushState(0, 0, '/style/theme')}>
+            onPress={() => this.props.pushState(0, 0, '/styles/theme')}>
             {' '}theme{' '}
           </Text>
           for any theme colors, but for one-off styles the
@@ -65,7 +66,7 @@ export default
   connectTheme(
   Colors)))
 
-const tStyles = theme => ({
+const tStyles = theme => ps({
   break: {
     marginBottom: 8 * gu,
   },
@@ -88,5 +89,12 @@ const tStyles = theme => ({
   
   link: {
     color: CUIColors.lightBlue400,
+  },
+  
+  
+  web: {
+    link: {
+      cursor: 'pointer',
+    },
   },
 })
