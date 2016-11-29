@@ -26,7 +26,7 @@ class Colors extends Component {
         </Body1>
         <Body1 style={styles.smallBreak}>
           You can use access these using the
-          <Link to="https://github.com/tuckerconnelly/carbon-ui/blob/master/src/styles/Colors.js">
+          <Link to="https://github.com/tuckerconnelly/carbon-ui/blob/master/src/style/Colors.js">
             Colors object
           </Link>:
         </Body1>
