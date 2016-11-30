@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { Text } from 'react-native-universal'
 import ps from 'react-native-ps'
-import { Display1, Body1, Colors as CUIColors, connectTheme, gu } from 'carbon-ui'
+import { Display1, Body1, connectTheme, gu } from 'carbon-ui'
 import { pushState } from 'react-stack-nav'
 
 import createLeafOrchestrator from 'src/modules/common/createLeafOrchestrator'
@@ -88,7 +88,7 @@ const tStyles = theme => ps({
   },
   
   link: {
-    color: CUIColors.lightBlue400,
+    color: theme.colors.primary,
   },
   
   

@@ -51,7 +51,7 @@ class RelatedLibraries extends Component {
           <Body1>
             This is a fork of necolas&apos;s sweet react-native-web library. It
             adds a bunch of stuff like onLayout and NativeModules. I should
-            probably hit him up about merging haha.
+            probably hit him up about merging.
           </Body1>
         </View>
       </Content>
