@@ -9,7 +9,7 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'web/assets'),
     filename: 'bundle.js',
-    publicPath: '/assets',
+    publicPath: '/',
   },
   module: {
     loaders: [

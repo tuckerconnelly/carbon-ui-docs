@@ -1,8 +1,8 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
-import { Platform, Image, TouchableOpacity, Linking, View } from 'react-native-universal'
+import { Animated, Platform, Image, TouchableOpacity, Linking, Text, View } from 'react-native-universal'
 import { pushState } from 'react-stack-nav'
-import Uranium from 'uranium'
+import Uranium, { animate } from 'uranium'
 import {
   Display2,
   Subheading,
@@ -12,6 +12,7 @@ import {
   Paper,
   RaisedButton,
   
+  Animations,
   Breakpoints,
   Colors,
   gu,
@@ -24,12 +25,36 @@ import Content from 'src/modules/common/Content'
 
 const APP_STORE_URL = 'https://itunes.apple.com/us/genre/ios/id36'
 const GOOGLE_PLAY_URL = 'https://play.google.com/store/apps'
+const LOGO_SIZE = 50 * gu
 
 export class HomePage extends Component {
-  static HEADER_HEIGHT = 40 * gu
+  static HEADER_HEIGHT = 102 * gu
+  
+  componentDidMount() {
+    // animatedjs super janky on web, looking in to it
+    if (Platform.OS === 'web') return
+    
+    this._electronSpinTimeout = setTimeout(this._rotateElectrons, (Math.random() * 2000) + 1000)
+  }
+  componentWillUnmount() {
+    clearTimeout(this._electronSpinTimeout)
+  }
+  
+  _rotateElectrons = () => {
+    Animations.standard(this._electronsAV, 1, 5000).start(() => {
+      this._electronsAV.setValue(0)
+      clearTimeout(this._electronSpinTimeout)
+      
+      // Repeat every 10 - 30 seconds
+      this._electronSpinTimeout = setTimeout(this._rotateElectrons, (Math.random() * 20000) + 10000)
+    })
+  }
   
   _goToInstallation = () => this.props.pushState(0, 'Installation', '/getting-started/installation')
   _navigateExternal = url => Linking.openURL(url)
+  
+  _electronSpinTimeout = null
+  _electronsAV = new Animated.Value(0)
   
   render() {
     const styles = tStyles(this.props.theme)
@@ -37,7 +62,20 @@ export class HomePage extends Component {
     return (
       <View style={styles.base}>
         <View style={styles.heading}>
-          <Display2 style={styles.title}>Carbon UI</Display2>
+          <View style={styles.logo}>
+            <Image
+              source={require('src/assets/images/app-logo-copy.png')}
+              style={styles.logoCopy} />
+            <Animated.Image
+              source={require('src/assets/images/app-logo-electrons.png')}
+              style={[
+                styles.logoElectrons,
+                animate(styles.logoElectrons, styles.logoElectronsRotated, this._electronsAV),
+              ]} />
+          </View>
+          <Display2 style={styles.title}>
+            <Text style={styles.titleCarbon}>Carbon</Text>{' '}<Text style={styles.titleUI}>UI</Text>
+          </Display2>
           <Subheading style={styles.tagline}>
             Universal Material Design components for React Native and React
           </Subheading>
@@ -138,13 +176,52 @@ const tStyles = theme => ({
     backgroundColor: theme.colors.primary,
   },
   
+  logo: {
+    position: 'relative',
+    
+    width: LOGO_SIZE,
+    height: LOGO_SIZE,
+    marginTop: 4 * gu,
+    marginBottom: 5 * gu,
+    
+    alignSelf: 'center',
+  },
+  
+  logoCopy: {
+    position: 'absolute',
+    
+    width: LOGO_SIZE,
+    height: LOGO_SIZE,
+  },
+  
+  logoElectrons: {
+    position: 'absolute',
+    
+    width: LOGO_SIZE,
+    height: LOGO_SIZE,
+    
+    transform: [{ rotate: '0deg' }],
+  },
+  
+  logoElectronsRotated: {
+    transform: [{ rotate: '1800deg' }],
+  },
+  
   title: {
     marginTop: 2 * gu,
-    marginBottom: 4 * gu,
+    marginBottom: 5 * gu,
     
     alignSelf: 'center',
     
     color: Colors.whitePrimary,
+  },
+  
+  titleCarbon: {
+    fontFamily: 'Roboto-Thin',
+  },
+  
+  titleUI: {
+    fontFamily: 'Roboto-Light',
   },
   
   tagline: {
@@ -153,6 +230,7 @@ const tStyles = theme => ({
     alignSelf: 'center',
     
     color: Colors.whitePrimary,
+    fontFamily: 'Roboto-Light',
     textAlign: 'center',
   },
   

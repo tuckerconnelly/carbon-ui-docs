@@ -8,9 +8,9 @@ module.exports = {
     './index.web',
   ],
   output: {
-    path: path.join(__dirname, 'build'),
+    path: path.join(__dirname, 'web/assets'),
     filename: 'bundle.js',
-    publicPath: '/assets',
+    publicPath: '/',
   },
   module: {
     loaders: [
@@ -48,7 +48,7 @@ module.exports = {
   devServer: {
     hot: true,
     colors: true,
-    publicPath: '/assets',
+    publicPath: '/',
     historyApiFallback: true,
     contentBase: 'web',
   },
