@@ -32,10 +32,10 @@ class Typography extends Component {
       <Content style={styles.base}>
         <Display1 style={styles.display1}>Typography</Display1>
         <Body1>
-          Material Design has a bunch of different
+          Material Design has a bunch of different{' '}
           <Link to="https://material.google.com/style/typography.html#typography-styles">
             font sizes
-          </Link>.
+          </Link>.{' '}
           You can use these simply as components in Carbon UI like:
         </Body1>
         <CodeBlock>{`
@@ -89,7 +89,7 @@ class Typography extends Component {
         }
         `}</CodeBlock>
         <Body1 style={styles.smallBreak}>
-          Such is the discussion of typography in
+          Such is the discussion of typography in{' '}
           <Link to="http://classics.mit.edu/Tzu/artwar.html">
             warfare
           </Link>.

@@ -19,14 +19,14 @@ class Colors extends Component {
       <Content style={styles.base}>
         <Display1 style={styles.display1}>Colors</Display1>
         <Body1 style={styles.smallBreak}>
-          Material Design has a vibrant
+          Material Design has a vibrant{' '}
           <Link to="https://material.google.com/style/color.html">
             set of colors
-          </Link>
+          </Link>{' '}
           you can use in your app.
         </Body1>
         <Body1 style={styles.smallBreak}>
-          You can use access these using the
+          You can use access these using the{' '}
           <Link to="https://github.com/tuckerconnelly/carbon-ui/blob/master/src/style/Colors.js">
             Colors object
           </Link>:
@@ -39,12 +39,12 @@ class Colors extends Component {
         `}</CodeBlock>
         
         <Body1>
-          I recommend using your
+          I recommend using your{' '}
           <Text
             style={styles.link}
             onPress={() => this.props.pushState(0, 0, '/styles/theme')}>
-            {' '}theme{' '}
-          </Text>
+            theme
+          </Text>{' '}
           for any theme colors, but for one-off styles the
           <InlineCode>Colors</InlineCode> object works great.
         </Body1>

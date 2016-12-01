@@ -17,10 +17,10 @@ class Motion extends Component {
       <Content style={styles.base}>
         <Display1 style={styles.display1}>Motion</Display1>
         <Body1 style={styles.break}>
-          Motion is a
+          Motion is a{' '}
           <Link to="https://material.google.com/motion/material-motion.html">
             complex and layered
-          </Link>
+          </Link>{' '}
           subject in Material Design. Carbon UI does its best to simplify the
           creation of Animations for you.
         </Body1>
@@ -131,10 +131,10 @@ class Motion extends Component {
         <Headline style={styles.headline}>Staggered animations</Headline>
         
         <Body1 style={styles.smallBreak}>
-          Material Design also likes to
+          Material Design also likes to{' '}
           <Link to="https://material.google.com/motion/choreography.html">
             stagger animations
-          </Link> by ~50 ms or so in complex
+          </Link>{' '}by ~50 ms or so in complex
           transitions. Carbon UI has the special <InlineCode>staggered</InlineCode> animation
           for these. It has the signature:
         </Body1>
@@ -175,7 +175,7 @@ class Motion extends Component {
         <Body1 style={styles.break}>
           The the <InlineCode>animate()</InlineCode> method above comes from Uranium. Uranium
           was built side-by-side with Carbon UI, so they integrate nicely. You
-          can read more about <InlineCode>animate()</InlineCode>
+          can read more about <InlineCode>animate()</InlineCode>{' '}
           <Link to="https://github.com/tuckerconnelly/uranium#animate-function">
             over here
           </Link>.
@@ -188,7 +188,7 @@ class Motion extends Component {
         <Body1>
           Carbon UI also has a <InlineCode>Durations</InlineCode> object and a
           <InlineCode>Curves</InlineCode> object if you want to build your own to-spec
-          animations. You can read about them in the
+          animations. You can read about them in the{' '}
           <Link to="https://github.com/tuckerconnelly/carbon-ui/blob/master/src/style/Animations.js">
             source
           </Link>.

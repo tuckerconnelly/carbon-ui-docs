@@ -64,7 +64,7 @@ class Exponent extends Component {
           }
         `}</CodeBlock>
         <Body1>
-          You can copy all the fonts from
+          You can copy all the fonts from{' '}
           <Link to="https://github.com/tuckerconnelly/carbon-ui-docs/tree/master/android/app/src/main/assets/fonts">
             here
           </Link>.

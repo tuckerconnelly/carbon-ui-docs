@@ -17,10 +17,10 @@ class Elevation extends Component {
       <Content style={styles.base}>
         <Display1 style={styles.display1}>Elevation and shadows</Display1>
         <Body1>
-          Material rests at
+          Material rests at{' '}
           <Link to="https://material.google.com/material-design/elevation-shadows.html">
             different elevations
-          </Link>.
+          </Link>.{' '}
           All components in Carbon UI implement elevation to spec, but if you want
           to add your own shadows to an element you can do so with the
           <InlineCode>Elevation</InlineCode> object:
@@ -46,10 +46,10 @@ class Elevation extends Component {
         </Body1>
         <Body1 style={styles.smallBreak}>
           The <InlineCode>Elevation</InlineCode> object has all the dps
-          you see on the
+          you see on the{' '}
           <Link to="https://material.google.com/material-design/elevation-shadows.html#elevation-shadows-elevation-android">
             Material Design elevation page
-          </Link>. You could spread, for example,
+          </Link>.{' '}You could spread, for example,
           <InlineCode>...Elevation.dp16</InlineCode> in a style object
           if you wanted to set an elevation of 16dp.
         </Body1>

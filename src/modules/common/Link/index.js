@@ -10,7 +10,7 @@ const Link = ({ to, children, style, theme, ...other }) => {
       style={[styles.base].concat(style)}
       onPress={() => Linking.openURL(to)}
       {...other}>
-      {' '}{children}{' '}
+      {children}
     </Body1>
   )
 }
@@ -30,8 +30,6 @@ export default
 
 const tStyles = theme => ps({
   base: {
-    marginHorizontal: 1 * gu,
-    
     color: theme.colors.primary,
   },
   

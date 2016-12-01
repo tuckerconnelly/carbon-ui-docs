@@ -18,10 +18,10 @@ class Responsive extends Component {
         <Display1 style={styles.display1}>Responsive UI</Display1>
         
         <Body1 style={styles.break}>
-          Carbon UI provides a few tools to make following Material Designs
+          Carbon UI provides a few tools to make following Material Designs{' '}
           <Link to="https://material.google.com/layout/responsive-ui.html">
-            Responsive guidelines
-          </Link>
+            responsive guidelines
+          </Link>{' '}
           a little easier.
         </Body1>
         
@@ -54,10 +54,10 @@ class Responsive extends Component {
         
         <Body1 style={styles.break}>
           Using <InlineCode>gu</InlineCode> for all of your sizing keeps
-          your layout consistent and your vertical rhythm
+          your layout consistent and your vertical rhythm{' '}
           <Link to="https://www.youtube.com/watch?v=Eo-KmOd3i7s">
-            *Nsync.
-          </Link>
+            *Nsync
+          </Link>.
         </Body1>
         
         <Divider style={styles.break} />
@@ -65,10 +65,10 @@ class Responsive extends Component {
         <Headline style={styles.headline}>Breakpoints</Headline>
         
         <Body1 style={styles.smallBreak}>
-          Material design has quite a few
+          Material design has quite a few{' '}
           <Link to="https://material.google.com/layout/responsive-ui.html#responsive-ui-breakpoints">
             breakpoints
-          </Link>. To simplify, I restricted the ones Carbon UI implements
+          </Link>.{' '}To simplify, I restricted the ones Carbon UI implements
           to the ones that actually affect behavior and layout:
         </Body1>
         
@@ -95,10 +95,10 @@ class Responsive extends Component {
         </Body1>
         
         <Body1>
-          You can use the breakpoints with
+          You can use the breakpoints with{' '}
           <Link to="https://github.com/tuckerconnelly/uranium">
             Uranium
-          </Link>
+          </Link>{' '}
           like this:
         </Body1>
         
@@ -121,10 +121,10 @@ class Responsive extends Component {
         `}</CodeBlock>
       
         <Body1 style={styles.break}>
-          You can check out the source
+          You can check out the source{' '}
           <Link to="https://github.com/tuckerconnelly/carbon-ui/blob/master/src/styles/Responsive.js">
-            here.
-          </Link>
+            here
+          </Link>.
         </Body1>
         
         <Divider style={styles.break} />
@@ -132,10 +132,10 @@ class Responsive extends Component {
         <Headline style={styles.headline}>Grid system</Headline>
         
         <Body1 style={styles.smallBreak}>
-          Material Design has a full-on
+          Material Design has a full-on{' '}
           <Link to="https://material.google.com/layout/responsive-ui.html#responsive-ui-grid">
             grid system
-          </Link>
+          </Link>{' '}
           with specs for gutters and margins and such.
         </Body1>
         <Body1 style={styles.smallBreak}>

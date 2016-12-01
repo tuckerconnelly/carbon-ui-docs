@@ -57,7 +57,7 @@ class Components extends Component {
           </Link>
           <Body1>
             If you want carbon-ui to adjust styles for screen size on iOS and
-            Android. This lib also has a peer dependency on
+            Android. This lib also has a peer dependency on{' '}
             <Link to="https://github.com/walmartlabs/react-native-orientation-listener">
               react-native-orientation-listener
             </Link>.
@@ -106,18 +106,18 @@ class Components extends Component {
           folder and they'll automatically be usable by the app.
         </Body1>
         <Body1 style={styles.smallBreak}>
-          You can grab all the Roboto fonts from
+          You can grab all the Roboto fonts from{' '}
           <Link to="https://github.com/tuckerconnelly/carbon-ui-docs/tree/master/android/app/src/main/assets/fonts">
-            this app's repo.
-          </Link>
+            this app's repo
+          </Link>.
         </Body1>
         <Body2>iOS</Body2>
         <Body1>
           iOS is a little more complicated than Android (thanks Apple).
-          You'll need all the Roboto fonts, which you can get from
+          You'll need all the Roboto fonts, which you can get from{' '}
           <Link to="https://github.com/tuckerconnelly/carbon-ui-docs/tree/master/android/app/src/main/assets/fonts">
-            this app's repo.
-          </Link>
+            this app's repo
+          </Link>.{' '}
           Once you have them, use this guide to get them all installed.
         </Body1>
       </Content>

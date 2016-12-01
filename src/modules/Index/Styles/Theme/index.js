@@ -35,12 +35,12 @@ class Theme extends Component {
         `}</CodeBlock>
         
         <Caption style={styles.smallBreak}>
-          Check out the
+          Check out the{' '}
           <Link
             to="https://github.com/tuckerconnelly/carbon-ui/blob/master/src/themes/light.js"
             style={styles.captionLink}>
             default light theme object
-          </Link>
+          </Link>{' '}
           for all the possible options.
         </Caption>
         
