@@ -40,6 +40,7 @@
 		B7639E0A1DD7D0320081664F /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B7639DFD1DD7D0320081664F /* Roboto-Thin.ttf */; };
 		B7639E0B1DD7D0320081664F /* Roboto-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B7639DFE1DD7D0320081664F /* Roboto-ThinItalic.ttf */; };
 		B7885AA61DE25F2E00BD08A0 /* RobotoMono-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B7885AA51DE25F2E00BD08A0 /* RobotoMono-Regular.ttf */; };
+		B7885ADF1DF06F9D00BD08A0 /* opacity-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = B7885ADE1DF06F9D00BD08A0 /* opacity-logo.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -226,6 +227,7 @@
 		B7639DFE1DD7D0320081664F /* Roboto-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-ThinItalic.ttf"; path = "../android/app/src/main/assets/fonts/Roboto-ThinItalic.ttf"; sourceTree = "<group>"; };
 		B7885AA51DE25F2E00BD08A0 /* RobotoMono-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "RobotoMono-Regular.ttf"; path = "../android/app/src/main/assets/fonts/RobotoMono-Regular.ttf"; sourceTree = "<group>"; };
 		B7885AB91DEBB9DB00BD08A0 /* CarbonUIDocs.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = CarbonUIDocs.entitlements; path = CarbonUIDocs/CarbonUIDocs.entitlements; sourceTree = "<group>"; };
+		B7885ADE1DF06F9D00BD08A0 /* opacity-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "opacity-logo.png"; path = "../design/opacity-logo.png"; sourceTree = "<group>"; };
 		C022F3ED9C9940F7A864AA9B /* libRCTOrientationListener.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRCTOrientationListener.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -341,6 +343,7 @@
 		13B07FAE1A68108700A75B9A /* CarbonUIDocs */ = {
 			isa = PBXGroup;
 			children = (
+				B7885ADE1DF06F9D00BD08A0 /* opacity-logo.png */,
 				B7885AB91DEBB9DB00BD08A0 /* CarbonUIDocs.entitlements */,
 				B7639DD21DD7D00F0081664F /* Fonts */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
@@ -747,6 +750,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7885ADF1DF06F9D00BD08A0 /* opacity-logo.png in Resources */,
 				B7639E0B1DD7D0320081664F /* Roboto-ThinItalic.ttf in Resources */,
 				B7639E0A1DD7D0320081664F /* Roboto-Thin.ttf in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,

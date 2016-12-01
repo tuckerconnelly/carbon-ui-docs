@@ -3,13 +3,13 @@
     {
       "size" : "20x20",
       "idiom" : "iphone",
-      "filename" : "AppIcon20x20@2x.png",
+      "filename" : "ios-40x40.png",
       "scale" : "2x"
     },
     {
       "size" : "20x20",
       "idiom" : "iphone",
-      "filename" : "AppIcon20x20@3x.png",
+      "filename" : "ios-60x60.png",
       "scale" : "3x"
     },
     {
