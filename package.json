@@ -8,7 +8,7 @@
     "start:web:prod": "NODE_ENV=production node web/server.js",
     "copy:assets": "mkdir -p web/build && cp src/assets/apple-app-site-association web/build && cp src/assets/images/favicon.png web/build",
     "build:webpack": "node_modules/.bin/webpack --config=webpack.config.prod.js",
-    "build:web": "rm -rf web/build && npm run copy:assets && npm run build:webpack",
+    "build:web": "rm -rf web/build && npm run copy:assets && npm run build:webpack && mv web/build/index.html web/index.html",
     "pushToASO": "ssh carbonui@carbon-ui.com 'cd carbon-ui-docs && git pull'",
     "gen:docs": "node_modules/.bin/react-docgen ../carbon-ui/src/components --pretty -o src/modules/Index/Components/docs/docgenOutput.json",
     "gen:examples": "node_modules/.bin/babel-node src/modules/Index/Components/docs/generateExamples.js",

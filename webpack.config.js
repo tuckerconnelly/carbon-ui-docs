@@ -1,5 +1,6 @@
 const path = require('path')
 const webpack = require('webpack')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   devtool: 'cheap-module-eval-source-map',
@@ -44,12 +45,17 @@ module.exports = {
     new webpack.DefinePlugin({
       __DEV__: true,
     }),
+    
+    // HTML
+    new HtmlWebpackPlugin({
+      template: 'web/index.ejs',
+    }),
   ],
   devServer: {
     hot: true,
     colors: true,
     publicPath: '/',
     historyApiFallback: true,
-    contentBase: 'web',
+    contentBase: 'web/build',
   },
 }
