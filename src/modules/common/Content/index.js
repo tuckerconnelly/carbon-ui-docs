@@ -34,7 +34,7 @@ const styles = {
     },
     
     [`@media (min-width: ${290 * gu}px)`]: {
-      flexBasis: 290 * gu,
+      width: 290 * gu,
       
       alignSelf: 'center',
     },
