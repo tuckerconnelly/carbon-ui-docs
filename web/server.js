@@ -6,11 +6,11 @@ var path = require('path')
 
 var app = express()
 
-app.use('/', express.static(path.resolve(__dirname, 'assets')))
+app.use('/', express.static(path.resolve(__dirname, 'build')))
 app.get('*', function (req, res) {
-  res.sendFile(path.resolve(__dirname, 'index.html'))
+  res.sendFile(path.resolve(__dirname, 'build/index.html'))
 })
 
 app.listen(3000, function () {
-  console.log('I gotchoo bae. Listening on 3000')
+  console.log('Listening on 3000')
 })

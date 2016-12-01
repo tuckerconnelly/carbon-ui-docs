@@ -1,5 +1,6 @@
 const path = require('path')
 const webpack = require('webpack')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   entry: [
@@ -7,8 +8,8 @@ module.exports = {
     './index.web',
   ],
   output: {
-    path: path.join(__dirname, 'web/assets'),
-    filename: 'bundle.js',
+    path: path.join(__dirname, 'web/build'),
+    filename: '[name].[chunkhash].js',
     publicPath: '/',
   },
   module: {
@@ -56,6 +57,11 @@ module.exports = {
     }),
     new webpack.optimize.MinChunkSizePlugin({
       minChunkSize: 51200,
+    }),
+    
+    // HTML
+    new HtmlWebpackPlugin({
+      template: 'web/index.prod.ejs',
     }),
   ],
 }

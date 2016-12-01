@@ -8,7 +8,7 @@ module.exports = {
     './index.web',
   ],
   output: {
-    path: path.join(__dirname, 'web/assets'),
+    path: path.join(__dirname, 'web/build'),
     filename: 'bundle.js',
     publicPath: '/',
   },
