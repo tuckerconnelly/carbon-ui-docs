@@ -8,10 +8,10 @@ import theme from './theme'
 
 const store = createStore({
   // NOTE For development, to start app on specific page
-  navigation: {
-    index: 0,
-    history: [{ stateObj: {}, title: '', url: '/components/IconToggle' }],
-  },
+  // navigation: {
+  //   index: 0,
+  //   history: [{ stateObj: {}, title: '', url: '/components/IconToggle' }],
+  // },
 })
 
 // Stateful component so it hot reloads

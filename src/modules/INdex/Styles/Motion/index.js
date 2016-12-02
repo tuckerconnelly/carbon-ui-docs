@@ -117,6 +117,11 @@ class Motion extends Component {
         Animations.standard(AnimatedValue, timingOptions)
         `}</CodeBlock>
   
+        <Body1 style={styles.smallBreak}>
+          <InlineCode>timingOptions</InlineCode> has the same options as
+          <InlineCode>Animated.timing</InlineCode>, and will be merged into the
+          default options for that animation.
+        </Body1>
         <Body1>
           So if you wanted to do an <InlineCode>exit</InlineCode> animation with
           a duration of 200ms, delayed by 50ms, you could do:
@@ -125,61 +130,6 @@ class Motion extends Component {
         <CodeBlock style={styles.break}>{`
         Animations.exit(this._exitAV, { duration: 200, delay: 50 }).start()
         `}</CodeBlock>
-      
-        <Divider style={styles.break} />
-      
-        <Headline style={styles.headline}>Staggered animations</Headline>
-        
-        <Body1 style={styles.smallBreak}>
-          Material Design also likes to{' '}
-          <Link to="https://material.google.com/motion/choreography.html">
-            stagger animations
-          </Link>{' '}by ~50 ms or so in complex
-          transitions. Carbon UI has the special <InlineCode>staggered</InlineCode> animation
-          for these. It has the signature:
-        </Body1>
-        
-        <CodeBlock>{`
-        Animations.staggered(firstAnimatedValue, secondAnimatedValue, toValue, duration, staggerAmount)
-        `}</CodeBlock>
-      
-        <Body1>
-          So a real-world sweg staggered transition might look like:
-        </Body1>
-        
-        <CodeBlock>{`
-        import { Animations } from 'carbon-ui'
-        
-        class MyComponent extends Component {
-          componentDidMount() {
-            Animations.staggered(this._av1, this._av2).start()
-          }
-          
-          _av1 = new Animated.Value(0)
-          _av2 = new Animated.Value(0)
-          
-          return (
-            <View
-              style={{
-                animate('height', 100, 200, this._av1),
-                animate('top', 40, 50, this._av1),
-              }}>
-              <View style={animate('opacity', 0, 1, this._av2)}>
-                <Text>Content</Text>
-              </View>
-            </View>
-          )
-        }
-        `}</CodeBlock>
-  
-        <Body1 style={styles.break}>
-          The the <InlineCode>animate()</InlineCode> method above comes from Uranium. Uranium
-          was built side-by-side with Carbon UI, so they integrate nicely. You
-          can read more about <InlineCode>animate()</InlineCode>{' '}
-          <Link to="https://github.com/tuckerconnelly/uranium#animate-function">
-            over here
-          </Link>.
-        </Body1>
         
         <Divider style={styles.break} />
         
