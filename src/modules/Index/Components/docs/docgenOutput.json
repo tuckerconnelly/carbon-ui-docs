@@ -486,12 +486,12 @@
           "computed": false
         }
       },
-      "onFinishClosing": {
+      "onStartClosing": {
         "type": {
           "name": "func"
         },
         "required": false,
-        "description": "Callback for when the drawer is finished opening. Use this in conjunction\nwith onFinishOpening for performance optimization.",
+        "description": "Callback for when the drawer is starting to close. Use this in conjunction\nwith onFinishOpening for performance optimization. If it returns a promise,\nit'll wait for the promise to resolve before starting the closing animation.",
         "defaultValue": {
           "value": "() => 0",
           "computed": false

@@ -12,7 +12,7 @@ import {
 import Index from './Index/index'
 import { HomePage } from './Index/HomePage'
 import Navigation from './Navigation'
-import { openMenu, closeMenu } from './duck'
+import { openMenu } from './duck'
 
 class Layout extends Component {
   state = { scrollY: 0 }
@@ -22,7 +22,7 @@ class Layout extends Component {
   }
 
   render() {
-    const { menuOpen, title, url, openMenu, closeMenu, children } = this.props
+    const { title, url, openMenu, children } = this.props
     const { scrollY } = this.state
         
     return (
@@ -31,9 +31,7 @@ class Layout extends Component {
           title={title}
           elevated={url !== '' || scrollY > HomePage.HEADER_HEIGHT}
           onLeftIconPress={openMenu} />
-        <Navigation
-          open={menuOpen}
-          onOverlayPress={closeMenu} />
+        <Navigation />
         <ScrollView
           scrollEventThrottle={50}
           onScroll={this._updateScrollY}>
@@ -49,11 +47,10 @@ Layout.propTypes = {
   children: PropTypes.node,
   
   // connect
-  menuOpen: PropTypes.bool.isRequired,
   url: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
+  
   openMenu: PropTypes.func.isRequired,
-  closeMenu: PropTypes.func.isRequired,
 }
 
 const mapStateToProps = ({ app, navigation }) => ({
@@ -62,7 +59,7 @@ const mapStateToProps = ({ app, navigation }) => ({
   title: navigation.history[navigation.index].title,
 })
 
-const mapDispatchToProps = { openMenu, closeMenu }
+const mapDispatchToProps = { openMenu }
 
 export default
   connectTheme(
