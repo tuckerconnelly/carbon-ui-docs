@@ -9,12 +9,12 @@ class Route extends Component {
   componentWillReceiveProps(next) {
     const { active } = this.props
     if (active && !next.active) {
-      Animations.standard(this._activateAV, 0, 112).start(() => {
+      Animations.standard(this._activateAV, { duration: 112, toValue: 0 }).start(() => {
         this.setState({ visible: false })
       })
     } else if (!active && next.active) {
       this.setState({ visible: true })
-      Animations.standard(this._activateAV, 1, 225, 112).start()
+      Animations.standard(this._activateAV, { duration: 225, delay: 112 }).start()
     }
   }
   

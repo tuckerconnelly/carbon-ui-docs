@@ -42,7 +42,7 @@ export class HomePage extends Component {
   }
   
   _rotateElectrons = () => {
-    Animations.standard(this._electronsAV, 1, 5000).start(() => {
+    Animations.standard(this._electronsAV, { duration: 5000 }).start(() => {
       this._electronsAV.setValue(0)
       clearTimeout(this._electronSpinTimeout)
       

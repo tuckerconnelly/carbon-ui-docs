@@ -11,10 +11,12 @@ class ExampleCard extends Component {
   componentWillUpdate(_, nextState) {
     const { expanded } = this.state
     if (!expanded && nextState.expanded) {
-      Animations.staggered(this._heightAV, this._opacityAV).start()
+      Animations.standard(this._heightAV).start()
+      Animations.standard(this._opacityAV, { delay: 50 }).start()
     }
     if (expanded && !nextState.expanded) {
-      Animations.staggered(this._heightAV, this._opacityAV, 0).start()
+      Animations.standard(this._heightAV, { toValue: 0, delay: 50 }).start()
+      Animations.standard(this._opacityAV, { toValue: 0 }).start()
     }
   }
   

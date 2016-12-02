@@ -17,11 +17,11 @@ class ComponentsIndex extends Component {
   componentWillReceiveProps(next) {
     if (this.props.routeFragment === next.routeFragment) return
     
-    Animations.exit(this._showAV, 0, 112).start(() => {
+    Animations.exit(this._showAV, { duration: 112, toValue: 0 }).start(() => {
       this.setState({ activeComponent: next.routeFragment }, () => {
         if (this.props.routeFragment === undefined) return
         
-        Animations.entrance(this._showAV, 1, 112).start()
+        Animations.entrance(this._showAV, { duration: 112 }).start()
       })
     })
   }

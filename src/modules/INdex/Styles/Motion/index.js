@@ -103,7 +103,7 @@ class Motion extends Component {
         </Body1>
         
         <CodeBlock>{`
-        Animations.standard(this._showAV, 0).start()
+        Animations.standard(this._showAV, { toValue: 0 }).start()
         `}</CodeBlock>
       
         <Body1>
@@ -114,7 +114,7 @@ class Motion extends Component {
         </Body1>
         
         <CodeBlock>{`
-        Animations.standard(AnimatedValue, toValue, duration, delay)
+        Animations.standard(AnimatedValue, timingOptions)
         `}</CodeBlock>
   
         <Body1>
@@ -123,7 +123,7 @@ class Motion extends Component {
         </Body1>
         
         <CodeBlock style={styles.break}>{`
-        Animations.exit(this._exitAV, 1, 200, 50).start()
+        Animations.exit(this._exitAV, { duration: 200, delay: 50 }).start()
         `}</CodeBlock>
       
         <Divider style={styles.break} />
