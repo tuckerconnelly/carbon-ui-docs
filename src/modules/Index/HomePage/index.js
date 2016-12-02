@@ -31,8 +31,9 @@ export class HomePage extends Component {
   static HEADER_HEIGHT = 102 * gu
   
   componentDidMount() {
-    // animatedjs super janky on web, looking in to it
+    // animatedjs super janky on web and android, looking in to it
     if (Platform.OS === 'web') return
+    if (Platform.OS === 'android') return
     
     this._electronSpinTimeout = setTimeout(this._rotateElectrons, (Math.random() * 2000) + 1000)
   }

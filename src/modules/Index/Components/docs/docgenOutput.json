@@ -475,6 +475,28 @@
         "required": false,
         "description": "Callback for when the overlay is pressed"
       },
+      "onFinishOpening": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Callback for when the drawer is finished opening. Use this to load in the\nthe content afterwards if open/close animation performance is poor.",
+        "defaultValue": {
+          "value": "() => 0",
+          "computed": false
+        }
+      },
+      "onFinishClosing": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Callback for when the drawer is finished opening. Use this in conjunction\nwith onFinishOpening for performance optimization.",
+        "defaultValue": {
+          "value": "() => 0",
+          "computed": false
+        }
+      },
       "children": {
         "type": {
           "name": "node"
