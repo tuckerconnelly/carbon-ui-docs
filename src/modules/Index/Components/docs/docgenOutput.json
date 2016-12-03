@@ -268,7 +268,7 @@
     }
   },
   "../carbon-ui/src/components/ExpansionPanel.js": {
-    "description": "",
+    "description": "Expansion panels contain creation flows and allow lightweight editing of an element.",
     "methods": [],
     "props": {
       "expanded": {
