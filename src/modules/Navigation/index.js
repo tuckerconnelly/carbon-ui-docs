@@ -99,6 +99,10 @@ class Navigation extends Component {
                 primaryText="Usage with Exponent"
                 active={url === '/getting-started/exponent'}
                 onPress={() => this._navigate('/getting-started/exponent', 'Usage with Exponent')} />
+              <ListItem
+                primaryText="Known issues"
+                active={url === '/getting-started/known-issues'}
+                onPress={() => this._navigate('/getting-started/known-issues', 'Known issues')} />
             </ListItem>
             <ListItem
               primaryText="Styles"

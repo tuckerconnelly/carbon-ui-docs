@@ -8,12 +8,14 @@ import NotFound from 'src/modules/common/NotFound'
 
 import Installation from './Installation'
 import Exponent from './Exponent'
+import KnownIssues from './KnownIssues'
 
 const VALID_FRAGMENTS = [
   undefined,
   '',
   'installation',
   'exponent',
+  'known-issues',
 ]
 
 class StylingIndex extends Component {
@@ -34,6 +36,7 @@ class StylingIndex extends Component {
       <View style={styles.base}>
         <RouteFade active={routeFragment === 'installation'}><Installation /></RouteFade>
         <RouteFade active={routeFragment === 'exponent'}><Exponent /></RouteFade>
+        <RouteFade active={routeFragment === 'known-issues'}><KnownIssues /></RouteFade>
         <RouteFade active={VALID_FRAGMENTS.indexOf(routeFragment) === -1}><NotFound /></RouteFade>
       </View>
     )
