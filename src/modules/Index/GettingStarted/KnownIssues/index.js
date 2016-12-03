@@ -22,7 +22,7 @@ class Components extends Component {
           <Link to="https://facebook.github.io/react-native/docs/animated.html">
             Animated API
           </Link>{' '}
-          to make its its pretty animations and transitions cross-platform.
+          to make its pretty animations and transitions cross-platform.
           Unfortunately, the Animated API is pretty slow, particularly on Android.
         </Body1>
         <Body1 style={styles.smallBreak}>
@@ -55,10 +55,16 @@ class Components extends Component {
           </Link>{' '}
           wherever you can
         </Body1>
-        <Body1 style={styles.break}>
+        <Body1 style={styles.listItem}>
           • For big transitions (like the NavigationDrawer) render as few
           components as possible while the transition is happening, and then
           add them in when it&apos;s over
+        </Body1>
+        <Body1 style={styles.break}>
+          • Avoid{' '}
+          <Link to="https://facebook.github.io/react/docs/react-api.html#cloneelement">
+            React.cloneElement()
+          </Link>
         </Body1>
         
         <Body1>

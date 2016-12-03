@@ -1,6 +1,6 @@
  import React, { Component } from 'react'
  import { View } from 'react-native-universal'
- import { List, ListItem, Elevation } from 'carbon-ui'
+ import { List, ListItem, Elevation, gu } from 'carbon-ui'
 
  export default class Example extends Component {
    state = { expandedItems: [] }
@@ -23,8 +23,8 @@
              primaryText="Nested item"
              expanded={this.state.expandedItems.indexOf('nestedItem') !== -1}
              onPress={() => this._toggleExpandedItem('nestedItem')}>
-             <ListItem primaryText="Nested one" />
-             <ListItem primaryText="Nested two" />
+             <ListItem primaryText="Nested one" style={styles.nestedItem} />
+             <ListItem primaryText="Nested two" style={styles.nestedItem} />
            </ListItem>
            <ListItem primaryText="Item two" />
            <ListItem primaryText="Item three" />
@@ -32,4 +32,8 @@
        </View>
      )
    }
+ }
+
+ const styles = {
+   nestedItem: { paddingLeft: 18 * gu },
  }

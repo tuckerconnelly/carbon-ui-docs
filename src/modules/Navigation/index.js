@@ -94,15 +94,18 @@ class Navigation extends Component {
               <ListItem
                 primaryText="Installation"
                 active={url === '/getting-started/installation'}
-                onPress={() => this._navigate('/getting-started/installation', 'Installation')} />
+                onPress={() => this._navigate('/getting-started/installation', 'Installation')}
+                style={styles.nested1} />
               <ListItem
                 primaryText="Usage with Exponent"
                 active={url === '/getting-started/exponent'}
-                onPress={() => this._navigate('/getting-started/exponent', 'Usage with Exponent')} />
+                onPress={() => this._navigate('/getting-started/exponent', 'Usage with Exponent')}
+                style={styles.nested1} />
               <ListItem
                 primaryText="Known issues"
                 active={url === '/getting-started/known-issues'}
-                onPress={() => this._navigate('/getting-started/known-issues', 'Known issues')} />
+                onPress={() => this._navigate('/getting-started/known-issues', 'Known issues')}
+                style={styles.nested1} />
             </ListItem>
             <ListItem
               primaryText="Styles"
@@ -112,27 +115,33 @@ class Navigation extends Component {
               <ListItem
                 primaryText="Theme"
                 active={url === '/styles/theme'}
-                onPress={() => this._navigate('/styles/theme', 'Theme')} />
+                onPress={() => this._navigate('/styles/theme', 'Theme')}
+                style={styles.nested1} />
               <ListItem
                 primaryText="Colors"
                 active={url === '/styles/colors'}
-                onPress={() => this._navigate('/styles/colors', 'Colors')} />
+                onPress={() => this._navigate('/styles/colors', 'Colors')}
+                style={styles.nested1} />
               <ListItem
                 primaryText="Responsive UI"
                 active={url === '/styles/responsive'}
-                onPress={() => this._navigate('/styles/responsive', 'Responsive UI')} />
+                onPress={() => this._navigate('/styles/responsive', 'Responsive UI')}
+                style={styles.nested1} />
               <ListItem
                 primaryText="Elevation and shadows"
                 active={url === '/styles/elevation'}
-                onPress={() => this._navigate('/styles/elevation', 'Elevation and shadows')} />
+                onPress={() => this._navigate('/styles/elevation', 'Elevation and shadows')}
+                style={styles.nested1} />
               <ListItem
                 primaryText="Typography"
                 active={url === '/styles/typography'}
-                onPress={() => this._navigate('/styles/typography', 'Typography')} />
+                onPress={() => this._navigate('/styles/typography', 'Typography')}
+                style={styles.nested1} />
               <ListItem
                 primaryText="Motion"
                 active={url === '/styles/motion'}
-                onPress={() => this._navigate('/styles/motion', 'Motion')} />
+                onPress={() => this._navigate('/styles/motion', 'Motion')}
+                style={styles.nested1} />
             </ListItem>
             <ListItem
               primaryText="Components"
@@ -148,7 +157,8 @@ class Navigation extends Component {
                       key={name}
                       primaryText={name}
                       active={url === `/components/${name}`}
-                      onPress={() => this._navigate(`/components/${name}`, name)} />
+                      onPress={() => this._navigate(`/components/${name}`, name)}
+                      style={styles.nested1} />
                   )
                 }
                                 
@@ -158,13 +168,15 @@ class Navigation extends Component {
                     primaryText={name}
                     expanded={expandedItems.indexOf(name) !== -1}
                     nestingDepth={NESTING_DEPTH}
-                    onPress={() => this._toggleExpandedItem(name)}>
+                    onPress={() => this._toggleExpandedItem(name)}
+                    style={styles.nested1}>
                     {Object.keys(componentDocs.tree[name]).sort().map(nestedName =>
                       <ListItem
                         key={nestedName}
                         primaryText={nestedName}
                         active={url === `/components/${nestedName}`}
-                        onPress={() => this._navigate(`/components/${nestedName}`, nestedName)} />
+                        onPress={() => this._navigate(`/components/${nestedName}`, nestedName)}
+                        style={styles.nested2} />
                     )}
                   </ListItem>
                 )
@@ -235,7 +247,15 @@ const tStyles = theme => ps({
   
     color: Colors.blackSecondary,
   },
-
+  
+  nested1: {
+    paddingLeft: NESTING_DEPTH,
+  },
+  
+  nested2: {
+    paddingLeft: 2 * NESTING_DEPTH,
+  },
+  
 
   // Account for iOS header
   ios: {

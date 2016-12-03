@@ -363,7 +363,7 @@
     }
   },
   "../carbon-ui/src/components/List.js": {
-    "description": "Lists are best suited to presenting a homogeneous data type or sets of data\ntypes, such as images and text.\n\n### Examples\n\n     import React from 'react'\n     import { View } from 'react-native-universal'\n     import { List, ListItem, Elevation } from 'carbon-ui'\n\n     export default () =>\n       <View style={{ ...Elevation.dp2 }}>\n         <List>\n           <ListItem primaryText=\"One\" />\n           <ListItem primaryText=\"Two\" />\n           <ListItem primaryText=\"Three\" />\n         </List>\n       </View>\n\n---\n\n     import React, { Component } from 'react'\n     import { View } from 'react-native-universal'\n     import { List, ListItem, Elevation } from 'carbon-ui'\n\n     export default class Example extends Component {\n       state = { expandedItems: [] }\n\n       _toggleExpandedItem = name => {\n         const expandedItems = [...this.state.expandedItems]\n\n         const index = expandedItems.indexOf(name)\n         if (index === -1) return this.setState({ expandedItems: expandedItems.concat([name]) })\n\n         expandedItems.splice(index, 1)\n         this.setState({ expandedItems })\n       }\n\n       render() {\n         return (\n           <View style={{ ...Elevation.dp2 }}>\n             <List>\n               <ListItem\n                 primaryText=\"Nested item\"\n                 expanded={this.state.expandedItems.indexOf('nestedItem') !== -1}\n                 onPress={() => this._toggleExpandedItem('nestedItem')}>\n                 <ListItem primaryText=\"Nested one\" />\n                 <ListItem primaryText=\"Nested two\" />\n               </ListItem>\n               <ListItem primaryText=\"Item two\" />\n               <ListItem primaryText=\"Item three\" />\n             </List>\n           </View>\n         )\n       }\n     }",
+    "description": "Lists are best suited to presenting a homogeneous data type or sets of data\ntypes, such as images and text.\n\n### Examples\n\n     import React from 'react'\n     import { View } from 'react-native-universal'\n     import { List, ListItem, Elevation } from 'carbon-ui'\n\n     export default () =>\n       <View style={{ ...Elevation.dp2 }}>\n         <List>\n           <ListItem primaryText=\"One\" />\n           <ListItem primaryText=\"Two\" />\n           <ListItem primaryText=\"Three\" />\n         </List>\n       </View>\n\n---\n\n     import React, { Component } from 'react'\n     import { View } from 'react-native-universal'\n     import { List, ListItem, Elevation, gu } from 'carbon-ui'\n\n     export default class Example extends Component {\n       state = { expandedItems: [] }\n\n       _toggleExpandedItem = name => {\n         const expandedItems = [...this.state.expandedItems]\n\n         const index = expandedItems.indexOf(name)\n         if (index === -1) return this.setState({ expandedItems: expandedItems.concat([name]) })\n\n         expandedItems.splice(index, 1)\n         this.setState({ expandedItems })\n       }\n\n       render() {\n         return (\n           <View style={{ ...Elevation.dp2 }}>\n             <List>\n               <ListItem\n                 primaryText=\"Nested item\"\n                 expanded={this.state.expandedItems.indexOf('nestedItem') !== -1}\n                 onPress={() => this._toggleExpandedItem('nestedItem')}>\n                 <ListItem primaryText=\"Nested one\" style={styles.nestedItem} />\n                 <ListItem primaryText=\"Nested two\" style={styles.nestedItem} />\n               </ListItem>\n               <ListItem primaryText=\"Item two\" />\n               <ListItem primaryText=\"Item three\" />\n             </List>\n           </View>\n         )\n       }\n     }\n\n     const styles = {\n       nestedItem: { paddingLeft: 18 * gu },\n     }",
     "methods": [],
     "props": {
       "children": {
@@ -383,7 +383,7 @@
     }
   },
   "../carbon-ui/src/components/ListItem.js": {
-    "description": "Individual items for the <List /> component.\n\nCan become a nested menu item it has ListItem for children.\n\nExamples in the List page.",
+    "description": "Individual items for the <List /> component.\n\nCan become a nested menu item it has ListItem for children. Currently you\nneed to set the padding manually for these for performance reasons, but\nmay be automatic in the future.\n\nExamples in the List page.",
     "methods": [],
     "props": {
       "primaryText": {
@@ -456,17 +456,6 @@
         },
         "required": false,
         "description": "`true` if the list item is currently selected"
-      },
-      "nestingDepth": {
-        "type": {
-          "name": "number"
-        },
-        "required": false,
-        "description": "The depth, in px, of nested items. Only applies if there are children\nListItems. The default is the Material Design spec value.",
-        "defaultValue": {
-          "value": "18 * gu",
-          "computed": false
-        }
       },
       "expanded": {
         "type": {
