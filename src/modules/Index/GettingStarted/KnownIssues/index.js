@@ -16,7 +16,7 @@ class Components extends Component {
           There&apos;s only one big known issue currently with Carbon UI and that&apos;s…
         </Body1>
         
-        <Headline style={styles.headline}>Performance on Android</Headline>
+        <Headline style={styles.headline}>Performance</Headline>
         <Body1 style={styles.smallBreak}>
           Carbon UI leans pretty heavily on the{' '}
           <Link to="https://facebook.github.io/react-native/docs/animated.html">
@@ -37,8 +37,7 @@ class Components extends Component {
           degrades to non-animated components when that&apos;s not enough.
         </Body1>
         <Body1 style={styles.smallBreak}>
-          If you&apos;re building for Android, though, you&apos;ll probably need
-          to do some tweaking on your end.
+          You may need to do some tweaking on your end, though.
         </Body1>
         
         <Body2 style={styles.smallBreak}>Performance tips</Body2>
@@ -65,6 +64,10 @@ class Components extends Component {
         <Body1>
           Those should take care of 80% of your performance problems. If you
           still need a little more oomph, check out{' '}
+          <Link to="https://facebook.github.io/react/docs/perf.html">
+            Performance Tools
+          </Link>{' '}
+          and{' '}
           <Link to="https://facebook.github.io/react-native/docs/android-ui-performance.html">
             Profiling Android UI Performance
           </Link>.
