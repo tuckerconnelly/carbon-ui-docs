@@ -88,33 +88,36 @@ export class HomePage extends Component {
           </Body1>
           <Body2 style={styles.writeOnce}>write-once, run-anywhere apps</Body2>
         
-          <View css={styles.cardList} renderToHardwareTextureAndroid >
-            <Paper css={styles.card} elevation={4}>
-              <Subheading style={styles.cardHeading}>Runs everywhere</Subheading>
-              <Body1 style={styles.cardBody}>
-                Whether you&apos;re building for iOS, android, web, or all three,
-                Carbon UI runs seamlessly on on all platforms, without any platform-specific
-                code.
-              </Body1>
-            </Paper>
-            
-            <Paper css={[styles.card, styles.cardMiddle]} elevation={4}>
-              <Subheading style={styles.cardHeading}>Highly customizable</Subheading>
-              <Body1 style={styles.cardBody}>
-                Carbon UI&apos;s themes, animations, and grid-system are all very easy
-                to customize and modify to your unique app.
-              </Body1>
-            </Paper>
-            
-            <Paper css={styles.card} elevation={4}>
-              <Subheading style={styles.cardHeading}>Easy to use</Subheading>
-              <Body1 style={styles.cardBody}>
-                Simple-yet-powerful components and helpers hide all of Material Design&apos;s
-                complex specifications, so you can focus on making beautiful
-                cross-platform experiences.
-              </Body1>
-            </Paper>
-          </View>
+          {/* Android having problems rendering too many things */}
+          {Platform.OS !== 'android' &&
+            <View css={styles.cardList} renderToHardwareTextureAndroid >
+              <Paper css={styles.card} elevation={4}>
+                <Subheading style={styles.cardHeading}>Runs everywhere</Subheading>
+                <Body1 style={styles.cardBody}>
+                  Whether you&apos;re building for iOS, android, web, or all three,
+                  Carbon UI runs seamlessly on on all platforms, without any platform-specific
+                  code.
+                </Body1>
+              </Paper>
+              
+              <Paper css={[styles.card, styles.cardMiddle]} elevation={4}>
+                <Subheading style={styles.cardHeading}>Highly customizable</Subheading>
+                <Body1 style={styles.cardBody}>
+                  Carbon UI&apos;s themes, animations, and grid-system are all very easy
+                  to customize and modify to your unique app.
+                </Body1>
+              </Paper>
+              
+              <Paper css={styles.card} elevation={4}>
+                <Subheading style={styles.cardHeading}>Easy to use</Subheading>
+                <Body1 style={styles.cardBody}>
+                  Simple-yet-powerful components and helpers hide all of Material Design&apos;s
+                  complex specifications, so you can focus on making beautiful
+                  cross-platform experiences.
+                </Body1>
+              </Paper>
+            </View>
+          }
           
           <RaisedButton
             style={styles.getStarted}

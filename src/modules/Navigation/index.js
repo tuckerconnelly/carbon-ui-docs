@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { pushState } from 'react-stack-nav'
 import ps from 'react-native-ps'
-import { Animated, View, Linking } from 'react-native-universal'
+import { Animated, Platform, Linking } from 'react-native-universal'
 import {
   NavigationDrawer,
   TouchableRipple,
@@ -48,8 +48,9 @@ class Navigation extends Component {
   
   _contentAV = new Animated.Value(this.props.menuOpen ? 1 : 0)
   _fadeInContent = () => {
-    this.setState({ contentVisible: true })
-    Animations.entrance(this._contentAV).start()
+    this.setState({ contentVisible: true }, () =>
+      Animations.entrance(this._contentAV, { useNativeDriver: true }).start()
+    )
   }
   _hideContent = () => new Promise(resolve =>
     this.setState({ contentVisible: false }, () => {
@@ -63,6 +64,8 @@ class Navigation extends Component {
     const { expandedItems, contentVisible } = this.state
     
     const styles = tStyles(theme)
+    // PERFORMANCE OPTIMIZATION Disable list animations on android
+    const ListComponent = Platform.OS === 'android' ? List : AnimatedList
     
     return (
       <NavigationDrawer
@@ -71,16 +74,17 @@ class Navigation extends Component {
         open={menuOpen}
         onOverlayPress={closeMenu}
         {...other}>
-        <TouchableRipple rippleColor={Colors.white} onPress={() => this._navigate('')}>
-          <View style={styles.listHeading}>
-            <Headline style={styles.listHeadingText}>Carbon UI</Headline>
-          </View>
+        <TouchableRipple
+          rippleColor={Colors.white}
+          style={styles.listHeading}
+          onPress={() => this._navigate('')}>
+          <Headline style={styles.listHeadingText}>Carbon UI</Headline>
         </TouchableRipple>
         {contentVisible &&
-          <AnimatedList
+          <ListComponent
             style={[
               styles.list,
-              animate('opacity', 0, 1, this._contentAV),
+              Platform.OS !== 'android' && animate('opacity', 0, 1, this._contentAV),
             ]}>
             <ListItem
               primaryText="Getting started"
@@ -176,7 +180,7 @@ class Navigation extends Component {
             <ListItem
               primaryText="GitHub"
               onPress={() => this._openExternalLink('https://github.com/tuckerconnelly/carbon-ui')} />
-          </AnimatedList>
+          </ListComponent>
         }
       </NavigationDrawer>
     )
