@@ -1,10 +1,7 @@
 import React, { Component, PropTypes } from 'react'
-import { View } from 'react-native-universal'
-import { Display1, Headline, Body1, Body2, Divider, connectTheme, gu } from 'carbon-ui'
+import { Display1, Headline, Body1, Body2, connectTheme, gu } from 'carbon-ui'
 
 import createLeafOrchestrator from 'src/modules/common/createLeafOrchestrator'
-import CodeBlock from 'src/modules/common/CodeBlock'
-import InlineCode from 'src/modules/common/InlineCode'
 import Link from 'src/modules/common/Link'
 import Content from 'src/modules/common/Content'
 
@@ -16,7 +13,7 @@ class Components extends Component {
       <Content style={styles.base}>
         <Display1 style={styles.display1}>Known issues</Display1>
         <Body1 style={styles.break}>
-          There&apos;s only one big issue currently with Carbon UI and that&apos;s…
+          There&apos;s only one big known issue currently with Carbon UI and that&apos;s…
         </Body1>
         
         <Headline style={styles.headline}>Performance on Android</Headline>
