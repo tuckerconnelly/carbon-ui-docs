@@ -267,6 +267,66 @@
       }
     }
   },
+  "../carbon-ui/src/components/ExpansionPanel.js": {
+    "description": "",
+    "methods": [],
+    "props": {
+      "expanded": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Will expand the panel if true.",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "onExpand": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "The handler for when the the user presses to expand",
+        "defaultValue": {
+          "value": "() => 0",
+          "computed": false
+        }
+      },
+      "label": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "The label for the collapsed state"
+      },
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "The body of the expanded panel"
+      },
+      "actions": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "The buttons on the bottom of the expanded panel"
+      },
+      "approximateHeight": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "This component animates its height using maxHeight so it can accept any\ncontent for it's children property and still animate its height. Pass\nan approximate height when expanded here for a more accurate animation.",
+        "defaultValue": {
+          "value": "50 * gu",
+          "computed": false
+        }
+      }
+    }
+  },
   "../carbon-ui/src/components/Icon.js": {
     "description": "A system icon, or UI icon, symbolizes a command, file, device, or directory.\nSystem icons are also used to represent common actions like trash, print,\nand save.\n\nThe Icon's name maps to the material icons font.\n\n### Examples\n\n     import React from 'react'\n     import { View } from 'react-native-universal'\n     import { Icon } from 'carbon-ui'\n\n     export default () =>\n       <View style={{ flexDirection: 'row', justifyContent: 'flex-start' }}>\n         <Icon name=\"thumb_up\" />\n         <Icon name=\"label\" />\n         <Icon name=\"toc\" />\n       </View>",
     "methods": [],
@@ -507,7 +567,7 @@
     }
   },
   "../carbon-ui/src/components/Paper.js": {
-    "description": "Generic Paper component. The <div /> of Material Design.\n\n### Examples\n\n    import React from 'react'\n    import { Paper, Body1 } from 'carbon-ui'\n\n    export default () =>\n      <Paper elevation={8}>\n        <Body1>Hey I'm just some paper</Body1>\n      </Paper>",
+    "description": "Generic Paper component. The <div /> of Material Design.\n\n### Examples\n\n    import React from 'react'\n    import { Paper, Body1, gu } from 'carbon-ui'\n\n    export default () =>\n      <Paper elevation={8} style={{ padding: 4 * gu }}>\n        <Body1>Hey I'm just some paper</Body1>\n      </Paper>",
     "methods": [],
     "props": {
       "elevation": {
@@ -539,13 +599,6 @@
               "name": "array"
             }
           ]
-        },
-        "required": false,
-        "description": ""
-      },
-      "css": {
-        "type": {
-          "name": "object"
         },
         "required": false,
         "description": ""

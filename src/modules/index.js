@@ -17,6 +17,16 @@ import { openMenu } from './duck'
 class Layout extends Component {
   state = { scrollY: 0 }
   
+  componentWillReceiveProps(next) {
+    const { url } = this.props
+    if (url !== next.url) {
+      // Wait for fade transition, kinda hacky
+      setTimeout(() => this._scrollView.scrollTo({ x: 0, y: 0, animated: false }), 112)
+    }
+  }
+  
+  _scrollView = null
+  
   _updateScrollY = e => {
     this.setState({ scrollY: e.nativeEvent.contentOffset.y })
   }
@@ -34,6 +44,7 @@ class Layout extends Component {
         <Navigation />
         <ScrollView
           scrollEventThrottle={50}
+          ref={c => this._scrollView = c}
           onScroll={this._updateScrollY}>
           <Index />
         </ScrollView>

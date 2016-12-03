@@ -31,9 +31,8 @@ export class HomePage extends Component {
   static HEADER_HEIGHT = 102 * gu
   
   componentDidMount() {
-    // animatedjs super janky on web and android, looking in to it
+    // animatedjs super janky on web, looking in to it
     if (Platform.OS === 'web') return
-    if (Platform.OS === 'android') return
     
     this._electronSpinTimeout = setTimeout(this._rotateElectrons, (Math.random() * 2000) + 1000)
   }
@@ -42,7 +41,7 @@ export class HomePage extends Component {
   }
   
   _rotateElectrons = () => {
-    Animations.standard(this._electronsAV, { duration: 5000 }).start(() => {
+    Animations.standard(this._electronsAV, { duration: 5000, useNativeDriver: true }).start(() => {
       this._electronsAV.setValue(0)
       clearTimeout(this._electronSpinTimeout)
       
@@ -69,6 +68,7 @@ export class HomePage extends Component {
               style={styles.logoCopy} />
             <Animated.Image
               source={require('src/assets/images/app-logo-electrons.png')}
+              renderToHardwareTextureAndroid
               style={[
                 styles.logoElectrons,
                 animate(styles.logoElectrons, styles.logoElectronsRotated, this._electronsAV),
@@ -88,7 +88,7 @@ export class HomePage extends Component {
           </Body1>
           <Body2 style={styles.writeOnce}>write-once, run-anywhere apps</Body2>
         
-          <View css={styles.cardList}>
+          <View css={styles.cardList} renderToHardwareTextureAndroid >
             <Paper css={styles.card} elevation={4}>
               <Subheading style={styles.cardHeading}>Runs everywhere</Subheading>
               <Body1 style={styles.cardBody}>
@@ -98,7 +98,7 @@ export class HomePage extends Component {
               </Body1>
             </Paper>
             
-            <Paper style={[styles.card, styles.cardMiddle]} elevation={4}>
+            <Paper css={[styles.card, styles.cardMiddle]} elevation={4}>
               <Subheading style={styles.cardHeading}>Highly customizable</Subheading>
               <Body1 style={styles.cardBody}>
                 Carbon UI&apos;s themes, animations, and grid-system are all very easy
@@ -106,7 +106,7 @@ export class HomePage extends Component {
               </Body1>
             </Paper>
             
-            <Paper style={styles.card} elevation={4}>
+            <Paper css={styles.card} elevation={4}>
               <Subheading style={styles.cardHeading}>Easy to use</Subheading>
               <Body1 style={styles.cardBody}>
                 Simple-yet-powerful components and helpers hide all of Material Design&apos;s
@@ -258,6 +258,7 @@ const tStyles = theme => ({
   },
   
   card: {
+    padding: 4 * gu,
     marginBottom: 5 * gu,
     
     flexDirection: 'column',
