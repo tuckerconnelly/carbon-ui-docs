@@ -372,13 +372,6 @@
         },
         "required": false,
         "description": "Usually a collection of `ListItem`s"
-      },
-      "style": {
-        "type": {
-          "name": "object"
-        },
-        "required": false,
-        "description": ""
       }
     }
   },
@@ -1103,7 +1096,15 @@
       },
       "style": {
         "type": {
-          "name": "object"
+          "name": "union",
+          "value": [
+            {
+              "name": "object"
+            },
+            {
+              "name": "array"
+            }
+          ]
         },
         "required": false,
         "description": "The style of the containing TouchableRipple (which is a View)"
