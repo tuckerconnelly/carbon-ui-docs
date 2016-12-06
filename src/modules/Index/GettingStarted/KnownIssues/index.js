@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react'
+import { Platform } from 'react-native-universal'
 import { Display1, Headline, Body1, Body2, connectTheme, gu } from 'carbon-ui'
 
 import createLeafOrchestrator from 'src/modules/common/createLeafOrchestrator'
@@ -23,7 +24,8 @@ class Components extends Component {
             Animated API
           </Link>{' '}
           to make its pretty animations and transitions cross-platform.
-          Unfortunately, the Animated API is pretty slow, particularly on Android.
+          Unfortunately, the Animated API is pretty slow
+          {Platform.OS !== 'ios' && ' , particularly on Android'}.
         </Body1>
         <Body1 style={styles.smallBreak}>
           The React Native team is doing{' '}
@@ -48,13 +50,15 @@ class Components extends Component {
           </Link>{' '}
           wherever you can
         </Body1>
-        <Body1 style={styles.listItem}>
-          • Use{' '}
-          <Link to="https://facebook.github.io/react-native/docs/view.html#rendertohardwaretextureandroid">
-            renderToHardwareTextureAndroid
-          </Link>{' '}
-          wherever you can
-        </Body1>
+        {Platform.OS !== 'ios' &&
+          <Body1 style={styles.listItem}>
+            • Use{' '}
+            <Link to="https://facebook.github.io/react-native/docs/view.html#rendertohardwaretextureandroid">
+              renderToHardwareTextureAndroid
+            </Link>{' '}
+            wherever you can
+          </Body1>
+        }
         <Body1 style={styles.listItem}>
           • For big transitions (like the NavigationDrawer) render as few
           components as possible while the transition is happening, and then
@@ -67,17 +71,19 @@ class Components extends Component {
           </Link>
         </Body1>
         
-        <Body1>
-          Those should take care of 80% of your performance problems. If you
-          still need a little more oomph, check out{' '}
-          <Link to="https://facebook.github.io/react/docs/perf.html">
-            Performance Tools
-          </Link>{' '}
-          and{' '}
-          <Link to="https://facebook.github.io/react-native/docs/android-ui-performance.html">
-            Profiling Android UI Performance
-          </Link>.
-        </Body1>
+        {Platform.OS !== 'ios' &&
+          <Body1>
+            Those should take care of 80% of your performance problems. If you
+            still need a little more oomph, check out{' '}
+            <Link to="https://facebook.github.io/react/docs/perf.html">
+              Performance Tools
+            </Link>{' '}
+            and{' '}
+            <Link to="https://facebook.github.io/react-native/docs/android-ui-performance.html">
+              Profiling Android UI Performance
+            </Link>.
+          </Body1>
+        }
       </Content>
     )
   }

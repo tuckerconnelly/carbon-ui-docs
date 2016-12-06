@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react'
-import { View } from 'react-native-universal'
+import { View, Platform } from 'react-native-universal'
 import { Display1, Headline, Body1, Body2, Divider, connectTheme, gu } from 'carbon-ui'
 
 import createLeafOrchestrator from 'src/modules/common/createLeafOrchestrator'
@@ -8,7 +8,7 @@ import InlineCode from 'src/modules/common/InlineCode'
 import Link from 'src/modules/common/Link'
 import Content from 'src/modules/common/Content'
 
-class Components extends Component {
+class Installation extends Component {
   render() {
     const styles = tStyles(this.props.theme)
     
@@ -31,7 +31,7 @@ class Components extends Component {
             style={styles.dependencyLink}>
             react-native
           </Link>
-          <Body1>If you want to run carbon-ui in iOS or Android</Body1>
+          <Body1>If you want to run carbon-ui natively</Body1>
         </View>
         <View style={styles.smallBreak}>
           <Link
@@ -56,16 +56,15 @@ class Components extends Component {
             react-native-match-media
           </Link>
           <Body1>
-            If you want carbon-ui to adjust styles for screen size on iOS and
-            Android. This lib also has a peer dependency on{' '}
+            If you want carbon-ui to adjust styles for screen size on native
+            platforms. This lib also has a peer dependency on{' '}
             <Link to="https://github.com/walmartlabs/react-native-orientation-listener">
               react-native-orientation-listener
             </Link>.
           </Body1>
           <Body1>
             You need to set <InlineCode>global.matchMedia</InlineCode>
-            in your <InlineCode>index.ios.js</InlineCode> or
-            <InlineCode>index.android.js</InlineCode> file like:
+            in your <InlineCode>index</InlineCode> file like:
           </Body1>
           <CodeBlock>{`
           import matchMedia from 'react-native-match-media'
@@ -99,21 +98,26 @@ class Components extends Component {
 
         export default App
         `}</CodeBlock>
-        <Body2>Android</Body2>
-        <Body1>
-          Android's pretty simple--just gotta put all the fonts in the
-          <InlineCode>android/app/src/main/assets/fonts</InlineCode>
-          folder and they'll automatically be usable by the app.
-        </Body1>
-        <Body1 style={styles.smallBreak}>
-          You can grab all the Roboto fonts from{' '}
-          <Link to="https://github.com/tuckerconnelly/carbon-ui-docs/tree/master/android/app/src/main/assets/fonts">
-            this app's repo
-          </Link>.
-        </Body1>
+        {/* Can't mention Android on iOS :/ */}
+        {Platform.OS !== 'ios' &&
+          <View>
+            <Body2>Android</Body2>
+            <Body1>
+              Android's pretty simple--just gotta put all the fonts in the
+              <InlineCode>android/app/src/main/assets/fonts</InlineCode>
+              folder and they'll automatically be usable by the app.
+            </Body1>
+            <Body1 style={styles.smallBreak}>
+              You can grab all the Roboto fonts from{' '}
+              <Link to="https://github.com/tuckerconnelly/carbon-ui-docs/tree/master/android/app/src/main/assets/fonts">
+                this app's repo
+              </Link>.
+            </Body1>
+          </View>
+        }
         <Body2>iOS</Body2>
         <Body1>
-          iOS is a little more complicated than Android (thanks Apple).
+          iOS is a little more complicated.
           You'll need all the Roboto fonts, which you can get from{' '}
           <Link to="https://github.com/tuckerconnelly/carbon-ui-docs/tree/master/android/app/src/main/assets/fonts">
             this app's repo
@@ -125,7 +129,7 @@ class Components extends Component {
   }
 }
 
-Components.propTypes = {
+Installation.propTypes = {
   // connectTheme
   theme: PropTypes.object.isRequired,
 }
@@ -133,7 +137,7 @@ Components.propTypes = {
 export default
   createLeafOrchestrator('installation')(
   connectTheme(
-  Components))
+  Installation))
 
 const tStyles = theme => ({
   break: {

@@ -94,8 +94,12 @@ export class HomePage extends Component {
               <Paper css={styles.card} elevation={4}>
                 <Subheading style={styles.cardHeading}>Runs everywhere</Subheading>
                 <Body1 style={styles.cardBody}>
-                  Whether you&apos;re building for iOS, android, web, or all three,
-                  Carbon UI runs seamlessly on on all platforms, without any platform-specific
+                  Whether you&apos;re building for{' '}
+                  {Platform.OS === 'ios' ?
+                    'native or web' :
+                    'iOS, Android, web, or all three'
+                  },
+                  Carbon UI runs seamlessly on all platforms, without any platform-specific
                   code.
                 </Body1>
               </Paper>

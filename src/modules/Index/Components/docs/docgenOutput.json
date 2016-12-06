@@ -1,6 +1,6 @@
 {
   "../carbon-ui/src/components/AppBar.js": {
-    "description": "The app bar, formerly known as the action bar in Android, is a special kind\nof toolbar that’s used for branding, navigation, search, and actions.\n\n    import React from 'react'\n    import { View } from 'react-native-universal'\n    import { AppBar } from 'carbon-ui'\n\n    export default () =>\n      <View>\n        <AppBar title=\"The app\" />\n      </View>",
+    "description": "The app bar is a special kind\nof toolbar that’s used for branding, navigation, search, and actions.\n\n    import React from 'react'\n    import { View } from 'react-native-universal'\n    import { AppBar } from 'carbon-ui'\n\n    export default () =>\n      <View>\n        <AppBar title=\"The app\" />\n      </View>",
     "methods": [],
     "props": {
       "title": {

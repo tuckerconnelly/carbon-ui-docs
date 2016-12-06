@@ -37,7 +37,7 @@ class RelatedLibraries extends Component {
           </Link>
           <Body1>
             react-stack-nav is a simple routing library for React Native and
-            React apps. It supports back and forward buttons on Android and Web,
+            React apps. It supports back and forward buttons on all platforms,
             deep linking, and server-side rendering. It also lets you compose
             routes declaratively.
           </Body1>
