@@ -72,6 +72,7 @@ class Navigation extends Component {
         onFinishOpening={this._fadeInContent}
         onStartClosing={this._hideContent}
         open={menuOpen}
+        menuStyle={styles.menu}
         onOverlayPress={closeMenu}
         {...other}>
         <TouchableRipple
@@ -229,6 +230,7 @@ export default
 
 const tStyles = theme => ps({
   base: {},
+  menu: {},
   
   listHeading: {
     backgroundColor: theme.colors.primary,
@@ -261,6 +263,13 @@ const tStyles = theme => ps({
   ios: {
     listHeading: {
       paddingTop: 24,
+    },
+  },
+  
+  // Fixes a bug in chrome: https://github.com/tuckerconnelly/carbon-ui/issues/2
+  web: {
+    menu: {
+      boxShadow: 'none',
     },
   },
 })
