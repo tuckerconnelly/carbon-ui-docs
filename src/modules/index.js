@@ -40,7 +40,7 @@ class Layout extends Component {
         <AppBar
           title={title}
           elevated={url !== '' || scrollY > HomePage.HEADER_HEIGHT}
-          onLeftIconPress={openMenu} />
+          onNavIconPress={openMenu} />
         <Navigation />
         <ScrollView
           scrollEventThrottle={50}

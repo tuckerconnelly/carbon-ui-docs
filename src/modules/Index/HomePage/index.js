@@ -23,8 +23,8 @@ import {
 import createLeafOrchestrator from 'src/modules/common/createLeafOrchestrator'
 import Content from 'src/modules/common/Content'
 
-const APP_STORE_URL = 'https://itunes.apple.com/us/genre/ios/id36'
-const GOOGLE_PLAY_URL = 'https://play.google.com/store/apps'
+const APP_STORE_URL = 'https://itunes.apple.com/us/app/carbon-ui-docs/id1181483222?ls=1&mt=8'
+const GOOGLE_PLAY_URL = 'https://play.google.com/store/apps/details?id=com.carbon_ui.android'
 const LOGO_SIZE = 50 * gu
 
 export class HomePage extends Component {
@@ -310,10 +310,14 @@ const tStyles = theme => ({
     flexDirection: 'row',
   },
   
+  badgeAppStore: {
+    marginRight: 3 * gu,
+  },
+  
   badgeGooglePlay: {
     position: 'relative',
-    top: -10,
-
-    height: 60,
+    
+    height: 42,
+    marginTop: -1,
   },
 })
