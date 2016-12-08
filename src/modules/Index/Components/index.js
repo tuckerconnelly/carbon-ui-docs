@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { Animated, View } from 'react-native-universal'
-import { indexRedirect, createOrchestrator } from 'react-stack-nav'
+import { replaceTop, createOrchestrator } from 'react-stack-nav'
 import { Animations } from 'carbon-ui'
 import { animate } from 'uranium'
 
@@ -30,8 +30,8 @@ class ComponentsIndex extends Component {
     this._indexRedirect(nextProps)
   }
   
-  _indexRedirect = ({ routeFragment, indexRedirect }) =>
-    routeFragment === '' && indexRedirect(0, 'AppBar', 'AppBar')
+  _indexRedirect = ({ routeFragment, replaceTop }) =>
+    routeFragment === '' && replaceTop(0, 'AppBar', 'AppBar')
   
   _showAV = new Animated.Value(this.props.routeFragment === undefined ? 0 : 1)
   
@@ -52,7 +52,7 @@ ComponentsIndex.contextTypes = {
 
 ComponentsIndex.propTypes = {
   // connect
-  indexRedirect: PropTypes.func.isRequired, // eslint-disable-line react/no-unused-prop-types
+  replaceTop: PropTypes.func.isRequired, // eslint-disable-line react/no-unused-prop-types
   
   // createOrchestrator
   routeFragment: PropTypes.string,
@@ -61,7 +61,7 @@ ComponentsIndex.propTypes = {
 const mapStateToProps = ({ navigation }) => ({
   url: navigation.history[navigation.index].url,
 })
-const mapDispatchToProps = { indexRedirect }
+const mapDispatchToProps = { replaceTop }
 
 export default
   connect(mapStateToProps, mapDispatchToProps)(

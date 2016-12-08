@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { View } from 'react-native-universal'
-import { indexRedirect, createOrchestrator } from 'react-stack-nav'
+import { replaceTop, createOrchestrator } from 'react-stack-nav'
 
 import RouteFade from 'src/modules/common/RouteFade'
 import NotFound from 'src/modules/common/NotFound'
@@ -30,8 +30,8 @@ class StyleIndex extends Component {
     this._indexRedirect(nextProps)
   }
   
-  _indexRedirect = ({ routeFragment, indexRedirect }) =>
-    routeFragment === '' && indexRedirect(0, 'Theme', 'theme')
+  _indexRedirect = ({ routeFragment, replaceTop }) =>
+    routeFragment === '' && replaceTop(0, 'Theme', 'theme')
   
   render() {
     const { routeFragment } = this.props
@@ -55,7 +55,7 @@ StyleIndex.contextTypes = {
 
 StyleIndex.propTypes = {
   // connect
-  indexRedirect: PropTypes.func.isRequired, // eslint-disable-line react/no-unused-prop-types
+  replaceTop: PropTypes.func.isRequired, // eslint-disable-line react/no-unused-prop-types
   
   // createOrchestrator
   routeFragment: PropTypes.string,
@@ -64,7 +64,7 @@ StyleIndex.propTypes = {
 const mapStateToProps = ({ navigation }) => ({
   url: navigation.history[navigation.index].url,
 })
-const mapDispatchToProps = { indexRedirect }
+const mapDispatchToProps = { replaceTop }
 
 export default
   connect(mapStateToProps, mapDispatchToProps)(
