@@ -144,45 +144,48 @@ class Navigation extends Component {
                 onPress={() => this._navigate('/styles/motion', 'Motion')}
                 style={styles.nested1} />
             </ListItem>
-            <ListItem
-              primaryText="Components"
-              expanded={expandedItems.indexOf('components') !== -1}
-              nestingDepth={NESTING_DEPTH}
-              onPress={() => this._toggleExpandedItem('components')}>
-              {Object.keys(componentDocs.tree).sort().map(name => {
-                const isComponent = componentDocs.tree[name].description
-                
-                if (isComponent) {
+            {/* Temporarily disable till Animated gets its shit together */}
+            {Platform.OS !== 'android' &&
+              <ListItem
+                primaryText="Components"
+                expanded={expandedItems.indexOf('components') !== -1}
+                nestingDepth={NESTING_DEPTH}
+                onPress={() => this._toggleExpandedItem('components')}>
+                {Object.keys(componentDocs.tree).sort().map(name => {
+                  const isComponent = componentDocs.tree[name].description
+                  
+                  if (isComponent) {
+                    return (
+                      <ListItem
+                        key={name}
+                        primaryText={name}
+                        active={url === `/components/${name}`}
+                        onPress={() => this._navigate(`/components/${name}`, name)}
+                        style={styles.nested1} />
+                    )
+                  }
+                                  
                   return (
                     <ListItem
                       key={name}
                       primaryText={name}
-                      active={url === `/components/${name}`}
-                      onPress={() => this._navigate(`/components/${name}`, name)}
-                      style={styles.nested1} />
+                      expanded={expandedItems.indexOf(name) !== -1}
+                      nestingDepth={NESTING_DEPTH}
+                      onPress={() => this._toggleExpandedItem(name)}
+                      style={styles.nested1}>
+                      {Object.keys(componentDocs.tree[name]).sort().map(nestedName =>
+                        <ListItem
+                          key={nestedName}
+                          primaryText={nestedName}
+                          active={url === `/components/${nestedName}`}
+                          onPress={() => this._navigate(`/components/${nestedName}`, nestedName)}
+                          style={styles.nested2} />
+                      )}
+                    </ListItem>
                   )
-                }
-                                
-                return (
-                  <ListItem
-                    key={name}
-                    primaryText={name}
-                    expanded={expandedItems.indexOf(name) !== -1}
-                    nestingDepth={NESTING_DEPTH}
-                    onPress={() => this._toggleExpandedItem(name)}
-                    style={styles.nested1}>
-                    {Object.keys(componentDocs.tree[name]).sort().map(nestedName =>
-                      <ListItem
-                        key={nestedName}
-                        primaryText={nestedName}
-                        active={url === `/components/${nestedName}`}
-                        onPress={() => this._navigate(`/components/${nestedName}`, nestedName)}
-                        style={styles.nested2} />
-                    )}
-                  </ListItem>
-                )
-              })}
-            </ListItem>
+                })}
+              </ListItem>
+            }
             <ListItem
               primaryText="Related libraries"
               active={url === '/related-libraries'}
