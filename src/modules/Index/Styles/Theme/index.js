@@ -37,7 +37,7 @@ class Theme extends Component {
         <Caption style={styles.smallBreak}>
           Check out the{' '}
           <Link
-            to="https://github.com/tuckerconnelly/carbon-ui/blob/master/src/themes/light.js"
+            to="https://github.com/tuckerconnelly/carbon-ui/blob/master/src/theme/themes/light.js"
             style={styles.captionLink}>
             default light theme object
           </Link>{' '}
