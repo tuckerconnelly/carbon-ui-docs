@@ -122,9 +122,9 @@ class Responsive extends Component {
       
         <Body1 style={styles.break}>
           You can check out the source{' '}
-          <Link to="https://github.com/tuckerconnelly/carbon-ui/blob/master/src/styles/Responsive.js">
+          <Link to="https://github.com/tuckerconnelly/carbon-ui/blob/master/src/style/Responsive.js">
             here
-          </Link>.
+          </Link> for a clearer picture.
         </Body1>
         
         <Divider style={styles.break} />
