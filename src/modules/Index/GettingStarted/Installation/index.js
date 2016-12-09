@@ -122,7 +122,10 @@ class Installation extends Component {
           <Link to="https://github.com/tuckerconnelly/carbon-ui-docs/tree/master/android/app/src/main/assets/fonts">
             this app's repo
           </Link>.{' '}
-          Once you have them, use this guide to get them all installed.
+          Once you have them, use{' '}
+          <Link to="https://medium.com/@dabit3/adding-custom-fonts-to-react-native-b266b41bff7f#.shz3o3lwp">
+            this guide
+          </Link>{' '}to get them all installed.
         </Body1>
       </Content>
     )
