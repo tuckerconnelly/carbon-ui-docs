@@ -268,11 +268,4 @@ const tStyles = theme => ps({
       paddingTop: 24,
     },
   },
-  
-  // Fixes a bug in chrome: https://github.com/tuckerconnelly/carbon-ui/issues/2
-  web: {
-    menu: {
-      boxShadow: 'none',
-    },
-  },
 })
