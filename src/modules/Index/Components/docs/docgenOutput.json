@@ -1,6 +1,6 @@
 {
   "../carbon-ui/src/components/AppBar.js": {
-    "description": "The app bar is a special kind\nof toolbar that’s used for branding, navigation, search, and actions.\n\n    import React from 'react'\n    import { View } from 'react-native-universal'\n    import { AppBar } from 'carbon-ui'\n\n    export default () =>\n      <View>\n        <AppBar title=\"The app\" />\n      </View>",
+    "description": "The app bar is a special kind of toolbar that’s used for branding,\nnavigation, search, and actions.\n\n    import React from 'react'\n    import { View } from 'react-native-universal'\n    import { AppBar } from 'carbon-ui'\n\n    export default () =>\n      <View>\n        <AppBar title=\"The app\" />\n      </View>",
     "methods": [],
     "props": {
       "title": {
@@ -10,23 +10,23 @@
         "required": false,
         "description": "The title on the AppBar"
       },
-      "leftIcon": {
+      "navIcon": {
         "type": {
           "name": "string"
         },
         "required": false,
-        "description": "The material icon name of the left icon",
+        "description": "The material icon name of the nav icon",
         "defaultValue": {
           "value": "'menu'",
           "computed": false
         }
       },
-      "onLeftIconPress": {
+      "onNavIconPress": {
         "type": {
           "name": "func"
         },
         "required": false,
-        "description": "Callback for handling presses on the left icon"
+        "description": "Callback for handling presses on the nav icon"
       },
       "elevated": {
         "type": {
@@ -58,6 +58,53 @@
           "name": "object"
         },
         "required": false,
+        "description": ""
+      }
+    }
+  },
+  "../carbon-ui/src/components/BottomNavigation.js": {
+    "description": "Bottom navigation bars make it easy to explore and switch between top-level\nviews in a single tap.",
+    "methods": [],
+    "props": {
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "A collection of BottomNavigationIcons."
+      }
+    }
+  },
+  "../carbon-ui/src/components/BottomNavigationIcon.js": {
+    "description": "An icon in BottomNavigation",
+    "methods": [],
+    "props": {
+      "name": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "The name of the icon, from material icons."
+      },
+      "text": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "The text underneath the icon."
+      },
+      "active": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Will activate the icon if set to true."
+      },
+      "theme": {
+        "type": {
+          "name": "object"
+        },
+        "required": true,
         "description": ""
       }
     }
@@ -509,6 +556,21 @@
           "value": "false",
           "computed": false
         }
+      },
+      "menuStyle": {
+        "type": {
+          "name": "union",
+          "value": [
+            {
+              "name": "object"
+            },
+            {
+              "name": "array"
+            }
+          ]
+        },
+        "required": false,
+        "description": "The style of the menu."
       },
       "onOverlayPress": {
         "type": {
@@ -1070,6 +1132,62 @@
       "css": {
         "type": {
           "name": "object"
+        },
+        "required": false,
+        "description": ""
+      },
+      "theme": {
+        "type": {
+          "name": "object"
+        },
+        "required": true,
+        "description": ""
+      }
+    }
+  },
+  "../carbon-ui/src/components/buttons/FloatingActionButton.js": {
+    "description": "A floating action button represents the primary action in an application.\n\nThe Android implementation is temporarily un-rippled until the React Native\nteam implements `overflow: hidden` on Android.\n\n### Examples\n\n     import React from 'react'\n     import { View } from 'react-native-universal'\n     import { FloatingActionButton, Icon, gu } from 'carbon-ui'\n\n     export default () =>\n       <View style={{ justifyContent: 'flex-start', flexDirection: 'row' }}>\n         <FloatingActionButton style={{ marginRight: 2 * gu }}>\n           <Icon name=\"add\" style={{ color: 'white' }} />\n         </FloatingActionButton>\n         <FloatingActionButton accent>\n           <Icon name=\"keyboard_voice\" style={{ color: 'white' }} />\n         </FloatingActionButton>\n       </View>",
+    "methods": [],
+    "props": {
+      "accent": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Will set the background color to the accent color if set to true"
+      },
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "Usually an <Icon />"
+      },
+      "style": {
+        "type": {
+          "name": "union",
+          "value": [
+            {
+              "name": "object"
+            },
+            {
+              "name": "array"
+            }
+          ]
+        },
+        "required": false,
+        "description": ""
+      },
+      "onPressIn": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": ""
+      },
+      "onPressOut": {
+        "type": {
+          "name": "func"
         },
         "required": false,
         "description": ""

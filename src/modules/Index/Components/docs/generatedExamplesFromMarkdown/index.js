@@ -10,6 +10,7 @@ import PaperExample0 from './Paper/0'
 import TextFieldExample0 from './TextField/0'
 import TouchableRippleExample0 from './TouchableRipple/0'
 import FlatButtonExample0 from './FlatButton/0'
+import FloatingActionButtonExample0 from './FloatingActionButton/0'
 import IconToggleExample0 from './IconToggle/0'
 import RaisedButtonExample0 from './RaisedButton/0'
 
@@ -57,6 +58,10 @@ export default {
 
   FlatButton: [
     FlatButtonExample0,
+  ],
+
+  FloatingActionButton: [
+    FloatingActionButtonExample0,
   ],
 
   IconToggle: [
