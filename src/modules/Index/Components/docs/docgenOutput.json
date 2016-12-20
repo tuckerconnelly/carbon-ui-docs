@@ -284,6 +284,21 @@
         },
         "required": true,
         "description": "The contents of the dialog"
+      },
+      "style": {
+        "type": {
+          "name": "union",
+          "value": [
+            {
+              "name": "object"
+            },
+            {
+              "name": "array"
+            }
+          ]
+        },
+        "required": false,
+        "description": ""
       }
     }
   },
