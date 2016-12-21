@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import { View, Platform } from 'react-native-universal'
-import { Display1, Headline, Body1, Body2, Divider, connectTheme, gu } from 'carbon-ui'
+import { Display1, Headline, Body1, Body2, Caption, Divider, connectTheme, gu } from 'carbon-ui'
 
 import createLeafOrchestrator from 'src/modules/common/createLeafOrchestrator'
 import CodeBlock from 'src/modules/common/CodeBlock'
@@ -11,7 +11,7 @@ import Content from 'src/modules/common/Content'
 class Installation extends Component {
   render() {
     const styles = tStyles(this.props.theme)
-    
+
     return (
       <Content style={styles.base}>
         <Display1 style={styles.display1}>Installation</Display1>
@@ -19,7 +19,7 @@ class Installation extends Component {
           You'll need to install the tuckerconnelly/carbon-ui package using npm:
         </Body1>
         <CodeBlock style={styles.break}>npm -S i tuckerconnelly/carbon-ui</CodeBlock>
-        
+
         <Headline style={styles.headline}>Peer dependencies</Headline>
         <Body1 style={styles.smallBreak}>
           Because Carbon UI supports multiple platforms, you may need to install
@@ -29,9 +29,10 @@ class Installation extends Component {
           <Link
             to="https://github.com/facebook/react-native"
             style={styles.dependencyLink}>
-            react-native
+            react-native#0.37.0
           </Link>
-          <Body1>If you want to run carbon-ui natively</Body1>
+          <Body1>If you want to run carbon-ui natively.</Body1>
+          <Caption>(We're working on getting the latest version working).</Caption>
         </View>
         <View style={styles.smallBreak}>
           <Link
@@ -71,9 +72,9 @@ class Installation extends Component {
           global.matchMedia = matchMedia
           `}</CodeBlock>
         </View>
-        
+
         <Divider style={styles.break} />
-        
+
         <Headline style={styles.headline}>Fonts</Headline>
         <Body1 style={styles.smallBreak}>
           Material Design uses the Roboto font family, so for everything to work
@@ -146,23 +147,23 @@ const tStyles = theme => ({
   break: {
     marginBottom: 8 * gu,
   },
-  
+
   smallBreak: {
     marginBottom: 4 * gu,
   },
-  
+
   display1: {
     marginBottom: 5 * gu,
-    
+
     color: theme.colors.primary,
   },
-  
+
   headline: {
     marginBottom: 4 * gu,
-    
+
     color: theme.colors.primary,
   },
-  
+
   dependencyLink: {
     marginHorizontal: 0,
   },

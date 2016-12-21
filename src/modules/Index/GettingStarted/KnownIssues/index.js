@@ -1,22 +1,23 @@
 import React, { Component, PropTypes } from 'react'
 import { Platform } from 'react-native-universal'
-import { Display1, Headline, Body1, Body2, connectTheme, gu } from 'carbon-ui'
+import { Divider, Display1, Headline, Body1, Body2, connectTheme, gu } from 'carbon-ui'
 
 import createLeafOrchestrator from 'src/modules/common/createLeafOrchestrator'
 import Link from 'src/modules/common/Link'
 import Content from 'src/modules/common/Content'
+import CodeBlock from 'src/modules/common/CodeBlock'
 
 class Components extends Component {
   render() {
     const styles = tStyles(this.props.theme)
-    
+
     return (
       <Content style={styles.base}>
         <Display1 style={styles.display1}>Known issues</Display1>
         <Body1 style={styles.break}>
-          There&apos;s only one big known issue currently with Carbon UI and that&apos;s…
+          There are a few issues currently with carbon-ui.
         </Body1>
-        
+
         <Headline style={styles.headline}>Performance</Headline>
         <Body1 style={styles.smallBreak}>
           Carbon UI leans pretty heavily on the{' '}
@@ -41,7 +42,7 @@ class Components extends Component {
         <Body1 style={styles.smallBreak}>
           You may need to do some tweaking on your end, though.
         </Body1>
-        
+
         <Body2 style={styles.smallBreak}>Performance tips</Body2>
         <Body1 style={styles.listItem}>
           • Use{' '}
@@ -70,7 +71,7 @@ class Components extends Component {
             React.cloneElement()
           </Link>
         </Body1>
-        
+
         {Platform.OS !== 'ios' &&
           <Body1>
             Those should take care of 80% of your performance problems. If you
@@ -84,6 +85,18 @@ class Components extends Component {
             </Link>.
           </Body1>
         }
+
+        <Divider style={styles.divider} />
+
+        <Headline style={styles.headline}>React Native 0.37 only</Headline>
+        <Body1>
+          Currently carbon-ui only works with react-native 0.37. You can
+          create a new project with this version using:
+        </Body1>
+        <CodeBlock style={styles.smallBreak}>
+          react-native init MyApp --version react-native@0.37.0
+        </CodeBlock>
+        <Body1>We're working on getting the latest version working :)</Body1>
       </Content>
     )
   }
@@ -103,24 +116,28 @@ const tStyles = theme => ({
   break: {
     marginBottom: 8 * gu,
   },
-  
+
   smallBreak: {
     marginBottom: 4 * gu,
   },
-  
+
   display1: {
     marginBottom: 5 * gu,
-    
+
     color: theme.colors.primary,
   },
-  
+
   headline: {
     marginBottom: 4 * gu,
-    
+
     color: theme.colors.primary,
   },
-  
+
   listItem: {
     marginBottom: 2 * gu,
+  },
+
+  divider: {
+    marginVertical: 4 * gu,
   },
 })
