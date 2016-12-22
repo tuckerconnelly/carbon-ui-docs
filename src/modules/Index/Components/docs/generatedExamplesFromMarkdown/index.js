@@ -1,4 +1,5 @@
 import AppBarExample0 from './AppBar/0'
+import BottomNavigationExample0 from './BottomNavigation/0'
 import DataTableExample0 from './DataTable/0'
 import DialogExample0 from './Dialog/0'
 import DividerExample0 from './Divider/0'
@@ -17,6 +18,10 @@ import RaisedButtonExample0 from './RaisedButton/0'
 export default {
   AppBar: [
     AppBarExample0,
+  ],
+
+  BottomNavigation: [
+    BottomNavigationExample0,
   ],
 
   DataTable: [

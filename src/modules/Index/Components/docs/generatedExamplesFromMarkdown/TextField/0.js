@@ -1,5 +1,5 @@
  import React, { Component } from 'react'
- import { View } from 'react-native-universal'
+ import { View } from 'react-native'
  import { TextField } from 'carbon-ui'
 
  export default class Example extends Component {

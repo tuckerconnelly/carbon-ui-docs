@@ -1,5 +1,5 @@
 import React from 'react'
-import { View } from 'react-native-universal'
+import { View } from 'react-native'
 import { AppBar } from 'carbon-ui'
 
 export default () =>

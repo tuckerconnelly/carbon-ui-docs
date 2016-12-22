@@ -1,5 +1,5 @@
  import React from 'react'
- import { View } from 'react-native-universal'
+ import { View } from 'react-native'
  import { Body1, Divider, gu } from 'carbon-ui'
 
  export default () =>
