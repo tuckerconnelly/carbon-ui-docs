@@ -36,9 +36,9 @@ class Installation extends Component {
         </View>
         <View style={styles.smallBreak}>
           <Link
-            to="https://github.com/tuckerconnelly/react-native-web"
+            to="https://github.com/necolas/react-native-web"
             style={styles.dependencyLink}>
-            tuckerconnelly/react-native-web
+            react-native-web
           </Link>
           <Body1>If you want to run carbon-ui in the web</Body1>
         </View>
