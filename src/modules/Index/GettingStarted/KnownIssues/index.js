@@ -1,11 +1,10 @@
 import React, { Component, PropTypes } from 'react'
 import { Platform } from 'react-native-universal'
-import { Divider, Display1, Headline, Body1, Body2, connectTheme, gu } from 'carbon-ui'
+import { Display1, Headline, Body1, Body2, connectTheme, gu } from 'carbon-ui'
 
 import createLeafOrchestrator from 'src/modules/common/createLeafOrchestrator'
 import Link from 'src/modules/common/Link'
 import Content from 'src/modules/common/Content'
-import CodeBlock from 'src/modules/common/CodeBlock'
 
 class Components extends Component {
   render() {
@@ -85,18 +84,6 @@ class Components extends Component {
             </Link>.
           </Body1>
         }
-
-        <Divider style={styles.divider} />
-
-        <Headline style={styles.headline}>React Native 0.37 only</Headline>
-        <Body1>
-          Currently carbon-ui only works with react-native 0.37. You can
-          create a new project with this version using:
-        </Body1>
-        <CodeBlock style={styles.smallBreak}>
-          react-native init MyApp --version react-native@0.37.0
-        </CodeBlock>
-        <Body1>We're working on getting the latest version working :)</Body1>
       </Content>
     )
   }
