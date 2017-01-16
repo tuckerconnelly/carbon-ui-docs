@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import { View, Platform } from 'react-native-universal'
-import { Display1, Headline, Body1, Body2, Caption, Divider, connectTheme, gu } from 'carbon-ui'
+import { Display1, Headline, Body1, Body2, Divider, connectTheme, gu } from 'carbon-ui'
 
 import createLeafOrchestrator from 'src/modules/common/createLeafOrchestrator'
 import CodeBlock from 'src/modules/common/CodeBlock'
@@ -29,10 +29,9 @@ class Installation extends Component {
           <Link
             to="https://github.com/facebook/react-native"
             style={styles.dependencyLink}>
-            react-native#0.37.0
+            react-native
           </Link>
           <Body1>If you want to run carbon-ui natively.</Body1>
-          <Caption>(We're working on getting the latest version working).</Caption>
         </View>
         <View style={styles.smallBreak}>
           <Link
@@ -41,14 +40,6 @@ class Installation extends Component {
             react-native-web
           </Link>
           <Body1>If you want to run carbon-ui in the web</Body1>
-        </View>
-        <View style={styles.smallBreak}>
-          <Link
-            to="https://github.com/tuckerconnelly/react-native-universal"
-            style={styles.dependencyLink}>
-            react-native-universal
-          </Link>
-          <Body1>If you want to run carbon-ui on all 3 platforms</Body1>
         </View>
         <View style={styles.break}>
           <Link
