@@ -579,6 +579,21 @@
           "computed": false
         }
       },
+      "style": {
+        "type": {
+          "name": "union",
+          "value": [
+            {
+              "name": "object"
+            },
+            {
+              "name": "array"
+            }
+          ]
+        },
+        "required": false,
+        "description": ""
+      },
       "menuStyle": {
         "type": {
           "name": "union",
@@ -668,6 +683,58 @@
         },
         "required": false,
         "description": ""
+      }
+    }
+  },
+  "../carbon-ui/src/components/Snackbar.js": {
+    "description": "Snackbars provide brief feedback about an operation through a message at the\nbottom of the screen.",
+    "methods": [],
+    "props": {
+      "shown": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Will show the Snackbar when set to true"
+      },
+      "children": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The text of the snackbar."
+      },
+      "actionText": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "The text of the action button."
+      },
+      "onPressAction": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "The onPress prop of the action button."
+      },
+      "autoHideDuration": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "The duration in milliseconds after appearing that props.onRequestDeactivate\nwill be called.",
+        "defaultValue": {
+          "value": "3000",
+          "computed": false
+        }
+      },
+      "onRequestHide": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Called once the props.autoHideDuration passes"
       }
     }
   },
@@ -1130,7 +1197,7 @@
     ]
   },
   "../carbon-ui/src/components/buttons/FlatButton.js": {
-    "description": "Flat buttons are printed on material. They do not lift, but fill with color\non press.\n\n### Examples\n\n     import React from 'react'\n     import { View } from 'react-native'\n     import { FlatButton } from 'carbon-ui'\n\n     export default () =>\n       <View style={{ justifyContent: 'flex-start', flexDirection: 'row' }}>\n         <FlatButton>Hey I'm a button</FlatButton>\n       </View>",
+    "description": "Flat buttons are printed on material. They do not lift, but fill with color\non press.\n\n### Examples\n\n     import React from 'react'\n     import { View } from 'react-native'\n     import { FlatButton } from 'carbon-ui'\n\n     export default () =>\n       <View style={{ justifyContent: 'flex-start', flexDirection: 'row' }}>\n         <FlatButton>Hey I'm a button</FlatButton>\n         <FlatButton disabled>Hey I'm disabled</FlatButton>\n       </View>",
     "methods": [],
     "props": {
       "disabled": {
@@ -1157,6 +1224,21 @@
         },
         "required": false,
         "description": ""
+      },
+      "textStyle": {
+        "type": {
+          "name": "union",
+          "value": [
+            {
+              "name": "object"
+            },
+            {
+              "name": "array"
+            }
+          ]
+        },
+        "required": false,
+        "description": "The style of the button text. Only applies if props.children isn't passed."
       },
       "theme": {
         "type": {
@@ -1276,12 +1358,20 @@
         "required": false,
         "description": "The inside of the button. If it's text, it'll be UPPERCASEd."
       },
-      "css": {
+      "textStyle": {
         "type": {
-          "name": "object"
+          "name": "union",
+          "value": [
+            {
+              "name": "object"
+            },
+            {
+              "name": "array"
+            }
+          ]
         },
         "required": false,
-        "description": ""
+        "description": "The style of the button text. Only applies if props.children isn't passed."
       },
       "theme": {
         "type": {
